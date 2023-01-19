@@ -104,54 +104,216 @@
 
                 <div class="row form-group">
                   <div class="col-md-6 mb-3 mb-md-0">
-                    <label class="text-black" for="fname">First Name</label>
-                    <input type="text" id="fname" class="form-control">
+                    <label class="text-black" for="fname">Full Name</label>
+                    <input type="text" id="fname" class="form-control" required>
                   </div>
                   <div class="col-md-6">
-                    <label class="text-black" for="lname">Last Name</label>
-                    <input type="text" id="lname" class="form-control">
+                    <label class="text-black" for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" required>
                   </div>
                 </div>
 
                 <div class="row form-group">
-
-                  <div class="col-md-12">
-                    <label class="text-black" for="email">Email</label> 
-                    <input type="email" id="email" class="form-control">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-black" for="emailId">Email ID</label>
+                    <input type="email" id="emailId" class="form-control" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="text-black" for="club">Rotaract Club Name (Enter Full Name)</label>
+                    <input type="text" id="club" class="form-control" required>
                   </div>
                 </div>
 
                 <div class="row form-group">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-black" >Gender</label>
+                    <br>
+                    <input type="radio" id="genderf" name="gender" value="Female" required />
+                    <label for="genderf">Female</label>
 
-                  <div class="col-md-12">
-                    <label class="text-black" for="subject">Date of Birth</label> 
-                    <input type="text" id="subject" onfocus="(this.type='date')" class="form-control" required>
+                    <input type="radio" id="genderfm" name="gender" value="Male" />
+                    <label for="genderfm">Male</label>
+
+                    <input type="radio" id="genderfp" name="gender" value="Prefer not to say" />
+                    <label for="genderfp">Prefer not to say</label>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="text-black" for="dob">Date of Birth</label> 
+                    <input type="date" id="dob" class="form-control" required>
                   </div>
                 </div>
 
                 <div class="row form-group">
-
-                  <div class="col-md-12">
-                    <label class="text-black" for="subject">Subject</label> 
-                    <input type="subject" id="subject" class="form-control">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-black" >Student or Working Professional?</label>
+                    <br>
+                    <input type="radio" id="student" name="stupro" value="Student" />
+                    <label for="student">Student</label>
+                    <input type="radio" id="professional" name="stupro" value="Professional" />
+                    <label for="professional">Professional</label>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="text-black" for="organization">College / Company Name with Location</label> 
+                    <input type="text" id="organization" class="form-control" required>
                   </div>
                 </div>
 
                 <div class="row form-group">
                   <div class="col-md-12">
-                    <label class="text-black" for="message">Message</label> 
+                    <label class="text-black" for="rjourney">Tell us about your Rotaract Journey so far!</label> 
+                    <textarea name="message" id="rjourney" cols="30" rows="7" class="form-control" placeholder="Share about your Journey here..." required></textarea>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                        <label class="text-black" for="p1">I. Select Your First Preference Role</label> 
+                        <select name="entry.1887778624" id="p1" class="form-control" required>
+                            <option value="" disabled="" selected="" hidden=""></option>
+                            <option value="District Rotaract Secretary">District Rotaract Secretary</option>
+                            <option value="District Joint Secretary">District Joint Secretary</option>
+                            <option value="Zonal Rotaract Representative">Zonal Rotaract Representative</option>
+                            <option value="Treasurer">Treasurer</option>
+                            <option value="Sergeant at Arms">Sergeant at Arms</option>
+                            <option value="Director, Training">Director, Training</option>
+                            <option value="Director, Resources & Operations">Director, Resources & Operations</option>
+                            <option value="Director, Club Service">Director, Club Service</option>
+                            <option value="Director, Community Service">Director, Community Service</option>
+                            <option value="Director, International Service">Director, International Service</option>
+                            <option value="Director, Professional Development">Director, Professional Development</option>
+                            <option value="Director, Tech and Webservices">Director, Tech and Webservices</option>
+                            <option value="Director, Social Media & Outreach">Director, Social Media & Outreach</option>
+                            <option value="Director, Design and Visual Communications">Director, Design and Visual Communications</option>
+                            <option value="Director, Public Image">Director, Public Image</option>
+                            <option value="District Editor">District Editor</option>
+                            <option value="Director, Next Gen">Director, Next Gen</option>
+                        </select>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="p1justification">I. Tell us how & why you can be the best fit for the above Role</label> 
+                    <textarea name="message" id="p1justification" cols="30" rows="7" class="form-control" placeholder="Share about your message here..." required></textarea>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                        <label class="text-black" for="p2">II. Select Your Second Preference Role</label> 
+                        <select name="entry.1887778624" id="p2" class="form-control" required>
+                            <option value="" disabled="" selected="" hidden=""></option>
+                            <option value="District Rotaract Secretary">District Rotaract Secretary</option>
+                            <option value="District Joint Secretary">District Joint Secretary</option>
+                            <option value="Zonal Rotaract Representative">Zonal Rotaract Representative</option>
+                            <option value="Treasurer">Treasurer</option>
+                            <option value="Sergeant at Arms">Sergeant at Arms</option>
+                            <option value="Director, Training">Director, Training</option>
+                            <option value="Director, Resources & Operations">Director, Resources & Operations</option>
+                            <option value="Director, Club Service">Director, Club Service</option>
+                            <option value="Director, Community Service">Director, Community Service</option>
+                            <option value="Director, International Service">Director, International Service</option>
+                            <option value="Director, Professional Development">Director, Professional Development</option>
+                            <option value="Director, Tech and Webservices">Director, Tech and Webservices</option>
+                            <option value="Director, Social Media & Outreach">Director, Social Media & Outreach</option>
+                            <option value="Director, Design and Visual Communications">Director, Design and Visual Communications</option>
+                            <option value="Director, Public Image">Director, Public Image</option>
+                            <option value="District Editor">District Editor</option>
+                            <option value="Director, Next Gen">Director, Next Gen</option>
+                            <option value="None">None</option>
+                        </select>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="p2justification">II. Tell us how & why you can be the best fit for the above Role</label> 
+                    <textarea name="message" id="p2justification" cols="30" rows="7" class="form-control" placeholder="Share about your message here..." required></textarea>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                        <label class="text-black" for="p3">III. Select Your Third Preference Role</label> 
+                        <select name="entry.1887778624" id="p3" class="form-control" required>
+                            <option value="" disabled="" selected="" hidden=""></option>
+                            <option value="District Rotaract Secretary">District Rotaract Secretary</option>
+                            <option value="District Joint Secretary">District Joint Secretary</option>
+                            <option value="Zonal Rotaract Representative">Zonal Rotaract Representative</option>
+                            <option value="Treasurer">Treasurer</option>
+                            <option value="Sergeant at Arms">Sergeant at Arms</option>
+                            <option value="Director, Training">Director, Training</option>
+                            <option value="Director, Resources & Operations">Director, Resources & Operations</option>
+                            <option value="Director, Club Service">Director, Club Service</option>
+                            <option value="Director, Community Service">Director, Community Service</option>
+                            <option value="Director, International Service">Director, International Service</option>
+                            <option value="Director, Professional Development">Director, Professional Development</option>
+                            <option value="Director, Tech and Webservices">Director, Tech and Webservices</option>
+                            <option value="Director, Social Media & Outreach">Director, Social Media & Outreach</option>
+                            <option value="Director, Design and Visual Communications">Director, Design and Visual Communications</option>
+                            <option value="Director, Public Image">Director, Public Image</option>
+                            <option value="District Editor">District Editor</option>
+                            <option value="Director, Next Gen">Director, Next Gen</option>
+                            <option value="None">None</option>
+                        </select>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="p3justification">III. Tell us how & why you can be the best fit for the above Role</label> 
+                    <textarea name="message" id="p3justification" cols="30" rows="7" class="form-control" placeholder="Share about your message here..." required></textarea>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="p4">IV. Any other special roles (Not present in the list) that you would like to recommend and Why?</label> 
+                    <textarea name="message" id="p4" cols="30" rows="7" class="form-control" placeholder="Share about your Message here..." required></textarea>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="suggestions_ideas">Any suggestion or idea for the upcoming year?</label> 
+                    <textarea name="message" id="suggestions_ideas" cols="30" rows="7" class="form-control" placeholder="Share about your Suggestions & Ideas here..." required></textarea>
+                  </div>
+                </div>
+
+
+
+                <div class="row form-group">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-black" >Do you to nominate yourself for an Event Chairperson / CoChairperson / Secretary Role?</label>
+                    <br>
+                    <input type="radio" id="contactChoice1" name="contact" value="Yes" />
+                    <label for="contactChoice1">Yes</label>
+
+                    <input type="radio" id="contactChoice2" name="contact" value="No" />
+                    <label for="contactChoice2">No</label>
+
+                  </div>
+                  <div class="col-md-6">
+                    <label class="text-black" for="subject">If Yes, Which event you wish to lead?</label> 
+                    <input type="text" id="dob" class="form-control" required>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="message">If yes, Tell us how & why you can be the best fit to lead the above event?</label> 
                     <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
                   </div>
                 </div>
 
                 <div class="row form-group">
                   <div class="col-md-12">
-                    <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                    <input type="submit" value="Apply Now" class="btn btn-primary btn-md text-white">
                   </div>
                 </div>
 
-
               </form>
+
             </div>
 
           </div>
