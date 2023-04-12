@@ -19,6 +19,10 @@ body {
 
 #screen canvas {
   margin: auto;
+  @media (max-width: 800px) {
+    margin-top:60%
+    /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  }
   /* Hide the gap for font descenders. */
   display: block;
 
