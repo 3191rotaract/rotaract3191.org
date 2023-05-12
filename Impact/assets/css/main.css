@@ -156,6 +156,7 @@ section {
   content: "/";
 }
 
+
 /*--------------------------------------------------------------
 # Scroll top button
 --------------------------------------------------------------*/
@@ -601,6 +602,17 @@ section {
     background: rgba(0, 106, 93, 0.8);
     z-index: 9996;
   }
+}
+
+/*--------------------------------------------------------------
+# Maps Section
+--------------------------------------------------------------*/
+
+.embed-responsive-100x400px {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 400px;
 }
 
 /*--------------------------------------------------------------
@@ -1366,6 +1378,8 @@ section {
 # Our Team Section
 --------------------------------------------------------------*/
 .team .member {
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background: #fff;
   border-radius: 10px;
@@ -1375,6 +1389,7 @@ section {
 }
 
 .team .member img {
+  align-items:baseline;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -2119,7 +2134,7 @@ section {
   margin-top: 30px;
   color: #555555;
 }
-
+.blog .blog-
 .blog .blog-pagination ul {
   display: flex;
   padding: 0;
