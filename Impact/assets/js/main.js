@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', navbarlinksActive);
   document.addEventListener('scroll', navbarlinksActive);
 
+  
+  
+
   /**
    * Mobile nav toggle
    */
@@ -119,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   });
+  
 
   /**
    * Initiate glightbox
@@ -274,7 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   }
-
   /**
    * Animation on scroll function and init
    */

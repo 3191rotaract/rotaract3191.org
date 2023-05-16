@@ -607,12 +607,12 @@ section {
 /*--------------------------------------------------------------
 # Maps Section
 --------------------------------------------------------------*/
-
 .embed-responsive-100x400px {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 400px;
+  margin-left: 0px;
+  padding-bottom: 0px;
 }
 
 /*--------------------------------------------------------------
