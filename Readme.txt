@@ -1,6 +1,2 @@
-Thanks for downloading this template!
-
-Template Name: Impact
-Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Updated: June 16 2023 with Bootstrap v5.3.0  
+  * Author: Samarth Viswanath
