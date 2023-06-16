@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Rotaract District 3191</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Branding_kit/Rotary Mark of Excellence.png" rel="icon">
+  <link href="assets/img/Branding_kit/Rotary Mark of Excellence.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QQ5YJSVNK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0QQ5YJSVNK');
+  </script>
+
+  <style>
+    body {
+      background-color: #f8f8f8;
+      font-family: Arial, sans-serif;
+    }
+
+    .document-list {
+      margin: 0 auto;
+      max-width: 800px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .document-item {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .document-item:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .document-item .icon {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .document-item .document-name {
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .pdf-popup {
+      position: fixed;
+      margin-top: 20px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .pdf-viewer {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      height: 90vh;
+      max-height: 90vh;
+      background: #fff;
+      padding: 30px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .iframe-container {
+      flex-grow: 1;
+    }
+
+    .pdf-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      color: #333;
+    }
+
+    .download-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .download-button {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <!-- =======================================================
+  * Updated: June 14 2023 with Bootstrap v5.3.0
+  * Author: Samarth Viswanath
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo">
+        <img src="assets/img/Branding_kit/Rotaract 3191 Masterbrand - White.png" alt="" class="img-fluid">
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link  scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="team.html">Team</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="ClubFinder.html">Club Finder</a></li>
+              <li><a href="#">Logos</a></li>
+              <li><a href="#">Documents</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <section id="about" class="services">
+    <ul class="document-list">
+      <li class="document-item" data-pdf-src="apply/DistrictCommittees_RolesResponsibilities_RIY2023_2024.pdf">
+        <i class="icon fas fa-file-pdf"></i>
+        <span class="document-name">Document 1</span>
+      </li>
+      <li class="document-item" data-pdf-src="assets/docs/document2.pdf">
+        <i class="icon fas fa-file-pdf"></i>
+        <span class="document-name">Document 2</span>
+      </li>
+      <li class="document-item" data-pdf-src="assets/docs/document3.pdf">
+        <i class="icon fas fa-file-pdf"></i>
+        <span class="document-name">Document 3</span>
+      </li>
+    </ul>
+
+    <div class="pdf-popup">
+      <div class="pdf-viewer">
+        <span class="back-button">
+          <i class="fas fa-arrow-left"></i> Back
+        </span>
+        <div class="iframe-container">
+          <iframe src="" frameborder="0"></iframe>
+        </div>
+        <div class="download-container">
+          <a href="#" class="download-button" download>
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const documentList = document.querySelector('.document-list');
+    const pdfPopup = document.querySelector('.pdf-popup');
+    const pdfViewer = pdfPopup.querySelector('iframe');
+    const backBtn = pdfPopup.querySelector('.back-button');
+
+    // Event listener for document name click
+    documentList.addEventListener('click', (event) => {
+      if (event.target.classList.contains('document-name')) {
+        const documentItem = event.target.closest('.document-item');
+        const pdfSrc = documentItem.dataset.pdfSrc;
+        pdfViewer.src = pdfSrc;
+        pdfPopup.style.display = 'flex';
+
+        const downloadButton = pdfPopup.querySelector('.download-button');
+        downloadButton.href = pdfSrc;
+      }
+    });
+
+    // Event listener for back button
+    backBtn.addEventListener('click', () => {
+      pdfPopup.style.display = 'none';
+      pdfViewer.src = '';
+    });
+  </script>
+</body>
+
+</html>

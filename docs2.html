@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PDF Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+    }
+
+    .pdf-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .pdf-title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .pdf-search {
+      margin-bottom: 20px;
+    }
+
+    .pdf-search input {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .pdf-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+    }
+
+    .pdf-item {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .pdf-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .pdf-name {
+      cursor: pointer;
+      color: blue;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .pdf-name:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-download {
+      cursor: pointer;
+      color: green;
+      text-decoration: none;
+    }
+
+    .pdf-download:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .pdf-popup.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .pdf-popup-content {
+      width: 90%;
+      height: 90%;
+      max-height: calc(100vh - 40px);
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pdf-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #000;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .pdf-preloader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pdf-container">
+    <h1 class="pdf-title">PDF Viewer</h1>
+    <div class="pdf-search">
+      <input type="text" id="searchInput" placeholder="Search" oninput="filterPDFs()">
+    </div>
+    <ul class="pdf-list">
+      <li class="pdf-item">
+        <a class="pdf-name" onclick="openPdf('apply/DistrictCommittees_RolesResponsibilities_RIY2023_2024.pdf')">Document 1</a>
+        <a class="pdf-download" onclick="downloadPdf('apply/DistrictCommittees_RolesResponsibilities_RIY2023_2024.pdf')">Download</a>
+      </li>
+      <li class="pdf-item">
+        <a class="pdf-name" onclick="openPdf('path-to-document2.pdf')">Document 2</a>
+        <a class="pdf-download" onclick="downloadPdf('path-to-document2.pdf')">Download</a>
+      </li>
+      <li class="pdf-item">
+        <a class="pdf-name" onclick="openPdf('path-to-document3.pdf')">Document 3</a>
+        <a class="pdf-download" onclick="downloadPdf('path-to-document3.pdf')">Download</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="pdf-popup">
+    <div class="pdf-popup-content">
+      <div class="pdf-close" onclick="closePdf()">&times;</div>
+      <div class="pdf-preloader">
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+      <iframe id="pdf-iframe" src="" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/5441ec9f6c.js" crossorigin="anonymous"></script>
+  <script>
+    const pdfItems = document.getElementsByClassName('pdf-item');
+
+    function openPdf(pdfPath) {
+      if (isMobile()) {
+        window.open(pdfPath, '_blank');
+      } else {
+        document.querySelector('.pdf-popup').classList.add('active');
+        const pdfIframe = document.getElementById('pdf-iframe');
+        pdfIframe.src = pdfPath;
+        pdfIframe.onload = function () {
+          document.querySelector('.pdf-preloader').style.display = 'none';
+        };
+      }
+    }
+
+    function closePdf() {
+      document.querySelector('.pdf-popup').classList.remove('active');
+      document.getElementById('pdf-iframe').src = '';
+      document.querySelector('.pdf-preloader').style.display = 'flex';
+    }
+
+    function downloadPdf(pdfPath) {
+      const link = document.createElement('a');
+      link.href = pdfPath;
+      link.download = pdfPath.split('/').pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    function filterPDFs() {
+      const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+
+      for (let i = 0; i < pdfItems.length; i++) {
+        const pdfName = pdfItems[i].querySelector('.pdf-name').innerText.toLowerCase();
+        if (pdfName.includes(searchTerm)) {
+          pdfItems[i].style.display = 'flex';
+        } else {
+          pdfItems[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

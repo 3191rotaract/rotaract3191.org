@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Rotaract District 3191</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Branding_kit/Rotary Mark of Excellence.png" rel="icon">
+  <link href="assets/img/Branding_kit/Rotary Mark of Excellence.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QQ5YJSVNK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0QQ5YJSVNK');
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+    }
+
+    .pdf-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pdf-title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .pdf-search {
+      margin-bottom: 20px;
+    }
+
+    .pdf-search input {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .pdf-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+    }
+
+    .pdf-item {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .pdf-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .pdf-name {
+      cursor: pointer;
+      color: blue;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .pdf-name:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-download {
+      cursor: pointer;
+      color: green;
+      text-decoration: none;
+    }
+
+    .pdf-download:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .pdf-popup.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .pdf-popup-content {
+      width: 90%;
+      height: 90%;
+      max-height: calc(100vh - 40px);
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 25px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pdf-close {
+      position: absolute;
+      top: -5px;
+      right: 5px;
+      color: #000;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .pdf-preloader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  </style>
+  <!-- =======================================================
+  * Updated: June 14 2023 with Bootstrap v5.3.0
+  * Author: Samarth Viswanath
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- <h1 class="logo"><a href="index.html">Hidayah</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo"><img src="assets/img/Branding_kit/Rotaract 3191 Masterbrand - White.png" alt=""
+          class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+          <li class="dropdown"><a href="#about"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="aboutus.html">About Rotaract International</a></li>
+              <li><a href="aboutus3191.html">About Rotaract District 3191</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li class="dropdown"><a class="nav-link scrollto active" href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="ClubFinder.html">Club Finder</a></li>
+              <li><a href="#">Logos</a></li>
+              <li><a href="docs.html">Documents</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>
+              <li><a class="nav-link  scrollto" href="#portfolio">Portfolio</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+
+    </div>
+  </header><!-- End Header -->
+
+  <section id="about" class="services">
+    <div class="pdf-container">
+      <div class="section-title">
+        <h2>Resources</h2>
+        <h3>Find <span>The Documents of RI District 3191</span></h3>
+      </div>
+      <div class="pdf-search">
+        <input type="text" id="searchInput" placeholder="Search" oninput="filterPDFs()">
+      </div>
+      <ul class="pdf-list">
+        <li class="pdf-item">
+          <a class="pdf-name"
+            onclick="openPdf('apply/DistrictCommittees_RolesResponsibilities_RIY2023_2024.pdf')">Document 1</a>
+          <a class="pdf-download"
+            onclick="downloadPdf('apply/DistrictCommittees_RolesResponsibilities_RIY2023_2024.pdf')">Download</a>
+        </li>
+        <li class="pdf-item">
+          <a class="pdf-name" onclick="openPdf('path-to-document2.pdf')">Document 2</a>
+          <a class="pdf-download" onclick="downloadPdf('path-to-document2.pdf')">Download</a>
+        </li>
+        <li class="pdf-item">
+          <a class="pdf-name" onclick="openPdf('path-to-document3.pdf')">Document 3</a>
+          <a class="pdf-download" onclick="downloadPdf('path-to-document3.pdf')">Download</a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="pdf-popup">
+      <div class="pdf-popup-content">
+        <div class="pdf-close" onclick="closePdf()">&times;</div>
+        <div class="pdf-preloader">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <iframe id="pdf-iframe" src="" frameborder="0" width="100%" height="100%"></iframe>
+      </div>
+    </div>
+  
+    <script src="https://kit.fontawesome.com/5441ec9f6c.js" crossorigin="anonymous"></script>
+    <script>
+      const pdfItems = document.getElementsByClassName('pdf-item');
+
+      function openPdf(pdfPath) {
+        if (isMobile()) {
+          window.open(pdfPath, '_blank');
+        } else {
+          document.querySelector('.pdf-popup').classList.add('active');
+          const pdfIframe = document.getElementById('pdf-iframe');
+          pdfIframe.src = pdfPath;
+          pdfIframe.onload = function () {
+            document.querySelector('.pdf-preloader').style.display = 'none';
+          };
+        }
+      }
+
+      function closePdf() {
+        document.querySelector('.pdf-popup').classList.remove('active');
+        document.getElementById('pdf-iframe').src = '';
+        document.querySelector('.pdf-preloader').style.display = 'flex';
+      }
+
+      function downloadPdf(pdfPath) {
+        const link = document.createElement('a');
+        link.href = pdfPath;
+        link.download = pdfPath.split('/').pop();
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+
+      function filterPDFs() {
+      const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+
+      for (let i = 0; i < pdfItems.length; i++) {
+        const pdfName = pdfItems[i].querySelector('.pdf-name').innerText.toLowerCase();
+        if (pdfName.includes(searchTerm)) {
+          pdfItems[i].style.display = 'flex';
+        } else {
+          pdfItems[i].style.display = 'none';
+        }
+      }
+    }
+    </script>
+  </section>
+  </body>
+  
+  </html>
