@@ -81,12 +81,12 @@
   /**
    * Preloader
    */
-  let preloader = select("#preloader");
-  if (preloader) {
-    window.addEventListener("load", () => {
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
       preloader.remove();
-    });
-  }
+    }
+  });
 
   /**
    * Back to top button
