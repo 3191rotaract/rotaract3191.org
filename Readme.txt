@@ -1,2 +1,4 @@
-Updated: June 16 2023 with Bootstrap v5.3.0  
-  * Author: Samarth Viswanath
+<!-- =======================================================
+  * Template Name: Rotaract 3191 - v4.0.0
+  * Author: Rtr Samarth Viswanath
+  ======================================================== -->
