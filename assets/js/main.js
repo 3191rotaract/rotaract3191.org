@@ -212,6 +212,7 @@
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: ".portfolio-item",
+        layoutMode: "fitRows",
       });
 
       let portfolioFilters = select("#portfolio-flters li", true);
@@ -240,6 +241,15 @@
    */
   const portfolioLightbox = GLightbox({
     selector: ".portfolio-lightbox",
+  });
+
+  /**
+   * Initiate portfolio details lightbox
+   */
+  const portfolioDetailsLightbox = GLightbox({
+    selector: ".portfolio-details-lightbox",
+    width: "90%",
+    height: "90vh",
   });
 
   /**
