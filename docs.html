@@ -74,6 +74,11 @@
       justify-content: center;
     }
 
+    /* .pdf-container.h2{
+      align-items: center;
+      justify-content: center;
+    } */
+
     .pdf-title {
       font-size: 32px;
       margin-bottom: 20px;
@@ -96,7 +101,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      max-width: 800px;
+      max-width: 1000px;
     }
 
     .pdf-item {
@@ -132,6 +137,7 @@
       cursor: pointer;
       color: green;
       text-decoration: none;
+      font-weight: bold;
     }
 
     .pdf-download:hover {
@@ -197,11 +203,12 @@
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-inner-pages">
+  <header id="header" class="fixed-top header">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo"><img src="assets/img/Branding_kit/Limitless/bwblack (secondary).png" alt="Home"
+      <a href="index.html" class="logo"><img
+          src="assets/img/Branding_kit/2.Rotaract with Limitless/wwwhite (primary).webp" alt="Home"
           class="img-fluid"></a>
-      <nav id="navbar" class="navbar-inner-pages">
+      <nav id="navbar" class="navbar">
         <ul>
           <li class="nav-link scrollto"></li><a href="index.html">Home</a></li>
           <li class="nav-link scrollto"></li><a href="aboutus.html">About Us</a></li>
@@ -215,9 +222,10 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main"><section id="about" class="services">
-    <div class="container" data-aos="fade-up">
-    </div>
+  <main id="main">
+    <section id="about" class="services" style="padding-top: 100px;">
+      <div class="container" data-aos="fade-up">
+      </div>
     </section>
 
     <div class="section-title">
@@ -230,18 +238,42 @@
         <!-- <div class="pdf-search">
         <input type="text" id="searchInput" placeholder="Search" oninput="filterPDFs()">
       </div> -->
-        <div class="pdf-categories">
-          <h2>Installation Guidelines</h2>
+        <div class="pdf-categories" style="align-items: center;">
+          <div class="section-title">
+            <h2>Installation Guidelines</h2>
+          </div>
           <ul class="pdf-list">
             <li class="pdf-item">
+              <h4>Rotaract Club Installation Guidelines</h4>
               <a class="pdf-name"
-                onclick="openPdf('assets/docs/Rotaract Club Installation Guidelines (1).pdf')">Rotaract
-                Club Installation Guidelines</a>
+                onclick="openPdf('assets/docs/Rotaract Club Installation Guidelines (1).pdf')">View PDF</a>
               <a class="pdf-download"
                 onclick="downloadPdf('assets/docs/Rotaract Club Installation Guidelines (1).pdf')">Download</a>
             </li>
             <!-- Add more PDF items for Category 1 -->
           </ul>
+        </div>
+        <div class="pdf-categories">
+          <div class="section-title">
+            <h2>Club Documents</h2>
+          </div>
+          <ul class="pdf-list">
+            <li class="pdf-item">
+              <h4>Rotaract Club Dues Guidelines</h4>
+              <a class="pdf-name"
+                onclick="openPdf('assets/docs/Annual Rotaract Club Dues Structure RY 2023 - 2024.pdf')">View PDF</a>
+              <a class="pdf-download"
+                onclick="downloadPdf('assets/docs/Annual Rotaract Club Dues Structure RY 2023 - 2024.pdf')">Download</a>
+            </li>
+            <li class="pdf-item">
+              <h4>Rotaract Club Reporting Guidelines</h4>
+              <a class="pdf-name"
+                onclick="openPdf('assets/docs/Rotaract Club Reporting Guidelines RY 2023 - 2024.pdf')">View PDF</a>
+              <a class="pdf-download"
+                onclick="downloadPdf('assets/docs/Rotaract Club Reporting Guidelines RY 2023 - 2024.pdf')">Download</a>
+            </li>
+          </ul>
+          
         </div>
         <!-- <div class="pdf-categories">
         <h2>Category 2</h2>
@@ -374,7 +406,7 @@
 
 
   <div id="preloader">
-    <img src="assets/img/Infinity-2.2s-800px.gif" alt="Loading">
+    <img src="assets/img/loading.gif" alt="Loading">
   </div>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

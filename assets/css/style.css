@@ -139,7 +139,7 @@ h6 {
 
 .moving-text {
   display: inline-block;
-  animation: marquee 5s linear infinite;
+  animation: marquee 7.5s linear infinite;
 }
 
 #header.header-inner-pages {
@@ -874,7 +874,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 80px 0;
+  padding: 0 0;
 }
 
 .section-bg {
@@ -883,7 +883,7 @@ section {
 
 .section-title {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 30px;
   padding-bottom: 10px;
 }
 
@@ -923,6 +923,68 @@ section {
     width: 50%;
   }
 }
+
+/*--------------------------------------------------------------
+# Logo box
+--------------------------------------------------------------*/
+.logo-boxes {
+  padding-bottom: 60px;
+}
+
+@media (min-width: 1200px) {
+  .logo-boxes:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(50% + 20px);
+    background-color: #fff;
+  }
+}
+
+.logo-boxes .logo-box {
+  padding: 60px 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.logo-boxes .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.logo-box .title a {
+  color: #0d0d0d;
+  transition: 0.3s;
+}
+
+/* .logo-box:hover {
+  background: #000000;
+} */
+
+.logo-box:hover .title a {
+  color: #f28705;
+}
+
+/* Styles for the image inside the logo-box */
+.logo-box img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
 
 /*--------------------------------------------------------------
 # About
@@ -1213,124 +1275,99 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio .portfolio-item {
-  margin-bottom: 30px;
-}
-
 .portfolio #portfolio-flters {
   padding: 0;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 25px auto;
   list-style: none;
   text-align: center;
+  border-radius: 50px;
 }
 
 .portfolio #portfolio-flters li {
   cursor: pointer;
   display: inline-block;
-  padding: 8px 15px 10px 15px;
+  padding: 8px 18px 10px 18px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
-  text-transform: uppercase;
   color: #444444;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 3px;
+  margin: 25px 3px 10px 3px;
+  transition: all ease-in-out 0.3s;
+  background: #fafafc;
+  border-radius: 50px;
 }
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  color: #fff;
-  background: #428bca;
+  color: #414c64;
+  background: #ffc107;
 }
 
 .portfolio #portfolio-flters li:last-child {
   margin-right: 0;
 }
 
-.portfolio .portfolio-wrap {
-  transition: 0.3s;
-  position: relative;
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
   overflow: hidden;
-  z-index: 1;
-  background: rgba(57, 64, 71, 0.6);
 }
 
-.portfolio .portfolio-wrap::before {
-  content: "";
-  background: rgba(57, 64, 71, 0.6);
-  position: absolute;
-  left: 0;
-  right: 0;
+.portfolio .portfolio-item img {
+  position: relative;
   top: 0;
-  bottom: 0;
-  transition: all ease-in-out 0.3s;
-  z-index: 2;
-  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.portfolio .portfolio-wrap img {
-  transition: all ease-in-out 0.3s;
-}
-
-.portfolio .portfolio-wrap .portfolio-info {
+.portfolio .portfolio-item .portfolio-info {
   opacity: 0;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 0px;
+  right: 5px;
+  bottom: -50px;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 20px;
+  background: #ffc107;
+  padding: 30px 20px;
 }
 
-.portfolio .portfolio-wrap .portfolio-info h4 {
-  font-size: 20px;
-  color: #fff;
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
+  color: #000000;
   font-weight: 600;
 }
 
-.portfolio .portfolio-wrap .portfolio-info p {
-  color: rgba(255, 255, 255, 0.7);
+.portfolio .portfolio-item .portfolio-info p {
+  color: #000000;
   font-size: 14px;
-  text-transform: uppercase;
-  padding: 0;
-  margin: 0;
-  font-style: italic;
+  margin-bottom: 0;
 }
 
-.portfolio .portfolio-wrap .portfolio-links {
-  text-align: center;
-  z-index: 4;
+.portfolio .portfolio-item .portfolio-info .preview-link,
+.portfolio .portfolio-item .portfolio-info .details-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(50% - 18px);
+  color: rgba(255, 255, 255, 0.7);
+  transition: ease-in-out 0.3s;
 }
 
-.portfolio .portfolio-wrap .portfolio-links a {
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
   color: #fff;
-  margin: 0 5px 0 0;
-  font-size: 28px;
-  display: inline-block;
-  transition: 0.3s;
 }
 
-.portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #6aa3d5;
+.portfolio .portfolio-item .portfolio-info .details-link {
+  right: 15px;
 }
 
-.portfolio .portfolio-wrap:hover::before {
+.portfolio .portfolio-item:hover img {
+  top: -30px;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
-}
-
-.portfolio .portfolio-wrap:hover img {
-  transform: scale(1.2);
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info {
-  opacity: 1;
+  bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1354,16 +1391,16 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #428bca;
+  border: 1px solid #ffc107;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #428bca;
+  background-color: #ffc107;
 }
 
 .portfolio-details .portfolio-info {
   padding: 30px;
-  box-shadow: 0px 0 30px rgba(57, 64, 71, 0.08);
+  box-shadow: 0px 0 30px rgba(65, 76, 100, 0.08);
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -1821,7 +1858,7 @@ a.btn.btn-get-started {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 
 .pdf-container {
