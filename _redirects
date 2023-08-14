@@ -1,2 +1,4 @@
 # Redirect default Netlify subdomain to primary domain
 https://rotaract3191.netlify.app/* https://rotaract3191.org/:splat 301!
+
+https://rotaract3191.org/samanvaya/ https://konfhub.com/checkout/samanvaya3191?ticketId=9051 301!
