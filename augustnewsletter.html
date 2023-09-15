@@ -108,8 +108,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #c7c5c5;
-      border-color: #000;
+      background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       padding: 20px;
@@ -122,7 +121,7 @@
 
     .pdf-name {
       cursor: pointer;
-      color: #000000;
+      color: blue;
       text-decoration: none;
       font-weight: bold;
       margin-bottom: 10px;
@@ -135,7 +134,7 @@
 
     .pdf-download {
       cursor: pointer;
-      color: #000000;
+      color: green;
       text-decoration: none;
       font-weight: bold;
     }
@@ -211,13 +210,13 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li class="nav-link scrollto"></li><a href="index.html">Home</a></li>
-          <li class="nav-link scrollto"><a href="newsletterlib.html"><span>Our Newsletter</span></a></li>
+          <li><a class="nav-link scrollto active" href="newsletterlib.html">Our Newsletter</a></li>
           <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
           <li class="nav-link scrollto"></li><a href="aboutus.html">About Us</a></li>
           <li class="nav-link scrollto"><a href="aboutus3191.html"><span>Our Theme</span></a></li>
           <li><a class="nav-link scrollto" href="https://rotasia2024bengaluru.com/" target="_blank">Rotasia2024</a></li>
           <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
-          <li><a class="nav-link scrollto active" href="brandcenter.html">Brand Center</a></li>
+          <li><a class="nav-link scrollto " href="brandcenter.html">Brand Center</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -230,139 +229,25 @@
       </div>
     </section>
 
-    <div class="section-title">
-      <h2>Documents & Resources</h2>
-      <h3>Here are some <span>Documents & Resources</span></h3>
-    </div>
-
-    <section id="about" class="services section-bg">
-      <div class="pdf-container">
-        <!-- <div class="pdf-search">
-        <input type="text" id="searchInput" placeholder="Search" oninput="filterPDFs()">
-      </div> -->
-        <div class="pdf-categories" style="align-items: center;">
-          <div class="section-title">
-            <h2>Installation Guidelines</h2>
-          </div>
-          <ul class="pdf-list">
-            <li class="pdf-item">
-              <h4>Rotaract Club Installation Guidelines</h4>
-              <a class="pdf-name"
-                onclick="openPdf('assets/docs/Rotaract Club Installation Guidelines (1).pdf')">View PDF</a>
-              <a class="pdf-download"
-                onclick="downloadPdf('assets/docs/Rotaract Club Installation Guidelines (1).pdf')">Download</a>
-            </li>
-            <!-- Add more PDF items for Category 1 -->
-          </ul>
-        </div>
-        <div class="pdf-categories">
-          <div class="section-title">
-            <h2>Club Documents</h2>
-          </div>
-          <ul class="pdf-list">
-            <li class="pdf-item">
-              <h4>Rotaract Club Dues Guidelines</h4>
-              <a class="pdf-name"
-                onclick="openPdf('assets/docs/Annual Rotaract Club Dues Structure RY 2023 - 2024.pdf')">View PDF</a>
-              <a class="pdf-download"
-                onclick="downloadPdf('assets/docs/Annual Rotaract Club Dues Structure RY 2023 - 2024.pdf')">Download</a>
-            </li>
-            <li class="pdf-item">
-              <h4>Rotaract Club Reporting Guidelines</h4>
-              <a class="pdf-name"
-                onclick="openPdf('assets/docs/Rotaract Club Reporting Guidelines RY 2023 - 2024.pdf')">View PDF</a>
-              <a class="pdf-download"
-                onclick="downloadPdf('assets/docs/Rotaract Club Reporting Guidelines RY 2023 - 2024.pdf')">Download</a>
-            </li>
-          </ul>
-          
-        </div>
-        <!-- <div class="pdf-categories">
-        <h2>Category 2</h2>
-        <ul class="pdf-list">
-          <li class="pdf-item">
-            <a class="pdf-name" onclick="openPdf('path-to-document2.pdf')">Document 2</a>
-            <a class="pdf-download" onclick="downloadPdf('path-to-document2.pdf')">Download</a>
-          </li>
-          Add more PDF items for Category 2
-        </ul>
-      </div> -->
-        <!-- <div class="pdf-categories">
-        <h2>Category 3</h2>
-        <ul class="pdf-list">
-          <li class="pdf-item">
-            <a class="pdf-name" onclick="openPdf('path-to-document3.pdf')">Document 3</a>
-            <a class="pdf-download" onclick="downloadPdf('path-to-document3.pdf')">Download</a>
-          </li>
-          Add more PDF items for Category 3 -->
-        <!-- </ul>
-      </div> -->
-      </div>
-
-      <div class="pdf-popup">
-        <div class="pdf-popup-content">
-          <div class="pdf-close" onclick="closePdf()">&times;</div>
-          <div class="pdf-preloader">
-            <i class="fas fa-spinner fa-spin"></i>
-          </div>
-          <iframe id="pdf-iframe" src="" frameborder="0" width="100%" height="100%"></iframe>
-        </div>
-      </div>
-
+    <section id="newsletter" class="services">
       <div class="section-title">
-        <!-- <h2>Documents & Resources</h2> -->
-        <h3>****More Documents <span>COMING SOON*****</span></h3>
+        <h2>Limitless Chronicles</h2>
+        <h3>Find our <span>amazing monthly Newsletter</span></h3>
+        <!-- <p>Take action and join Rotaract today to make a meaningful difference in your community and beyond!</p> -->
       </div>
+      <div class="container" data-aos="fade-up">
+        <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
+          src="https://heyzine.com/flip-book/efb3eb6f9e.html"
+          style="border: 1px solid lightgray; width: 100%; height: 800px;"></iframe>
+        <!-- <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
+          src="https://heyzine.com/flip-book/cbc4f78ae8.html"
+          style="border: 1px solid lightgray; width: 100%; height: 800px;"></iframe> -->
+      </div>
+    </section>
 
-      <script src="https://kit.fontawesome.com/5441ec9f6c.js" crossorigin="anonymous"></script>
-      <script>
-        const pdfItems = document.getElementsByClassName('pdf-item');
+    
 
-        function openPdf(pdfPath) {
-          if (isMobile()) {
-            window.open(pdfPath, '_blank');
-          } else {
-            document.querySelector('.pdf-popup').classList.add('active');
-            const pdfIframe = document.getElementById('pdf-iframe');
-            pdfIframe.src = pdfPath;
-            pdfIframe.onload = function () {
-              document.querySelector('.pdf-preloader').style.display = 'none';
-            };
-          }
-        }
-
-        function closePdf() {
-          document.querySelector('.pdf-popup').classList.remove('active');
-          document.getElementById('pdf-iframe').src = '';
-          document.querySelector('.pdf-preloader').style.display = 'flex';
-        }
-
-        function downloadPdf(pdfPath) {
-          const link = document.createElement('a');
-          link.href = pdfPath;
-          link.download = pdfPath.split('/').pop();
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }
-
-        function isMobile() {
-          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-
-        function filterPDFs() {
-          const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-
-          for (let i = 0; i < pdfItems.length; i++) {
-            const pdfName = pdfItems[i].querySelector('.pdf-name').innerText.toLowerCase();
-            if (pdfName.includes(searchTerm)) {
-              pdfItems[i].style.display = 'flex';
-            } else {
-              pdfItems[i].style.display = 'none';
-            }
-          }
-        }
-      </script>
+    
   </main><!-- End #main -->
   <!--=======Footer=======-->
   <footer id="footer">
