@@ -131,8 +131,8 @@ a:hover {
 }
 
 .section-padding {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 10px;
+  padding-bottom: 100px;
 }
 
 .custom-border-radius {
@@ -942,7 +942,7 @@ strong {
 -----------------------------------------*/
 @media screen and (max-width: 1500px) {
    .speakers-text-info {
-    padding: 50px;
+    padding: 10px;
   }
 }
 
