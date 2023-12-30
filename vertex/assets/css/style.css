@@ -728,7 +728,7 @@ section {
 
 .service-item .icon i {
   color: var(--color-default);
-  font-size: 56px;
+  font-size: 50px;
   transition: ease-in-out 0.3s;
   z-index: 2;
   position: relative;
