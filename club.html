@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotaract Club Map</title>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" />
+  <style>
+    #map {
+      height: 400px;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    #location-table {
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    #location-table th, #location-table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    #search {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+<div id="location-details"></div>
+
+<input type="text" id="search" placeholder="Search for a club">
+
+<table id="location-table">
+  <thead>
+    <tr>
+      <th>Club Name</th>
+      <th>Zone</th>
+      <th>Members</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table rows will be dynamically added here -->
+  </tbody>
+</table>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoicm90YXJhY3QzMTkxIiwiYSI6ImNsaHV1M2g1eDAyNngzZm1kMXBva2l4MWYifQ.wUfCCENez4xSQqam7EzCpw';
+
+  const locations = [
+    { 
+      name: "A P S College of Engineering",
+      lat: 12.78382486,
+      lng: 77.49651267,
+      zone: "Warriors",
+      members: ["Amulya CV", "Harshita S Yadav", "Akshay Shivashankar"],
+      instagram: "//www.instagram.com/rotaractclubapsce/"
+    },
+    // Add more locations as needed
+  ];
+
+  let map;
+
+  function initMap() {
+    // Initialize the map
+    map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [77.5946, 12.9716],
+      zoom: 8
+    });
+
+    // Add markers to the map and populate the table
+    const tableBody = document.querySelector('#location-table tbody');
+    locations.forEach((location) => {
+      const marker = new mapboxgl.Marker()
+        .setLngLat([location.lng, location.lat])
+        .addTo(map);
+
+      // Add click listener for marker
+      marker.getElement().addEventListener('click', () => {
+        const detailsContainer = document.getElementById('location-details');
+        detailsContainer.innerHTML = `
+          <strong>${location.name}</strong><br>
+          <strong>Zone:</strong> ${location.zone}<br>
+          <strong>Members:</strong> ${location.members.join(', ')}<br>
+          <strong>Instagram:</strong> 
+          <a class="instagram-icon" href="${location.instagram}" target="_blank">
+            <i class="bx bx-instagram"></i> Instagram
+          </a>
+        `;
+        detailsContainer.style.display = 'block';
+      });
+
+      // Add a row to the table
+      const row = tableBody.insertRow();
+      row.insertCell(0).textContent = location.name;
+      row.insertCell(1).textContent = location.zone;
+      row.insertCell(2).textContent = location.members.join(', ');
+    });
+  }
+
+  // Filter markers and table based on search input
+  const searchInput = document.getElementById('search');
+  const tableRows = document.querySelectorAll('#location-table tbody tr');
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+
+    tableRows.forEach((row) => {
+      const locationName = row.cells[0].textContent.toLowerCase();
+      const locationZone = row.cells[1].textContent.toLowerCase();
+      const locationMembers = row.cells[2].textContent.toLowerCase();
+      const marker = map.getLayer(locationName);
+
+      if (locationName.includes(query) || locationZone.includes(query) || locationMembers.includes(query)) {
+        row.style.display = '';
+        marker.setOpacity(1);
+      } else {
+        row.style.display = 'none';
+        marker.setOpacity(0);
+      }
+    });
+  });
+
+  // Initialize the map after the DOM has loaded
+  document.addEventListener('DOMContentLoaded', initMap);
+</script>
+
+</body>
+</html>
