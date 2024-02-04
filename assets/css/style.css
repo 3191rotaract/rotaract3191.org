@@ -1336,22 +1336,29 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-info {
-  opacity: 0;
+  opacity: 100;
   position: absolute;
-  left: 0px;
-  right: 5px;
+  left: 0;
+  right: 0;
   bottom: -50px;
   z-index: 3;
   transition: all ease-in-out 0.3s;
   background: #ffc107;
-  padding: 30px 20px;
+  padding: 20px; /* Adjust padding as needed */
+  height: 135px; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow content */
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
   font-size: 18px;
   color: #000000;
   font-weight: 600;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 
 .portfolio .portfolio-item .portfolio-info p {
   color: #000000;
