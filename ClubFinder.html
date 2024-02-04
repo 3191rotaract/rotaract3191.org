@@ -32,16 +32,35 @@
 
 
   <!-- Favicons -->
-  <link href="assets/img/Branding_kit/Rotary Mark of Excellence.png" rel="icon">
+  <link href="../assets/img/Branding_kit/1.Limitless/Primary@4x.webp" rel="icon">
+  <link href="../assets/img/Branding_kit/1.Limitless/Primary@4x.webp" rel="apple-touch-icon">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
 
 
   <title>Rotaract Club Finder - Bangalore</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/maps.css" rel="stylesheet">
+
 
 
 
@@ -57,38 +76,87 @@
   </script>
 
   <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+
+
     #map {
       height: 400px;
       width: 80%;
       margin: 0 auto;
     }
 
+    @media screen and (max-width: 600px) {
+      #map {
+        width: 100%;
+      }
+    }
+
     #search {
-      width: 60%;
+      display: flex;
+      width: 75%;
       padding: 10px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: calc(50% - 30%);
+      margin: 20px auto;
+      /* Center the search input */
       border: 1px solid #ddd;
       border-radius: 4px;
       box-sizing: border-box;
     }
 
+
     #location-table {
-      margin: 0 auto;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
       width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border-radius: 8px;
     }
 
     #location-table th,
     #location-table td {
-      padding: 8px;
-      border: 1px solid #000000;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      text-align: left;
+    }
+
+    #location-table th {
+      background-color: #2196F3;
+      color: white;
     }
 
     #location-table tbody tr:hover {
-      background-color: #7e7e7e;
+      background-color: #f5f3f3;
+    }
+
+    .instagram-icon::before,
+    .directions-icon::before {
+      margin-right: 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+      #search {
+        width: 80%;
+      }
+
+
+
+      .club-name-link {
+        color: #2196F3;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .club-name-link:hover {
+        color: #0e5c91;
+      }
     }
   </style>
 
@@ -100,6 +168,22 @@
 
 <body>
 
+  <!-- News Script -->
+  <script>
+    !function (t, e, a, n) { function c() { if (!e.getElementById(a)) { var t = e.getElementsByTagName(n)[0], c = e.createElement(n); c.type = "text/javascript", c.async = !0, c.src = "https://cdn.taku-app.com/js/latest.js", t.parentNode.insertBefore(c, t) } } if ("function" != typeof t.Taku) { var s = function () { s.q.push(arguments) }; s.q = [], t.Taku = s, "complete" === e.readyState ? c() : t.attachEvent ? t.attachEvent("onload", c) : t.addEventListener("load", c, !1) } }(window, document, "taku-js", "script");
+
+    window.Taku('news:boot', {
+      api_public_key: "cnRkiihtg7KlriZsyo1YPVFyOcFoO4gN1Zh0G9AdyB8=",
+      position: "left",
+
+      launcher_options: {
+        bg_color: "#f2bf27",
+        text_color: "#ffffff",
+        text: "News"
+      }
+    });
+  </script>
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header">
     <div class="container d-flex align-items-center justify-content-between">
@@ -108,43 +192,31 @@
           class="img-fluid"></a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li class="nav-link scrollto"></li><a href="../index.html">Home</a></li>
-          <li class="nav-link scrollto"><a href="../newsletterlib.html"><span>Our Newsletter</span></a></li>
+          <li class="nav-link scrollto"></li><a href="../">Home</a></li>
+          <li><a class="nav-link scrollto " href="../chronicles">Our Newsletter</a></li>
           <li><a class="nav-link scrollto" href="../index.html#team">Team</a></li>
-          <li class="nav-link scrollto"><a href="../aboutus.html"><span>About Us</span></a></li>
+          <li><a class="nav-link scrollto active" href="ClubFinder.html">ClubFinder</a></li>
+          <li class="nav-link scrollto"></li><a href="../aboutus.html">About Us</a></li>
           <li class="nav-link scrollto"><a href="../aboutus3191.html"><span>Our Theme</span></a></li>
           <li><a class="nav-link scrollto" href="https://rotasia2024bengaluru.com/" target="_blank">Rotasia2024</a></li>
-          <li><a class="nav-link scrollto" href="../#team">Team</a></li>
-          <li><a class="nav-link scrollto active" href="../brandcenter.html">Brand Center</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+          <li><a class="nav-link scrollto " href="../brandcenter.html">Brand Center</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
-  
+
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('');">
-        <div class="container position-relative">
-          <div class="row d-flex justify-content-center">
-            
-          </div>
-        </div>
-      </div>
-      <nav>
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>RMaps</li>
-          </ol>
-        </div>
-      </nav>
-    </div>
-    <!-- End Breadcrumbs -->
 
+
+    <div class="container section-title" data-aos="fade-up">
+      <!-- <h2>ClubFinder</h2> -->
+      <h3>Club <span>Finder</span></h3>
+      <p>Find Rotaract Clubs of RI DIstrict 3191</p>
+    </div><!-- End Section Title -->
 
     <!-- Maps Section -->
     <div id="map"></div>
@@ -152,223 +224,1047 @@
       <thead>
         <tr>
           <input type="text" id="search" placeholder="Search locations">
-          <th>Location</th>
-          <th>Description</th>
-          <th>Action</th>
+          <th>Rotaract Club Name</th>
+          <th>President's Name</th>
+          <th>Meeting Location</th>
+          <!-- <th>ISD's Name</th> -->
+          <!-- <th>Clubs Instagram Account</th>
+          <th>Zones</th> -->
         </tr>
       </thead>
       <tbody>
-        <tr data-lat="12.9716" data-lng="77.5946" data-description="University-based club">
-          <td><a href="index.html">Bengaluru</a></td>
-          <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</td>
-          <td><button onclick="getDirections(12.9716, 77.5946)">Get Directions</button></td>
+        <tr data-lat="12.78382486" data-lng="77.49651267" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.783824863910404, 77.49651267331441)">
+              A P S College of Engineering
+            </a>
+          </td>
+          <td>Amulya CV <br><a href="mailto:rotaractapsce@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.783824863910404, 77.49651267331441)">Get Directions</button></td>
         </tr>
-        <tr data-lat="13.1019" data-lng="77.3928" data-description="Community-based club">
-          <td>Nelamangala</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-          <td><button onclick="getDirections(13.1019, 77.3928)">Get Directions</button></td>
+        <tr data-lat="12.76695720099052" data-lng="77.411458990495087" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.76695720099052, 77.41145899049508)">
+              AIEMS Bengaluru MBA
+            </a>
+          </td>
+          <td>Prathiksha Gowda ks</td>
+          <td><button onclick="getDirections(12.76695720099052, 77.41145899049508)">Get Directions</button></td>
         </tr>
-        <tr data-lat="12.7166" data-lng="77.3639" data-description="University-based club">
-          <td>Ramanagara</td>
-          <td>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</td>
-          <td><button onclick="getDirections(12.7166, 77.3639)">Get Directions</button></td>
+
+        <tr data-lat="12.736005109300526" data-lng="77.70818934309361" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.736005109300526, 77.70818934309361)">
+              Alliance University
+            </a>
+          </td>
+          <td>Hiranmayi Rajeev</td>
+          <td><button onclick="getDirections(12.736005109300526, 77.70818934309361)">Get Directions</button></td>
         </tr>
-        <tr data-lat="13.2173" data-lng="79.1006" data-description="Community-based club">
-          <td>Chittoor</td>
-          <td>Duis aute irure dolor in reprehenderit in voluptate velit.</td>
-          <td><button onclick="getDirections(13.2173, 79.1006)">Get Directions</button></td>
+        <tr data-lat="13.03258020219832" data-lng="77.59212399609481" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(13.03258020219832, 77.59212399609481)">
+              Atria Institute of Technology
+            </a>
+          </td>
+          <td>Rtr Ajay Kumar S <br><a href="mailto:rotaractatriait3191@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(13.03258020219832, 77.59212399609481)">Get Directions</button></td>
         </tr>
-        <tr data-lat="13.6288" data-lng="79.4192" data-description="University-based club">
-          <td>Tirupathi</td>
-          <td>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</td>
-          <td><button onclick="getDirections(13.6288, 79.4192)">Get Directions</button></td>
+        <tr data-lat="12.946396789177388" data-lng="77.58003964233023" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.946396789177388, 77.58003964233023)">
+              Banashankari
+            </a>
+          </td>
+          <td>Sangeetha Sundaram<br><a href="mailto:president.rcob@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.946396789177388, 77.58003964233023)">Get Directions</button></td>
         </tr>
+        <tr data-lat="12.915075743596995" data-lng="77.60257465163632" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.915075743596995, 77.60257465163632)">
+              Bangalore Aagneya
+            </a>
+          </td>
+          <td>Indranil roy Chowdhury <br><a href="mailto:rotaractclubofbangaloreaagneya@gmail.com">Click to email</a>
+          </td>
+          <td><button onclick="getDirections(12.915075743596995, 77.60257465163632)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.783835637703204" data-lng="77.49654092883489" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.783835637703204, 77.49654092883489)">
+              Bangalore Advaitha
+            </a>
+          </td>
+          <td>Meghana N M <br><a href="mailto:rotaractadvaitha@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.783835637703204, 77.49654092883489)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.955021064145239" data-lng="77.57420274233024" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.955021064145239, 77.57420274233024)">
+              Bangalore B.I.T.
+            </a>
+          </td>
+          <td>DS Prajwal Gowda<br><a href="mailto:rotaract@bit-bangalore.edu.in">Click to email</a></td>
+          <td><button onclick="getDirections(12.955021064145239, 77.57420274233024)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="13.025231607863311" data-lng="77.69965194601855" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(13.025231607863311, 77.69965194601855)">
+              Bangalore East
+            </a>
+          </td>
+          <td>Hemanth Kumar B<br><a href="mailto:info@3191rbe.org">Click to email</a></td>
+          <td><button onclick="getDirections(13.025231607863311, 77.69965194601855)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.953859843923532" data-lng="77.56989891349535" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.953859843923532, 77.56989891349535)">
+              Bangalore Jayanagar
+            </a>
+          </td>
+          <td>Pooja Kalpesh Parekh<br><a href="mailto:3191rcj@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.953859843923532, 77.56989891349535)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.894973078741012" data-lng="77.58524788259801" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.894973078741012, 77.58524788259801)">
+              Bangalore JP Nagar
+            </a>
+          </td>
+          <td>Aishwarya KR<br><a href="mailto:rotaractjpnagar@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.894973078741012, 77.58524788259801)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Bangalore Kempegowda
+            </a>
+          </td>
+          <td>Akash Prasad C</td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Bangalore Midtown
+            </a>
+          </td>
+          <td>Nabila Rasheed</td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="12.921088663832892" data-lng="77.58594802666424" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.921088663832892, 77.58594802666424)">
+              Bangalore Orchards
+            </a>
+          </td>
+          <td>Sarvajith SK<br><a href="mailto:rotaractbangaloreorchards@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.921088663832892, 77.58594802666424)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Bangalore Prime
+            </a>
+          </td>
+          <td>Renny Antony</td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Bangalore Revolution
+            </a>
+          </td>
+          <td>Pooja Jha<br><a href="mailto:rotaract.revolution@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(0,0)">Online</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Bangalore South Parade
+            </a>
+          </td>
+          <td>Meghana S<br><a href="mailto:rotaractbangaloresouthparade@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Bangalore Southwest
+            </a>
+          </td>
+          <td>Shreyas Raghu</td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="12.982970997272687" data-lng="77.55451052303476" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.982970997272687, 77.55451052303476)">
+              Bangalore Vijayanagar
+            </a>
+          </td>
+          <td>Hitaishi Anand</td>
+          <td><button onclick="getDirections(12.982970997272687, 77.55451052303476)">N/A</button></td>
+        </tr>
+        <tr data-lat="12.978091149120845" data-lng="77.5952621883488" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.978091149120845, 77.5952621883488)">
+              Bangalore Uttaraahalli
+            </a>
+          </td>
+          <td>Darshith G<br><a href="mailto:rotaractuttarahalli@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.978091149120845, 77.5952621883488)">N/A</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Bangaluru United
+            </a>
+          </td>
+          <td>Smriti S</td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Bengaluru Harmony
+            </a>
+          </td>
+          <td>Akhil Srinivasan</td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="12.910048242707502" data-lng="77.63575104417438" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.910048242707502, 77.63575104417438)">
+              Bengaluru HSR
+            </a>
+          </td>
+          <td>Arushi Khandelwal<br><a href="mailto:rotaract.hsr@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.910048242707502, 77.63575104417438)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.962920259003843" data-lng="77.58682567116512" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.962920259003843, 77.58682567116512)">
+              Bishop Cotton Womens Christian College
+            </a>
+          </td>
+          <td>Harshitaa Parakh<br><a href="mailto:racbcwcc3191@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.962920259003843, 77.58682567116512)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.941247467441775" data-lng="77.56551507116512" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.941247467441775, 77.56551507116512)">
+              BMS College of Engineering, Basavanagudi
+            </a>
+          </td>
+          <td>Advaith V<br><a href="mailto:rotaract@bmsce.ac.in">Click to email</a></td>
+          <td><button onclick="getDirections(12.941247467441775, 77.56551507116512)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.729367360833306" data-lng="77.28668673864193" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.729367360833306, 77.28668673864193)">
+              Govt. First Grade College, Ramanagara
+            </a>
+          </td>
+          <td>Chethan Kumar S</td>
+          <td><button onclick="getDirections(12.729367360833306, 77.28668673864193)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.977188713213021" data-lng="77.54551534946957" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.977188713213021, 77.54551534946957)">
+              Indian Institute of Fashion Technology
+            </a>
+          </td>
+          <td>Barkha Jain</td>
+          <td><button onclick="getDirections(12.977188713213021, 77.54551534946957)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.949784994860286" data-lng="77.57461912492877" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.949784994860286, 77.57461912492877)">
+              Jain Evening College
+            </a>
+          </td>
+          <td>Sadeem Khan<br><a href="mailto:3191rotaractsbmjec@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.949784994860286, 77.57461912492877)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.93387891320731" data-lng="77.61622855466759" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.93387891320731, 77.61622855466759)">
+              Jyoti Nivas College
+            </a>
+          </td>
+          <td>Tashina Dsouza<br><a href="mailto:rcjnc2021@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.93387891320731, 77.61622855466759)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.983549578339693" data-lng="77.58681588010818" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.983549578339693, 77.58681588010818)">
+              K.G.F. Community
+            </a>
+          </td>
+          <td>Rahul R<br><a href="mailto:rackgf@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.983549578339693, 77.58681588010818)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.879506723822765" data-lng="77.54428426661106" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.879506723822765, 77.54428426661106)">
+              Kammavari Sangam Institute of Technology
+            </a>
+          </td>
+          <td>Chaya S</td>
+          <td><button onclick="getDirections(12.879506723822765, 77.54428426661106)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.93937935719658" data-lng="77.62480991110215" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.93937935719658, 77.62480991110215)">
+              Koramangala
+            </a>
+          </td>
+          <td>Ram Narayanan</td>
+          <td><button onclick="getDirections(12.93937935719658, 77.62480991110215)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.913897675905885" data-lng="77.72444292699072" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.913897675905885, 77.72444292699072)">
+              Krupanidhi Group of Institutions
+            </a>
+          </td>
+          <td>Harish K V<br><a href="mailto:harish.kilari8@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.913897675905885, 77.72444292699072)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.888509339009758" data-lng="77.56296095766977" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.888509339009758, 77.56296095766977)">
+              KSSEM
+            </a>
+          </td>
+          <td>Suchitha R<br><a href="mailto:rotaractclubofkssem@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.888509339009758, 77.56296095766977)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.980298969877264" data-lng="77.59478051319705" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.980298969877264, 77.59478051319705)">
+              Marathahalli
+            </a>
+          </td>
+          <td>Ashwini N<br><a href="mailto:marathahallirotaract@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.980298969877264, 77.59478051319705)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Medikardia
+            </a>
+          </td>
+          <td>Karthik Venkatesh U<br><a href="mailto:rotaractclub.medikardia@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(0,0)">Online</button></td>
+        </tr>
+        <tr data-lat="12.993058085149466" data-lng="77.5885129242827" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.993058085149466, 77.5885129242827)">
+              Mount Carmel College
+            </a>
+          </td>
+          <td>A Krithika<br><a href="mailto:rotaractclubmcc16@gmail">Click to email</a></td>
+          <td><button onclick="getDirections(12.993058085149466, 77.5885129242827)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="13.019886772748201" data-lng="77.634084452957" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(13.019886772748201, 77.634084452957)">
+              Narsee Monjee Institute of Mangement Studies, Bangalore
+            </a>
+          </td>
+          <td>Gungeet Kaur<br><a href="mailto:rotaractnmb@nmims.edu.in">Click to email</a></td>
+          <td><button onclick="getDirections(13.019886772748201, 77.634084452957)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.933907091154254" data-lng="77.69209924233023" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.933907091154254, 77.69209924233023)">
+              New Horizon College of Engineering
+            </a>
+          </td>
+          <td>Shreya D Revankar<br><a href="mailto:rotaract.nhce@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.933907091154254, 77.69209924233023)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="13.131123163531804" data-lng="77.58885155376555" data-description="Zone Guardians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(13.131123163531804, 77.58885155376555)">
+              NMIT-MBA
+            </a>
+          </td>
+          <td>Hemanth Kumar M<br><a href="mailto:rotaractclubofnmitbanglore@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(13.131123163531804, 77.58885155376555)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Palmville
+            </a>
+          </td>
+          <td>Nagavishnu B K</td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="12.94138689150578" data-lng="77.53559214563538" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.94138689150578, 77.53559214563538)">
+              PES University
+            </a>
+          </td>
+          <td>Shobhith Prabhu</td>
+          <td><button onclick="getDirections(12.94138689150578, 77.53559214563538)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.861603165052802" data-lng="77.6646973711651" data-description="Zone Warriors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.861603165052802, 77.6646973711651)">
+              PES University Electronic City
+            </a>
+          </td>
+          <td>Neha Nair<br><a href="mailto:rotaract.ecc@pes.edu">Click to email</a></td>
+          <td><button onclick="getDirections(12.861603165052802, 77.6646973711651)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.885344528408524" data-lng="77.56334643286829" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.885344528408524, 77.56334643286829)">
+              Prestige Falcon City
+            </a>
+          </td>
+          <td>Prratham Kamat</td>
+          <td><button onclick="getDirections(12.885344528408524, 77.56334643286829)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.885344528408524" data-lng="77.56334643286829" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.885344528408524, 77.56334643286829)">
+              R V university
+            </a>
+          </td>
+          <td>MANAT KAUR</td>
+          <td><button onclick="getDirections(12.885344528408524, 77.56334643286829)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.92382214205246" data-lng="77.49874411533952" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.92382214205246, 77.49874411533952)">
+              R.V.C.E.
+            </a>
+          </td>
+          <td>Satej Patil<br><a href="mailto:rotaractrvce3190@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.92382214205246, 77.49874411533952)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.80592079551542" data-lng="77.4225303561821" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.80592079551542, 77.4225303561821)">
+              Ramanagara
+            </a>
+          </td>
+          <td>Shashank MN<br><a href="mailto:rotaractramanagara@gmail.com"> Click to email</a></td>
+          <td><button onclick="getDirections(12.80592079551542, 77.4225303561821)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.923204112825593" data-lng="77.59279008466048" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.923204112825593, 77.59279008466048)">
+              S.S.M.R.V. Degree College
+            </a>
+          </td>
+          <td>Harshal Pandya<br><a href="mailto:ssmrvpresident@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.923204112825593, 77.59279008466048)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.965395139809262" data-lng="77.6620101310313" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.965395139809262, 77.6620101310313)">
+              Sacred Heart Degree College for Women
+            </a>
+          </td>
+          <td>Kavitha Kumar</td>
+          <td><button onclick="getDirections(12.965395139809262, 77.6620101310313)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.983617532906244" data-lng="77.58685879609425" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.983617532906244, 77.58685879609425)">
+              Samarpane RC College
+            </a>
+          </td>
+          <td>AISHWARYA SHETTY S<br><a href="mailto:rotaractculbsamarpanerc">Click to email</a></td>
+          <td><button onclick="getDirections(12.983617532906244, 77.58685879609425)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.915165775189433" data-lng="77.48107211533951" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.915165775189433, 77.48107211533951)">
+              Seshadripuram Academy of Business Studies
+            </a>
+          </td>
+          <td>Atmaja B S<br><a href="mailto:rotaractclub@sabs.ac.in">Click to email</a></td>
+          <td><button onclick="getDirections(12.915165775189433, 77.48107211533951)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.990455364056515" data-lng="77.57497953842463" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.990455364056515, 77.57497953842463)">
+              Seshadripuram Institute of Commerce & Management
+            </a>
+          </td>
+          <td>Anjali. S<br><a href="mailto:sicm.rotaractclub3190@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.990455364056515, 77.57497953842463)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="0" data-lng="0" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(0,0)">
+              Shantiniketan
+            </a>
+          </td>
+          <td>Mohammed Adnan pasha<br><a href="mailto:Rcs@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(0,0)">N/A</button></td>
+        </tr>
+        <tr data-lat="12.952851497560463" data-lng="78.26681639320965" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.952851497560463, 78.26681639320965)">
+              Shishu Mandir
+            </a>
+          </td>
+          <td>Puneeth Kumar<br><a href="mailto:rcsmofficial20@gmail.com">Click to email</a></td>
+          <td><button onclick="getDirections(12.952851497560463, 78.26681639320965)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.879095615777635" data-lng="77.52985147519796" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.879095615777635, 77.52985147519796)">
+              Sobha Forest View
+            </a>
+          </td>
+          <td>Samyama Sagare Venkatesh</td>
+          <td><button onclick="getDirections(12.879095615777635, 77.52985147519796)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.949712362853061" data-lng="77.57502242308462" data-description="Zone Gaurdians">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.949712362853061, 77.57502242308462)">
+              Sri Bhagawan Mahaveer Jain College
+            </a>
+          </td>
+          <td>Chetan P Khupkar</td>
+          <td><button onclick="getDirections(12.949712362853061, 77.57502242308462)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.832558067902761" data-lng="77.68228174884028" data-description="Zone Conquerors">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.832558067902761, 77.68228174884028)">
+              St. Francis de Sales College
+            </a>
+          </td>
+          <td>Arun Kumar. A <br><a href="mailto:rotaractclub_3190@sfscollege.in">Click to email</a></td>
+          <td><button onclick="getDirections(12.832558067902761, 77.68228174884028)">Get Directions</button></td>
+        </tr>
+        <tr data-lat="12.970923516575317" data-lng="77.607058610787" data-description="Zone Titans">
+          <td>
+            <a class="club-name-link" onclick="getDirections(12.970923516575317, 77.607058610787)">
+              St. Joseph's College Of Commerce
+            </a>
+          </td>
+          <td>Harshini V</td>
+          <td><button onclick="getDirections(12.970923516575317, 77.607058610787)">Get Directions</button></td>
+        </tr>
+
+
+
+
+
       </tbody>
     </table>
     <div id="location-details"></div>
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css' rel='stylesheet' />
+</body>
 
-    <script>
-      mapboxgl.accessToken = 'pk.eyJ1Ijoicm90YXJhY3QzMTkxIiwiYSI6ImNsaHV1M2g1eDAyNngzZm1kMXBva2l4MWYifQ.wUfCCENez4xSQqam7EzCpw';
-      const locations = [
-        {
-          name: 'Bangalore',
-          lat: 12.9716,
-          lng: 77.5946,
-          description: 'University-based club'
-        },
-        {
-          name: 'Nelamangala',
-          lat: 13.1019,
-          lng: 77.3928,
-          description: 'Community-based club'
-        },
-        {
-          name: 'Ramanagara',
-          lat: 12.7166,
-          lng: 77.3639,
-          description: 'University-based club'
-        },
-        {
-          name: 'Chittoor',
-          lat: 13.2173,
-          lng: 79.1006,
-          description: 'Community-based club'
-        },
-        {
-          name: 'Tirupathi',
-          lat: 13.6288,
-          lng: 79.4192,
-          description: 'University-based club'
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css' rel='stylesheet' />
+
+<script>
+
+
+  mapboxgl.accessToken = 'pk.eyJ1Ijoicm90YXJhY3QzMTkxIiwiYSI6ImNsaHV1M2g1eDAyNngzZm1kMXBva2l4MWYifQ.wUfCCENez4xSQqam7EzCpw';
+  const locations = [
+    {
+      "Rotaract Club Name": "A P S College of Engineering",
+      "Latitude": 12.78382486,
+      "Longitude": 77.49651267,
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "AIEMS Bengaluru MBA",
+      "Latitude": 12.7669572,
+      "Longitude": 77.41145899
+    },
+    {
+      "Rotaract Club Name": "Alliance University",
+      "Latitude": 12.73600511,
+      "Longitude": 77.70818934,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "Atria Institute of Technology",
+      "Latitude": 13.0325802,
+      "Longitude": 77.592124,
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "Banashankari",
+      "Latitude": 12.94639679,
+      "Longitude": 77.58003964,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Aagneya",
+      "Latitude": 12.91507574,
+      "Longitude": 77.60257465,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Advaitha",
+      "Latitude": 12.78383564,
+      "Longitude": 77.49654093,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Bangalore B.I.T.",
+      "Latitude": 12.95502106,
+      "Longitude": 77.57420274,
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "Bangalore East",
+      "Latitude": 13.02523161,
+      "Longitude": 77.69965195,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Jayanagar",
+      "Latitude": 12.95385984,
+      "Longitude": 77.56989891,
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "Bangalore JP Nagar",
+      "Latitude": 12.89497308,
+      "Longitude": 77.58524788
+    },
+    {
+      "Rotaract Club Name": "Bangalore Kempegowda",
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Midtown",
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Orchards",
+      "Latitude": 12.92108866,
+      "Longitude": 77.58594803,
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Prime",
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Revolution",
+      "Latitude": "Online",
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "Bangalore South Parade",
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Southwest",
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "Bangalore Vijayanagar",
+      "Latitude": 12.982971,
+      "Longitude": 77.55451052
+    },
+    {
+      "Rotaract Club Name": "Bangalore Uttaraahalli",
+      "Latitude": 12.97809115,
+      "Longitude": 77.59526219,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Bangaluru United",
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "Bengaluru Harmony",
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "Bengaluru HSR",
+      "Latitude": 12.91004824,
+      "Longitude": 77.63575104,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Bishop Cotton Womens Christian College",
+      "Latitude": 12.96292026,
+      "Longitude": 77.58682567,
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "BMS College of Engineering, Basavanagudi",
+      "Latitude": 12.94124747,
+      "Longitude": 77.56551507,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "Govt. First Grade College, Ramanagara",
+      "Latitude": 12.72936736,
+      "Longitude": 77.28668674,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "IBSB"
+    },
+    {
+      "Rotaract Club Name": "Indian Institute of Fashion Technology",
+      "Latitude": 12.97718871,
+      "Longitude": 77.54551535,
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "Jain Evening College",
+      "Latitude": 12.94978499,
+      "Longitude": 77.57461912,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Jyoti Nivas College",
+      "Latitude": 12.93387891,
+      "Longitude": 77.61622855,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "K.G.F. Community",
+      "Latitude": 12.98354958,
+      "Longitude": 77.58681588,
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "Kammavari Sangam Institute of Technology",
+      "Latitude": 12.87950672,
+      "Longitude": 77.54428427,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Koramangala",
+      "Latitude": 12.93937936,
+      "Longitude": 77.62480991,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "Krupanidhi Group of Institutions",
+      "Latitude": 12.91389768,
+      "Longitude": 77.72444293,
+      "Zones": "Conquers"
+    },
+    {
+      "Rotaract Club Name": "KSSEM",
+      "Latitude": 12.88850934,
+      "Longitude": 77.56296096,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Marathahalli",
+      "Latitude": 12.98029897,
+      "Longitude": 77.59478051,
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "Medikardia",
+      "Latitude": "Online",
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Mount Carmel College",
+      "Latitude": 12.99305809,
+      "Longitude": 77.58851292,
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "Narsee Monjee Institute of Mangement Studies, Bangalore",
+      "Latitude": 13.01988677,
+      "Longitude": 77.63408445,
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "New Horizon College of Engineering",
+      "Latitude": 12.93390709,
+      "Longitude": 77.69209924,
+      "Zones": "Conquerors\n"
+    },
+    {
+      "Rotaract Club Name": "NMIT-MBA",
+      "Latitude": 13.13112316,
+      "Longitude": 77.58885155,
+      "Zones": "Guardians"
+    },
+    {
+      "Rotaract Club Name": "Palmville",
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "PES University",
+      "Latitude": 12.94138689,
+      "Longitude": 77.53559215,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "PES University Electronic City",
+      "Latitude": 12.86160317,
+      "Longitude": 77.66469737,
+      "Zones": "Warriors"
+    },
+    {
+      "Rotaract Club Name": "Prestige Falcon City",
+      "Latitude": 12.88534453,
+      "Longitude": 77.56334643,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "R V university",
+      "Latitude": 12.81113316,
+      "Longitude": 77.59074302,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "R.V.C.E.",
+      "Latitude": 12.92382214,
+      "Longitude": 77.49874412,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Ramanagara",
+      "Latitude": 12.8059208,
+      "Longitude": 77.42253036,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "S.S.M.R.V. Degree College",
+      "Latitude": 12.92320411,
+      "Longitude": 77.59279008,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Sacred Heart Degree College for Women",
+      "Latitude": 12.96539514,
+      "Longitude": 77.66201013,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Samarpane RC College",
+      "Latitude": 12.98361753,
+      "Longitude": 77.5868588,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Seshadripuram Academy of Business Studies",
+      "Latitude": 12.91516578,
+      "Longitude": 77.48107212,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "Seshadripuram Institute of Commerce & Management",
+      "Latitude": 12.99045536,
+      "Longitude": 77.57497954,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "Shantiniketan",
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "Shishu Mandir",
+      "Latitude": 12.9528515,
+      "Longitude": 78.26681639,
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "Sobha Forest View",
+      "Latitude": 12.87909562,
+      "Longitude": 77.52985148,
+      "Zones": "Titans"
+    },
+    {
+      "Rotaract Club Name": "Sri Bhagawan Mahaveer Jain College",
+      "Latitude": 12.94971236,
+      "Longitude": 77.57502242,
+      "Zones": "Gaurdians"
+    },
+    {
+      "Rotaract Club Name": "St. Francis de Sales College",
+      "Latitude": 12.83255807,
+      "Longitude": 77.68228175,
+      "Zones": "Conquerors"
+    },
+    {
+      "Rotaract Club Name": "St. Joseph's College Of Commerce",
+      "Latitude": 12.97092352,
+      "Longitude": 77.60705861,
+      "Zones": "Titans"
+    }
+  ]
+
+  let map;
+
+  function initMap() {
+    // Initialize the map
+    map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [77.5946, 12.9716],
+      zoom: 2
+    });
+
+    // Add markers to the map
+    locations.forEach((location) => {
+      const marker = new mapboxgl.Marker()
+        .setLngLat([location.lng, location.lat])
+        .addTo(map);
+
+      // Add click listener for marker
+      marker.getElement().addEventListener('click', () => {
+        const detailsContainer = document.getElementById('location-details');
+        detailsContainer.textContent = location.name + ' - ' + location.description;
+        detailsContainer.style.display = 'block';
+      });
+    });
+
+    // Filter markers and table based on search input
+    const searchInput = document.getElementById('search');
+    const tableRows = document.querySelectorAll('#location-table tbody tr');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+
+      tableRows.forEach((row) => {
+        const locationName = row.cells[0].textContent.toLowerCase();
+        const locationDescription = row.dataset.description.toLowerCase();
+        const marker = map.getLayer(locationName);
+
+        if (locationName.includes(query) || locationDescription.includes(query)) {
+          row.style.display = '';
+          marker.setOpacity(1);
+        } else {
+          row.style.display = 'none';
+          marker.setOpacity(0);
         }
-      ];
+      });
+    });
+  }
 
-      let map;
+  function getDirections(lat, lng) {
+    // Get user's current location
+    navigator.geolocation.getCurrentPosition((position) => {
+      const currentLat = position.coords.latitude;
+      const currentLng = position.coords.longitude;
 
-      function initMap() {
-        // Initialize the map
-        map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v11',
-          center: [77.5946, 12.9716],
-          zoom: 8
-        });
+      // Open Google Maps directions in a new tab
+      const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${currentLat},${currentLng}&destination=${lat},${lng}`;
+      window.open(directionsUrl, '_blank');
+    }, (error) => {
+      console.log('Error getting current location:', error);
+    });
+  }
 
-        // Add markers to the map
-        locations.forEach((location) => {
-          const marker = new mapboxgl.Marker()
-            .setLngLat([location.lng, location.lat])
-            .addTo(map);
-
-          // Add click listener for marker
-          marker.getElement().addEventListener('click', () => {
-            const detailsContainer = document.getElementById('location-details');
-            detailsContainer.textContent = location.name + ' - ' + location.description;
-            detailsContainer.style.display = 'block';
-          });
-        });
-
-        // Filter markers and table based on search input
-        const searchInput = document.getElementById('search');
-        const tableRows = document.querySelectorAll('#location-table tbody tr');
-
-        searchInput.addEventListener('input', () => {
-          const query = searchInput.value.toLowerCase();
-
-          tableRows.forEach((row) => {
-            const locationName = row.cells[0].textContent.toLowerCase();
-            const locationDescription = row.dataset.description.toLowerCase();
-            const marker = map.getLayer(locationName);
-
-            if (locationName.includes(query) || locationDescription.includes(query)) {
-              row.style.display = '';
-              marker.setOpacity(1);
-            } else {
-              row.style.display = 'none';
-              marker.setOpacity(0);
-            }
-          });
-        });
-      }
-
-      function getDirections(lat, lng) {
-        // Get user's current location
-        navigator.geolocation.getCurrentPosition((position) => {
-          const currentLat = position.coords.latitude;
-          const currentLng = position.coords.longitude;
-
-          // Open Google Maps directions in a new tab
-          const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${currentLat},${currentLng}&destination=${lat},${lng}`;
-          window.open(directionsUrl, '_blank');
-        }, (error) => {
-          console.log('Error getting current location:', error);
-        });
-      }
-
-      // Initialize the map
-      initMap();
-    </script>
+  // Initialize the map
+  initMap();
+</script>
 
 
 
-    <!-- End Maps Section -->
+<!-- End Maps Section -->
 
-    <!-- End #main -->
+<!-- End #main -->
 
-    <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-
-    <div class="footer-top">
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-xl-10">
-            <div class="row">
+<!--=======Footer=======-->
+<footer id="footer">
 
 
-              <div class="col-lg-3 col-md-6 footer-info">
-                <h3>Rotaract District 3191</h3>
-                <div class="social-links mt-3">
-                  <a href="https://e.rotaract3191.org/i" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-                  <a href="https://e.rotaract3191.org/t" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
-                  <a href="https://e.rotaract3191.org/l" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                  <a href="https://e.rotaract3191.org/f" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-                  <a href="https://e.rotaract3191.org/y" target="_blank" class="youtube"><i class="bx bxl-youtube"></i></a>
-                </div>
+  <div class="footer-top">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-10">
+          <div class="row">
+
+
+            <div class="col-lg-3 col-md-6 footer-info">
+              <h3>Rotaract District 3191</h3>
+              <div class="social-links mt-3">
+                <a href="https://e.rotaract3191.org/i" target="_blank" class="instagram"><i
+                    class="bx bxl-instagram"></i></a>
+                <a href="https://e.rotaract3191.org/t" target="_blank" class="twitter"><i
+                    class="bx bxl-twitter"></i></a>
+                <a href="https://e.rotaract3191.org/l" target="_blank" class="linkedin"><i
+                    class="bx bxl-linkedin"></i></a>
+                <a href="https://e.rotaract3191.org/f" target="_blank" class="facebook"><i
+                    class="bx bxl-facebook"></i></a>
+                <a href="https://e.rotaract3191.org/y" target="_blank" class="youtube"><i
+                    class="bx bxl-youtube"></i></a>
               </div>
-
-              <div class="col-lg-5 col-md-6 footer-links"></div>
-
-
-              <div class="col-lg-3 col-md-6 footer-links">
-                <h4>Useful Links</h4>
-                <ul>
-                  <li><i class="bx bx-chevron-right"></i> <a href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/privacy">Privacy Policy</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/terms">Terms and Conditions</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/refund">Cancellation & Refunds Policy</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/contact_us">Contact Us</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/shipping">Shipping & Delivery</a></li>
-                </ul>
-              </div>
-
             </div>
+
+            <div class="col-lg-5 col-md-6 footer-links"></div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a
+                    href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/privacy">Privacy Policy</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a
+                    href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/terms">Terms and Conditions</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a
+                    href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/refund">Cancellation & Refunds
+                    Policy</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a
+                    href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/contact_us">Contact Us</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a
+                    href="https://merchant.razorpay.com/policy/NF3Tuvgj42IZFd/shipping">Shipping & Delivery</a></li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Rotaract District 3191</span></strong>. All Rights Reserved
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-
-  <div id="preloader">
-    <img src="assets/img/loading.gif" alt="Loading">
   </div>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="apply/js/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-      <!-- Template Main JS File -->
-    <script src="assets/js/maps.js"></script>
+
+
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Rotaract District 3191</span></strong>. All Rights Reserved
+    </div>
+  </div>
+</footer><!-- End Footer -->
+
+
+
+<div id="preloader">
+  <img src="assets/img/loading.gif" alt="Loading">
+</div>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
 
 </body>
 

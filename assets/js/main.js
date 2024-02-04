@@ -20,6 +20,9 @@
     }
   };
 
+
+  
+
   /**
    * Easy event listener function
    */
@@ -169,15 +172,15 @@
   let heroCarouselItems = select("#heroCarousel .carousel-item", true);
 
   heroCarouselItems.forEach((item, index) => {
-    index === 0
-      ? (heroCarouselIndicators.innerHTML +=
-          "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
-          index +
-          "' class='active'></li>")
-      : (heroCarouselIndicators.innerHTML +=
-          "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
-          index +
-          "'></li>");
+    index === 0 ?
+      (heroCarouselIndicators.innerHTML +=
+        "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
+        index +
+        "' class='active'></li>") :
+      (heroCarouselIndicators.innerHTML +=
+        "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
+        index +
+        "'></li>");
   });
 
   /**
@@ -203,6 +206,8 @@
       },
     });
   }
+
+  
 
   /**
    * Porfolio isotope and filter
@@ -268,6 +273,65 @@
       clickable: true,
     },
   });
+
+  mapboxgl.accessToken = 'pk.eyJ1Ijoicm90YXJhY3QzMTkxIiwiYSI6ImNsaHV1M2g1eDAyNngzZm1kMXBva2l4MWYifQ.wUfCCENez4xSQqam7EzCpw';
+  
+  // Initialize the map
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [77.5946, 12.9716], // Bangalore coordinates
+    zoom: 11
+  });
+
+  // Add markers to the map
+  const markers = [];
+  const tableRows = document.querySelectorAll('#location-table tbody tr');
+
+  tableRows.forEach((row) => {
+    const lat = Number(row.getAttribute('data-lat'));
+    const lng = Number(row.getAttribute('data-lng'));
+    const description = row.getAttribute('data-description');
+
+    // Create a marker
+    const marker = new mapboxgl.Marker()
+      .setLngLat([lng, lat])
+      .setPopup(new mapboxgl.Popup().setHTML(`<h3>${row.cells[0].textContent}</h3><p>${description}</p>`))
+      .addTo(map);
+
+    markers.push(marker);
+  });
+
+  // Filter the locations based on search input
+  document.getElementById('search').addEventListener('input', (event) => {
+    const searchValue = event.target.value.toLowerCase();
+
+    tableRows.forEach((row, index) => {
+      const clubName = row.cells[0].textContent.toLowerCase();
+      const description = row.cells[1].textContent.toLowerCase();
+      const marker = markers[index];
+
+      if (clubName.includes(searchValue) || description.includes(searchValue)) {
+        row.style.display = 'table-row';
+        marker.addTo(map);
+      } else {
+        row.style.display = 'none';
+        marker.remove();
+      }
+    });
+  });
+
+  // Get directions function
+  function getDirections(lat, lng) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const currentLat = position.coords.latitude;
+      const currentLng = position.coords.longitude;
+      const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${currentLat},${currentLng}&destination=${lat},${lng}&travelmode=driving`;
+      window.open(directionsUrl, '_blank');
+    }, (error) => {
+      console.error('Error getting current location:', error);
+    });
+  }
 
   /**
    * Initiate Pure Counter
