@@ -1315,13 +1315,13 @@ section {
   overflow: hidden;
   cursor: pointer;
   text-align: center;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
+  /* background-color: #f5f5f5;
+  border: 1px solid #ddd; */
   border-radius: 25px;
   padding: 20px;
   height: 250px;
   /* Set a fixed height for consistent sizing */
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
   max-width: 275px;
   margin-bottom: 30px;
   overflow: hidden;
@@ -1329,29 +1329,40 @@ section {
   margin-right: 15px;
 }
 
-.portfolio .portfolio-item img {
+.portfolio .portfolio-item img,
+.portfolio-box img {
   position: relative;
-  top: 20px;
+  top: 0; /* Adjust as needed */
+  width: 80%;
+  height: 80%; /* Adjust as needed */
+  object-fit: cover; /* Use 'cover' to maintain aspect ratio and cover the container */
   transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .portfolio .portfolio-item .portfolio-info {
-  opacity: 0;
+  opacity: 100;
   position: absolute;
-  left: 0px;
-  right: 5px;
+  left: 0;
+  right: 0;
   bottom: -50px;
   z-index: 3;
   transition: all ease-in-out 0.3s;
   background: #ffc107;
-  padding: 30px 20px;
+  padding: 20px; /* Adjust padding as needed */
+  height: 135px; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow content */
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
   font-size: 18px;
   color: #000000;
   font-weight: 600;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 
 .portfolio .portfolio-item .portfolio-info p {
   color: #000000;
