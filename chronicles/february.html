@@ -66,10 +66,11 @@
       background-color: #f3f3f3;
     }
 
-    .container-n {
+    .pdf-container {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      text-align: center;
     }
 
     /* .pdf-container.h2{
@@ -186,28 +187,6 @@
       cursor: pointer;
     }
 
-    .container-n a {
-      text-decoration: none;
-      color: inherit;
-      display: inline-block;
-      /* Ensure anchor tags are treated as blocks for spacing */
-      margin: 0 10px;
-      /* Add spacing between anchor tags */
-    }
-
-    .container-n a img {
-      border: 1px solid lightgray;
-      box-shadow: lightgray 0px 0px 4px 1px;
-      width: 250px;
-    }
-
-    .container-n .title {
-      margin-top: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-    }
-
     .pdf-preloader {
       display: flex;
       justify-content: center;
@@ -222,15 +201,14 @@
 </head>
 
 <body>
-
-  <!-- News Script -->
-  <script>
-    !function (t, e, a, n) { function c() { if (!e.getElementById(a)) { var t = e.getElementsByTagName(n)[0], c = e.createElement(n); c.type = "text/javascript", c.async = !0, c.src = "https://cdn.taku-app.com/js/latest.js", t.parentNode.insertBefore(c, t) } } if ("function" != typeof t.Taku) { var s = function () { s.q.push(arguments) }; s.q = [], t.Taku = s, "complete" === e.readyState ? c() : t.attachEvent ? t.attachEvent("onload", c) : t.addEventListener("load", c, !1) } }(window, document, "taku-js", "script");
+    <!-- News Script -->
+    <script>
+    !function(t,e,a,n){function c(){if(!e.getElementById(a)){var t=e.getElementsByTagName(n)[0],c=e.createElement(n);c.type="text/javascript",c.async=!0,c.src="https://cdn.taku-app.com/js/latest.js",t.parentNode.insertBefore(c,t)}}if("function"!=typeof t.Taku){var s=function(){s.q.push(arguments)};s.q=[],t.Taku=s,"complete"===e.readyState?c():t.attachEvent?t.attachEvent("onload",c):t.addEventListener("load",c,!1)}}(window,document,"taku-js","script");
 
     window.Taku('news:boot', {
       api_public_key: "cnRkiihtg7KlriZsyo1YPVFyOcFoO4gN1Zh0G9AdyB8=",
       position: "left",
-
+  
       launcher_options: {
         bg_color: "#f2bf27",
         text_color: "#ffffff",
@@ -238,7 +216,7 @@
       }
     });
   </script>
-
+  
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header">
@@ -248,10 +226,9 @@
           class="img-fluid"></a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li class="nav-link scrollto"></li><a href="../">Home</a></li>
+          <li class="nav-link scrollto"></li><a href="../index.html">Home</a></li>
           <li><a class="nav-link scrollto active" href="../chronicles">Our Newsletter</a></li>
           <li><a class="nav-link scrollto" href="../index.html#team">Team</a></li>
-          <li><a class="nav-link scrollto " href="../ClubFinder.html">ClubFinder</a></li>
           <li class="nav-link scrollto"></li><a href="../aboutus.html">About Us</a></li>
           <li class="nav-link scrollto"><a href="../aboutus3191.html"><span>Our Theme</span></a></li>
           <li><a class="nav-link scrollto" href="https://rotasia2024bengaluru.com/" target="_blank">Rotasia2024</a></li>
@@ -275,53 +252,14 @@
         <h3>Find our <span>amazing monthly Newsletter</span></h3>
         <!-- <p>Take action and join Rotaract today to make a meaningful difference in your community and beyond!</p> -->
       </div>
-      <div class="container-n" data-aos="fade-up" style="display: block;">
-        <a href="./july.html" target="_BLANK" class="heyzine-link fp-link"><img
-            src="https://cdnc.heyzine.com/flip-book/cover/cbc4f78ae8.jpg" class="fp-thumb"
-            style="border: 1px solid lightgray; box-shadow: lightgray 0px 0px 4px 1px; width: 250px;">
-          <div class="section-title" style="font-weight: 800;font-size: 25px;margin-top: -25px;">July Edition</div>
-        </a>
-        <a href="./august.html" target="_BLANK" class="heyzine-link fp-link"><img
-            src="https://cdnc.heyzine.com/flip-book/cover/b23563ba11.jpg" class="fp-thumb"
-            style="border: 1px solid lightgray; box-shadow: lightgray 0px 0px 4px 1px; width: 250px;">
-          <div class="section-title" style="font-weight: 800;font-size: 25px;margin-top: -25px;">August Edition</div>
-        </a>
-        <a href="./september.html" target="_BLANK" class="heyzine-link fp-link"><img
-            src="https://cdnc.heyzine.com/flip-book/cover/5d8002d403.jpg" class="fp-thumb"
-            style="border: 1px solid lightgray; box-shadow: lightgray 0px 0px 4px 1px; width: 250px;">
-          <div class="section-title" style="font-weight: 800;font-size: 25px;margin-top: -25px;">September Edition</div>
-        </a>
-        <a href="./october.html" target="_BLANK" class="heyzine-link fp-link"><img
-            src="https://cdnc.heyzine.com/flip-book/cover/d71fb35e68.jpg" class="fp-thumb"
-            style="border: 1px solid lightgray; box-shadow: lightgray 0px 0px 4px 1px; width: 250px;">
-          <div class="section-title" style="font-weight: 800;font-size: 25px;margin-top: -25px;">October Edition</div>
-        </a>
-        <a href="./november.html" target="_BLANK" class="heyzine-link fp-link"><img
-            src="https://cdnc.heyzine.com/flip-book/cover/225c9e4694.jpg" class="fp-thumb"
-            style="border: 1px solid lightgray; box-shadow: lightgray 0px 0px 4px 1px; width: 250px;">
-          <div class="section-title" style="font-weight: 800;font-size: 25px;margin-top: -25px;">November Edition</div>
-        </a>
-        <a href="./december.html" target="_BLANK" class="heyzine-link fp-link"><img
-          src="https://cdnc.heyzine.com/flip-book/cover/81bb3addde.jpg" class="fp-thumb"
-          style="border: 1px solid lightgray; box-shadow: lightgray 0px 0px 4px 1px; width: 250px;">
-        <div class="section-title" style="font-weight: 800;font-size: 25px;margin-top: -25px;">December Edition</div>
-      </a>
-      <a href="./january.html" target="_BLANK" class="heyzine-link fp-link"><img
-        src="https://cdnc.heyzine.com/flip-book/cover/fda04f1146.jpg" class="fp-thumb"
-        style="border: 1px solid lightgray; box-shadow: lightgray 0px 0px 4px 1px; width: 250px;">
-      <div class="section-title" style="font-weight: 800;font-size: 25px;margin-top: -25px;">January Edition</div>
-    </a>
-    <a href="./february.html" target="_BLANK" class="heyzine-link fp-link"><img
-      src="https://cdnc.heyzine.com/flip-book/cover/fc0ccae4a5.jpg" class="fp-thumb"
-      style="border: 1px solid lightgray; box-shadow: lightgray 0px 0px 4px 1px; width: 250px;">
-    <div class="section-title" style="font-weight: 800;font-size: 25px;margin-top: -25px;">December Edition</div>
-  </a>
-
+      <div class="container" data-aos="fade-up">
+        
+        <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 800px;" src="https://heyzine.com/flip-book/fc0ccae4a5.html"></iframe>
       </div>
     </section>
 
 
-
+    
   </main><!-- End #main -->
   <!--=======Footer=======-->
   <footer id="footer">
@@ -374,11 +312,6 @@
         </div>
       </div>
     </div>
-
-
-
-
-
 
     <div class="container">
       <div class="copyright">
