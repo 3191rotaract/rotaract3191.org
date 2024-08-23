@@ -714,7 +714,7 @@ hr {
 /* scrollUp */
 /* line 436, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 #scrollUp, #back-top {
-  background: #09cc7f;
+  background: #560BBF;
   height: 50px;
   width: 50px;
   right: 31px;
@@ -2583,7 +2583,7 @@ hr {
 /* line 719, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 .section-padding2 {
   /* padding-top: 200px; */
-  padding-bottom: 200px;
+  padding-bottom: 20px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -4958,8 +4958,8 @@ hr {
 /* line 140, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_footer.scss */
 .footer-bottom-area .footer-social > a {
   color: #7b8693;
-  font-size: 14px;
-  padding-left: 25px;
+  font-size: 24px;
+  padding-left: 2px;
 }
 
 /* line 144, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_footer.scss */
@@ -4986,7 +4986,7 @@ hr {
 
 /* line 160, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_footer.scss */
 .footer-bottom-area .footer-social > a:hover {
-  color: #09cc7f;
+  color: #560BBF;
 }
 
 /* line 3, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_blog_page.scss */
@@ -7406,6 +7406,29 @@ del {
   border: 1px solid transparent;
   cursor: not-allowed;
 }
+
+.about-img {
+  text-align: center; /* Center the image horizontally */
+  margin-bottom: 30px; /* Space between the image and text */
+}
+
+.about-img img {
+  max-width: 100%; /* Ensure the image scales down with the container */
+  height: auto; /* Maintain aspect ratio */
+  display: inline-block; /* Keep the image centered */
+  max-height: 400px; /* Optional: limit height to avoid excessively large images */
+  object-fit: contain; /* Ensure the image is fully contained within its box */
+}
+
+/* Optional: Center vertically within a flex container */
+.section-top-border {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  min-height: 100vh; /* Make sure the section takes up the full viewport height */
+}
+
 
 /* line 315, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_elements.scss */
 .generic-blockquote {
