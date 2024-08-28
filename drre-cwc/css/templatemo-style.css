@@ -318,6 +318,16 @@ h2 {
     .appointmentlet-plugin {
       margin-bottom: 20px; /* Ensure there’s space between sections */
     }
+
+    .info-list {
+        list-style-type: disc; /* Bullet points for the list items */
+        padding-left: 20px; /* Indentation for the list */
+        margin-bottom: 20px; /* Space below the list */
+      }
+    
+      .info-list li {
+        margin-bottom: 10px; /* Space between list items */
+      }
   
     iframe {
       height: 500px; /* Adjust height for smaller screens */
@@ -565,6 +575,7 @@ h2 {
     }
 }
 
+
 /* Mobile styling */
 @media (max-width: 767px) {
 
@@ -618,6 +629,19 @@ h2 {
     /* Accent border */
     color: #ffffff;
 }
+
+.info-item {
+    margin-bottom: 15px; /* Space between items */
+    padding-left: 20px; /* Indent to simulate list appearance */
+    position: relative;
+  }
+  
+  .info-item::before {
+    content: "•"; /* Bullet point */
+    position: absolute;
+    left: 0;
+    color: white; /* Bullet color */
+  }
 
 .info-section h3,
 .info-section h4 {
