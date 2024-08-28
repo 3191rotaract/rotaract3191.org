@@ -87,34 +87,7 @@
     <!-- Header Start -->
     <div class="header-area">
       <div class="main-header ">
-        <div class="header-top d-none d-lg-block">
-          <div class="container-fluid">
-            <div class="col-xl-12">
-              <div class="row d-flex justify-content-between align-items-center">
-                <div class="header-info-left d-flex">
-                  <ul>
-                    <!-- <li>Phone: +99 (0) 101 0000 888</li> -->
-                    <li>Email: <a href="mailto:noreply@yourdomain.com">noreply@yourdomain.com</a>
-                    </li>
-                  </ul>
-  
-                  <div class="header-social">
-                    <ul>
-                      <li><a href="https://e.rotaract3191.org/i" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                      <li><a href="https://e.rotaract3191.org/t" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                      <li><a href="https://e.rotaract3191.org/l" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                      <li><a href="https://e.rotaract3191.org/f" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                      </li>
-                      <li><a href="https://e.rotaract3191.org/y" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                    </ul>
-                  </div>
-  
-                </div>
-  
-              </div>
-            </div>
-          </div>
-        </div>
+        
         <div class="header-bottom  header-sticky">
           <div class="container-fluid">
             <div class="row align-items-center">
@@ -133,9 +106,10 @@
                     <nav>
                       <ul id="navigation">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li><a href="about3191.html">Our Theme</a></li>
                         <li><a href="team.html">Our Team</a></li>
+                        <li><a href="brandcenter.html">Brand Center</a></li>
                         <!-- <li><a href="brandcenter.html">Brand Center</a></li> -->
                       </ul>
                     </nav>
@@ -156,56 +130,61 @@
   <!-- header end -->
   <main>
     <!-- slider Area Start-->
-    <div class="slider-area">
-      <div class="slider-active">
-        <!-- Single Slider -->
-        <div class="single-slider slider-height d-flex align-items-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
-                <div class="hero__caption">
-                  <h1 data-animation="fadeInUp" data-delay=".6s">Welcome to <br> Rotaract District
-                    3191</h1>
-                  <P data-animation="fadeInUp" data-delay=".8s">Rotaract District 3191 comprises
-                    Rotaract Clubs from Bangalore, Ramanagara, Kolar, and Chittor. Our mission is to
-                    empower communities through innovative service projects and dynamic youth
-                    engagement. Join us in making a difference!</P>
-                  <!-- Hero-btn -->
-                  <div class="hero__btn">
-                    <a href="#about" class="btn hero-btn mb-8" data-animation="fadeInLeft" data-delay=".8s">Know
-                      More</a>
-                    <!-- <a href="industries.html" class="cal-btn ml-15" data-animation="fadeInRight" data-delay="1.0s">
-                                        <i class="flaticon-null"></i>
-                                        <p>+12 1325 41</p>
-                                    </a> -->
-                  </div>
-                </div>
+    <section id="hero">
+      <div id="heroCarousel" data-bs-interval="4000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <ol class="carousel-indicators" id="hero-carousel-indicators">
+          <li data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#heroCarousel" data-bs-slide-to="1"></li>
+          <li data-bs-target="#heroCarousel" data-bs-slide-to="2"></li>
+        </ol>
+    
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(assets/img/Z62_4051@13664499.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animated fadeInDown">Welcome to <span>Rotaract District 3191</span></h2>
+                <a href="#about" class="btn-get-started animated fadeInUp scrollto">Know More</a>
               </div>
             </div>
           </div>
-        </div>
-        <!-- Single Slider -->
-        <!-- <div class="single-slider slider-height d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
-                            <div class="hero__caption">
-                                <h1 data-animation="fadeInUp" data-delay=".6s">Our Helping to<br> the world.</h1>
-                                <P data-animation="fadeInUp" data-delay=".8s" > adipiscing elit, sed do eiusmod tempor incididunt ut bore et dolore magnt, sed do eiusmod.</P>
-                                <div class="hero__btn">
-                                    <a href="industries.html" class="btn hero-btn mb-10"  data-animation="fadeInLeft" data-delay=".8s">Donate</a>
-                                    <a href="industries.html" class="cal-btn ml-15" data-animation="fadeInRight" data-delay="1.0s">
-                                        <i class="flaticon-null"></i>
-                                        <p>+12 1325 41</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+    
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url(assets/img/Z62_3950.JPG); background-position: center; background-repeat: no-repeat; background-size: cover;" loading="lazy">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animated fadeInDown">Welcome to Rotaract District 3191</h2>
+                <a href="#about" class="btn-get-started animated fadeInUp scrollto">Know More</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Slide 3 -->
+          <!-- <div class="carousel-item" style="background-image: url(assets/img/Promo_pics/IMG-20230716-WA0011%20(1).webp); background-position: center; background-repeat: no-repeat; background-size: cover;" loading="lazy">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animated fadeInDown">Welcome to Rotaract District 3191</h2>
+                <a href="#iconboxes" class="btn-get-started animated fadeInUp scrollto">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    
+        <!-- Navigation arrows -->
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-    </div>
+    </section>
+    
+    
+
+
     <!-- slider Area End-->
 
     <!--? Count Down Start -->
@@ -255,7 +234,7 @@
     </div>
     <!-- Count Down End -->
     <!--? Services Area Start -->
-    <div class="service-area section-padding30">
+    <div class="quick-links section-padding30">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
@@ -297,7 +276,7 @@
                 <span class="flaticon-gear"></span>
               </div>
               <div class="cat-cap">
-                <h5><a href="404.html">Brand Center</a></h5>
+                <h5><a href="brandcenter.html">Brand Center</a></h5>
                 <p>Discover resources and guidelines to maintain consistent branding across all
                   platforms, ensuring a unified and professional image for your club.</p>
               </div>
@@ -505,14 +484,19 @@
               </div>
               <div class="col-xl-2 col-lg-3">
                 <div class="footer-social f-right">
-                  <a href="https://e.rotaract3191.org/i" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-                  <a href="https://e.rotaract3191.org/t" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="https://e.rotaract3191.org/l" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                  <a href="https://e.rotaract3191.org/f" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://e.rotaract3191.org/y" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-              </div>
-              
-  
+                  <a href="https://e.rotaract3191.org/i" target="_blank" class="instagram"><i
+                      class="fab fa-instagram"></i></a>
+                  <a href="https://e.rotaract3191.org/t" target="_blank" class="twitter"><i
+                      class="fab fa-twitter"></i></a>
+                  <a href="https://e.rotaract3191.org/l" target="_blank" class="linkedin"><i
+                      class="fab fa-linkedin"></i></a>
+                  <a href="https://e.rotaract3191.org/f" target="_blank" class="facebook"><i
+                      class="fab fa-facebook-f"></i></a>
+                  <a href="https://e.rotaract3191.org/y" target="_blank" class="youtube"><i
+                      class="fab fa-youtube"></i></a>
+                </div>
+
+
               </div>
             </div>
           </div>
@@ -572,6 +556,23 @@
 
   <!-- Slick JS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  <!-- Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap JS with Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+
 
 </body>
 
