@@ -439,7 +439,7 @@ h2 {
         /* Adjust to stack items vertically */
         align-items: center;
         /* Center items horizontally */
-        justify-content: center;
+        justify-content: flex-start;
         /* Center items vertically */
         margin-bottom: 20px;
     }
