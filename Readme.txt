@@ -1,4 +1,4 @@
 <!-- =======================================================
-  * Template Name: Rotaract 3191 - v4.0.0
+  * Rotaract District Organisation 3191
   * Author: Rtr Samarth Viswanath
   ======================================================== -->
