@@ -1844,10 +1844,7 @@ hr {
   padding-top: 155px;
 }
 
-/* line 509, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
-.pt-160 {
-  padding-top: 160px;
-}
+
 
 /* line 509, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 .pt-165 {
@@ -2050,10 +2047,7 @@ hr {
   padding-bottom: 155px;
 }
 
-/* line 516, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
-.pb-160 {
-  padding-bottom: 160px;
-}
+
 
 /* line 516, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 .pb-165 {
@@ -2718,8 +2712,8 @@ hr {
 
   /* line 719, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
   .section-padding2 {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    /* padding-top: 200px; */
+    /* padding-bottom: 200px; */
   }
 }
 
@@ -3395,7 +3389,7 @@ hr {
   opacity: 0;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
   padding: 17px 0;
-  border-top: 5px solid #09cc7f;
+  border-top: 5px solid #560BBF;
   transition: 0.3s;
 }
 
@@ -3411,7 +3405,7 @@ hr {
 }
 
 .main-header .main-menu ul ul.submenu>li>a:hover {
-  color: #09cc7f;
+  color: #560BBF;
   background: none;
   padding-left: 13px !important;
 }
@@ -3421,6 +3415,9 @@ hr {
   opacity: 1;
   top: 100%;
 }
+
+
+
 
 /* Transparent and Sticky Header Styles */
 .header-transparent {
