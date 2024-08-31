@@ -1,27 +1,229 @@
-/**
- * Template Name: Hidayah
- * Updated: May 30 2023 with Bootstrap v5.3.0
- * Template URL: https://bootstrapmade.com/hidayah-free-simple-html-template-for-corporate/
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
- */
-(function () {
+(function ($) {
   "use strict";
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim();
-    if (all) {
-      return [...document.querySelectorAll(el)];
+  /* 1. Proloder */
+  $(window).on("load", function () {
+    $("#preloader-active").delay(450).fadeOut("slow");
+    $("body").delay(450).css({
+      overflow: "visible",
+    });
+  });
+
+  /* 2. sticky And Scroll UP */
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+    if (scroll < 400) {
+      $(".header-sticky").removeClass("sticky-bar");
+      $("#back-top").fadeOut(500);
     } else {
-      return document.querySelector(el);
+      $(".header-sticky").addClass("sticky-bar");
+      $("#back-top").fadeIn(500);
     }
-  };
+  });
 
+  // Scroll Up
+  $("#back-top a").on("click", function () {
+    $("body,html").animate(
+      {
+        scrollTop: 0,
+      },
+      800
+    );
+    return false;
+  });
 
-  
+  /* 3. slick Nav */
+  // mobile_menu
+  var menu = $("ul#navigation");
+  if (menu.length) {
+    menu.slicknav({
+      prependTo: ".mobile_menu",
+      closedSymbol: "+",
+      openedSymbol: "-",
+    });
+  }
+
+  /* 4. MainSlider-1 */
+  // h1-hero-active
+  function mainSlider() {
+    var BasicSlider = $(".slider-active");
+    BasicSlider.on("init", function (e, slick) {
+      var $firstAnimatingElements = $(".single-slider:first-child").find(
+        "[data-animation]"
+      );
+      doAnimations($firstAnimatingElements);
+    });
+    BasicSlider.on(
+      "beforeChange",
+      function (e, slick, currentSlide, nextSlide) {
+        var $animatingElements = $(
+          '.single-slider[data-slick-index="' + nextSlide + '"]'
+        ).find("[data-animation]");
+        doAnimations($animatingElements);
+      }
+    );
+    BasicSlider.slick({
+      autoplay: false,
+      autoplaySpeed: 4000,
+      dots: false,
+      fade: true,
+      arrows: false,
+      prevArrow:
+        '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
+      nextArrow:
+        '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+          },
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+      ],
+    });
+
+    function doAnimations(elements) {
+      var animationEndEvents =
+        "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+      elements.each(function () {
+        var $this = $(this);
+        var $animationDelay = $this.data("delay");
+        var $animationType = "animated " + $this.data("animation");
+        $this.css({
+          "animation-delay": $animationDelay,
+          "-webkit-animation-delay": $animationDelay,
+        });
+        $this.addClass($animationType).one(animationEndEvents, function () {
+          $this.removeClass($animationType);
+        });
+      });
+    }
+  }
+  mainSlider();
+
+  /* 5. Testimonial Active*/
+  var testimonial = $(".h1-testimonial-active");
+  if (testimonial.length) {
+    testimonial.slick({
+      dots: true,
+      infinite: true,
+      speed: 1000,
+      autoplay: false,
+      arrows: false,
+      prevArrow:
+        '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
+      nextArrow:
+        '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>',
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+            arrow: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            arrow: true,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            arrow: true,
+          },
+        },
+      ],
+    });
+  }
+
+  /* 6. Nice Selectorp  */
+  var nice_Select = $("select");
+  if (nice_Select.length) {
+    nice_Select.niceSelect();
+  }
+
+  /* 7. data-background */
+  $("[data-background]").each(function () {
+    $(this).css(
+      "background-image",
+      "url(" + $(this).attr("data-background") + ")"
+    );
+  });
+
+  /* 10. WOW active */
+  new WOW().init();
+
+  // 11. ---- Mailchimp js --------//
+  function mailChimp() {
+    $("#mc_embed_signup").find("form").ajaxChimp();
+  }
+  mailChimp();
+
+  // 12 Pop Up Img
+  var popUp = $(".single_gallery_part, .img-pop-up");
+  if (popUp.length) {
+    popUp.magnificPopup({
+      type: "image",
+      gallery: {
+        enabled: true,
+      },
+    });
+  }
+  // 12 Pop Up Video
+  var popUp = $(".popup-video");
+  if (popUp.length) {
+    popUp.magnificPopup({
+      type: "iframe",
+    });
+  }
+
+  /* 13. counterUp*/
+  $(".counter").counterUp({
+    delay: 10,
+    time: 3000,
+  });
+
+  /* 14. Datepicker */
+  $("#datepicker1").datepicker();
+
+  // 15. Time Picker
+  $("#timepicker").timepicker();
+
+  //16. Overlay
+  $(".snake").snakeify({
+    speed: 200,
+  });
 
   /**
    * Easy event listener function
@@ -44,170 +246,14 @@
     el.addEventListener("scroll", listener);
   };
 
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select("#navbar .scrollto", true);
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200;
-    navbarlinks.forEach((navbarlink) => {
-      if (!navbarlink.hash) return;
-      let section = select(navbarlink.hash);
-      if (!section) return;
-      if (
-        position >= section.offsetTop &&
-        position <= section.offsetTop + section.offsetHeight
-      ) {
-        navbarlink.classList.add("active");
-      } else {
-        navbarlink.classList.remove("active");
-      }
-    });
-  };
   window.addEventListener("load", navbarlinksActive);
   onscroll(document, navbarlinksActive);
 
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select("#header");
-    let offset = header.offsetHeight;
-
-    let elementPos = select(el).offsetTop;
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: "smooth",
-    });
-  };
-
-  /**
-   * Preloader
-   */
   window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
-    if (preloader) {
-      preloader.remove();
-    }
-  });
-
-  /**
-   * Back to top button
-   */
-  let backtotop = select(".back-to-top");
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add("active");
-      } else {
-        backtotop.classList.remove("active");
-      }
-    };
-    window.addEventListener("load", toggleBacktotop);
-    onscroll(document, toggleBacktotop);
-  }
-
-  /**
-   * Mobile nav toggle
-   */
-  on("click", ".mobile-nav-toggle", function (e) {
-    select("#navbar").classList.toggle("navbar-mobile");
-    this.classList.toggle("bi-list");
-    this.classList.toggle("bi-x");
-  });
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on(
-    "click",
-    ".navbar .dropdown > a",
-    function (e) {
-      if (select("#navbar").classList.contains("navbar-mobile")) {
-        e.preventDefault();
-        this.nextElementSibling.classList.toggle("dropdown-active");
-      }
-    },
-    true
-  );
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on(
-    "click",
-    ".scrollto",
-    function (e) {
-      if (select(this.hash)) {
-        e.preventDefault();
-
-        let navbar = select("#navbar");
-        if (navbar.classList.contains("navbar-mobile")) {
-          navbar.classList.remove("navbar-mobile");
-          let navbarToggle = select(".mobile-nav-toggle");
-          navbarToggle.classList.toggle("bi-list");
-          navbarToggle.classList.toggle("bi-x");
-        }
-        scrollto(this.hash);
-      }
-    },
-    true
-  );
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener("load", () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash);
-      }
-    }
-  });
-
-  /**
-   * Hero carousel indicators
-   */
-  let heroCarouselIndicators = select("#hero-carousel-indicators");
-  let heroCarouselItems = select("#heroCarousel .carousel-item", true);
-
-  heroCarouselItems.forEach((item, index) => {
-    index === 0 ?
-      (heroCarouselIndicators.innerHTML +=
-        "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
-        index +
-        "' class='active'></li>") :
-      (heroCarouselIndicators.innerHTML +=
-        "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
-        index +
-        "'></li>");
-  });
-
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: ".glightbox",
-  });
-
-  /**
-   * Skills animation
-   */
-  let skilsContent = select(".skills-content");
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: "80%",
-      handler: function (direction) {
-        let progress = select(".progress .progress-bar", true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute("aria-valuenow") + "%";
-        });
-      },
+    const glightbox = GLightbox({
+      selector: ".glightbox",
     });
-  }
-
-  
+  });
 
   /**
    * Porfolio isotope and filter
@@ -274,67 +320,109 @@
     },
   });
 
-  mapboxgl.accessToken = 'pk.eyJ1Ijoicm90YXJhY3QzMTkxIiwiYSI6ImNsaHV1M2g1eDAyNngzZm1kMXBva2l4MWYifQ.wUfCCENez4xSQqam7EzCpw';
-  
-  // Initialize the map
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [77.5946, 12.9716], // Bangalore coordinates
-    zoom: 11
+  /**
+   * Initiate glightbox
+   */
+  const glightbox = GLightbox({
+    selector: ".glightbox",
   });
-
-  // Add markers to the map
-  const markers = [];
-  const tableRows = document.querySelectorAll('#location-table tbody tr');
-
-  tableRows.forEach((row) => {
-    const lat = Number(row.getAttribute('data-lat'));
-    const lng = Number(row.getAttribute('data-lng'));
-    const description = row.getAttribute('data-description');
-
-    // Create a marker
-    const marker = new mapboxgl.Marker()
-      .setLngLat([lng, lat])
-      .setPopup(new mapboxgl.Popup().setHTML(`<h3>${row.cells[0].textContent}</h3><p>${description}</p>`))
-      .addTo(map);
-
-    markers.push(marker);
-  });
-
-  // Filter the locations based on search input
-  document.getElementById('search').addEventListener('input', (event) => {
-    const searchValue = event.target.value.toLowerCase();
-
-    tableRows.forEach((row, index) => {
-      const clubName = row.cells[0].textContent.toLowerCase();
-      const description = row.cells[1].textContent.toLowerCase();
-      const marker = markers[index];
-
-      if (clubName.includes(searchValue) || description.includes(searchValue)) {
-        row.style.display = 'table-row';
-        marker.addTo(map);
-      } else {
-        row.style.display = 'none';
-        marker.remove();
-      }
-    });
-  });
-
-  // Get directions function
-  function getDirections(lat, lng) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const currentLat = position.coords.latitude;
-      const currentLng = position.coords.longitude;
-      const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${currentLat},${currentLng}&destination=${lat},${lng}&travelmode=driving`;
-      window.open(directionsUrl, '_blank');
-    }, (error) => {
-      console.error('Error getting current location:', error);
-    });
-  }
 
   /**
-   * Initiate Pure Counter
+   * Hero carousel indicators
    */
-  new PureCounter();
-})();
+  let heroCarouselIndicators = select("#hero-carousel-indicators");
+  let heroCarouselItems = select("#heroCarousel .carousel-item", true);
+
+  heroCarouselItems.forEach((item, index) => {
+    index === 0 ?
+      (heroCarouselIndicators.innerHTML +=
+        "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
+        index +
+        "' class='active'></li>") :
+      (heroCarouselIndicators.innerHTML +=
+        "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
+        index +
+        "'></li>");
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var heroCarousel = document.getElementById('heroCarousel');
+    if (heroCarousel) {
+      heroCarousel.addEventListener('slid.bs.carousel', function () {
+        // You can add custom JavaScript here for further effects on slide change.
+      });
+    }
+  });
+  
+
+  /**
+   * Scrolls to an element with header offset
+   */
+  const scrollto = (el) => {
+    let header = select("#header");
+    let offset = header.offsetHeight;
+
+    let elementPos = select(el).offsetTop;
+    window.scrollTo({
+      top: elementPos - offset,
+      behavior: "smooth",
+    });
+  };
+
+  const pdfItems = document.getElementsByClassName('pdf-item');
+
+function openPdf(pdfPath) {
+  if (isMobile()) {
+    window.open(pdfPath, '_blank');
+  } else {
+    document.querySelector('.pdf-popup').classList.add('active');
+    const pdfIframe = document.getElementById('pdf-iframe');
+    pdfIframe.src = pdfPath;
+    pdfIframe.onload = function () {
+      document.querySelector('.pdf-preloader').style.display = 'none';
+    };
+  }
+}
+
+function closePdf() {
+  document.querySelector('.pdf-popup').classList.remove('active');
+  document.getElementById('pdf-iframe').src = '';
+  document.querySelector('.pdf-preloader').style.display = 'flex';
+}
+
+function downloadPdf(pdfPath) {
+  const link = document.createElement('a');
+  link.href = pdfPath;
+  link.download = pdfPath.split('/').pop();
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function filterPDFs() {
+  const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+
+  for (let i = 0; i < pdfItems.length; i++) {
+    const pdfName = pdfItems[i].querySelector('.pdf-name').innerText.toLowerCase();
+    if (pdfName.includes(searchTerm)) {
+      pdfItems[i].style.display = 'flex';
+    } else {
+      pdfItems[i].style.display = 'none';
+    }
+  }
+}
+
+
+  //17.  Progress barfiller
+
+  $("#bar1").barfiller();
+  $("#bar2").barfiller();
+  $("#bar3").barfiller();
+  $("#bar4").barfiller();
+  $("#bar5").barfiller();
+  $("#bar6").barfiller();
+})(jQuery);
