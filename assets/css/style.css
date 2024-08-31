@@ -1784,6 +1784,10 @@ hr {
   padding-top: 95px;
 }
 
+.pt-160{
+  padding-bottom: 30px;
+}
+
 /* line 509, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 .pt-100 {
   padding-top: 100px;
@@ -2899,8 +2903,8 @@ hr {
 }
 
 .section-padding30 {
-  padding-top: 80px;
-  /* padding-bottom: 180px; */
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -4119,7 +4123,7 @@ hr {
 
 .single-cat .cat-cap p {
   color: #57667e;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 20px;
   /* Space before next element */
 }
@@ -5422,23 +5426,56 @@ hr {
 }
 
 .portfolio-item img {
-  max-width: 80%;
-  max-height: 70%;
-  object-fit: contain;
+  width: 70%; /* Set a fixed width */
+  height: 100px; /* Set a fixed height to ensure uniformity */
+  object-fit: contain; /* Ensures the image covers the area without distortion */
   transition: transform 0.3s ease-in-out;
   margin-bottom: 10px;
+  border-radius: 4px; /* Optional: adds a bit of rounding for a cleaner look */
 }
 
 .portfolio-item img:hover {
   transform: scale(1.05);
 }
 
+
+/* Container styling for .portfolio-info */
 .portfolio-info {
   width: 100%;
-  padding: 0 10px;
+  padding: 10px;
   font-size: 0.9rem;
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  min-height: 60px; /* Minimum height for consistency */
+  height: auto; /* Auto height to fit content dynamically */
+  overflow: visible; /* Ensure all content is shown */
 }
+
+/* Styling for the h4 element */
+a.glightbox .portfolio-info h4 {
+  color: #000;
+  font-size: 16px; /* Adjusted font size for readability */
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  max-width: 100%;
+  word-wrap: break-word; /* Wrap long words */
+  white-space: normal; /* Allow text to wrap within container */
+  overflow: visible; /* Ensure all text is displayed */
+}
+
+/* Hover effect for the link container */
+a.glightbox:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
 
 
 /* Logo Grid Styling */
