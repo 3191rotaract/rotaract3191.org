@@ -4892,6 +4892,7 @@ hr {
 .row.justify-content-center {
   display: flex;
   justify-content: center;
+  /* flex: wrap; */
 }
 
 .col-lg-4 {
