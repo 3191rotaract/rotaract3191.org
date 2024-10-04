@@ -3993,6 +3993,7 @@ hr {
 @media (max-width: 575px) {
   .slider-area2 .hero-cap h2 {
     font-size: 30px;
+    padding: 5px;
     /* Adjust font size for small screens */
   }
 }
@@ -5542,6 +5543,56 @@ a.glightbox:hover {
     height: 150px;
   }
 }
+
+/* Container styling */
+.container-n {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Link styling */
+.heyzine-link {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Thumbnail styling */
+.fp-thumb {
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 4px 1px lightgray;
+  width: 250px;
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Add space between image and title */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Thumbnail hover effect */
+.fp-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.section-title {
+  font-weight: 800;
+  font-size: 20px;
+  color: #333; /* Better color for readability */
+  margin: 10px 0 0; /* Adjust margin to add space between image and title */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Link hover effect (optional: change title color on hover) */
+.heyzine-link:hover .section-title {
+  color: #007bff; /* Adjust hover color if needed */
+}
+
 
 
 /* Overall Container */
