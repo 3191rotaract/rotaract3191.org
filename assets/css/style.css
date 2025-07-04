@@ -3922,11 +3922,11 @@ hr {
 
 .slider-area2 {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/BeTheMiracle\ -\ cover.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/Branding_kit/Rotaract_with_UFG/Dist\ 3191\ MB+UFG-Cranberry.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain; /* Make sure the background image covers the entire area */
-  height: 160px; /* Set height to the full height of the viewport */
+  height: 150px; /* Set height to the full height of the viewport */
   overflow: hidden;
 }
 
