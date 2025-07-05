@@ -1,4 +1,4 @@
-Theme Description
+/*Theme Description
 -------------------------------------------------
 
 	  Theme Name:
@@ -503,7 +503,7 @@ hr {
 
 /* line 245, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 .btn {
-  background: #560BBF;
+  background: #1b2187;
   font-family: "Muli", sans-serif;
   text-transform: capitalize;
   padding: 27px 44px;
@@ -534,7 +534,7 @@ hr {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  background-color: #560BBF;
+  background-color: #1b2187;
   /* Customizable color */
   border-radius: 50px;
   text-align: center;
@@ -555,7 +555,7 @@ hr {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  background-color: #560BBF;
+  background-color: #1b2187;
   /* Customizable color */
   border-radius: 50px;
   text-align: center;
@@ -706,7 +706,7 @@ hr {
 
 /* line 326, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 .black-btn::before {
-  background: #331391;
+  background: #261391;
 }
 
 /* line 332, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
@@ -828,7 +828,7 @@ hr {
 /* line 436, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 #scrollUp,
 #back-top {
-  background: #560BBF;
+  background: #1b2187;
   height: 50px;
   width: 50px;
   right: 31px;
@@ -3125,7 +3125,7 @@ hr {
   font-weight: 700;
   margin-top: 10px;
   margin-bottom: 22px;
-  color: #a870f7;
+  color: #1b43c5a1;
   text-transform: capitalize;
   display: inline-block;
   letter-spacing: 0.05em;
@@ -3146,7 +3146,7 @@ hr {
 .section-tittle h2 {
   font-size: 42px;
   display: block;
-  color: #5D14A6;
+  color: #22299C;
   font-weight: 800;
   text-transform: capitalize;
   line-height: 1.4;
@@ -3303,7 +3303,7 @@ hr {
 }
 
 .header-area .header-top .header-info-left .header-social>ul>li>a:hover {
-  color: #560BBF;
+  color: #2f37cd;
 }
 
 .header-area .header-top .header-info-right .select-this .nice-select {
@@ -3380,20 +3380,20 @@ hr {
 }
 
 .main-header .main-menu ul li:hover>a {
-  color: #560BBF;
+  color: #6068fd;
 }
 
 .main-header .main-menu ul ul.submenu {
   position: absolute;
   width: 170px;
-  background: rgba(0, 12, 32, 0.6);
+  background: rgba(0, 12, 32, 0.331);
   left: 0;
   top: 90%;
   visibility: hidden;
   opacity: 0;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
   padding: 17px 0;
-  border-top: 5px solid #560BBF;
+  border-top: 5px solid #1b2187;
   transition: 0.3s;
 }
 
@@ -3409,7 +3409,7 @@ hr {
 }
 
 .main-header .main-menu ul ul.submenu>li>a:hover {
-  color: #560BBF;
+  color: #b8bbfa;
   background: none;
   padding-left: 13px !important;
 }
@@ -3453,12 +3453,14 @@ hr {
   margin-top: 0px !important;
 }
 
+
+
 .mobile_menu .slicknav_menu .slicknav_btn {
   top: -30px;
 }
 
 .mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar {
-  background-color: #5D14A6 !important;
+  background-color: #22299C !important;
 }
 
 .mobile_menu .slicknav_menu .slicknav_nav {
@@ -3467,12 +3469,13 @@ hr {
 
 .mobile_menu .slicknav_menu .slicknav_nav a:hover {
   background: transparent;
-  color: #5D14A6;
+  color: #22299C;
 }
 
 .mobile_menu .slicknav_menu .slicknav_nav a {
   font-size: 15px;
   padding: 7px 10px;
+  font-weight: 500;
 }
 
 .mobile_menu .slicknav_menu .slicknav_nav .slicknav_item a {
@@ -3681,7 +3684,7 @@ hr {
   line-height: 1;
   color: #fff;
   animation-delay: 0.8s;
-  background: #560BBF;
+  background: #1b2187;
 }
 
 #hero .btn-get-started:hover {
@@ -3998,8 +4001,13 @@ hr {
   }
 }
 
-
 .quick-links .single-cat {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px;
   background: #ffffff;
   border-radius: 6px;
   padding: 20px 15px;
@@ -4011,14 +4019,20 @@ hr {
   position: relative;
   z-index: 1;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  /* Reduced box-shadow */
-  height: 200px;
-  /* Reduced height */
+  box-shadow: 0 5px 6px rgba(14, 1, 95, 0.425);
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.quick-links .single-cat .cat-cap p {
+  margin: 0 auto;
+  max-width: 90%;
+  font-size: 16px;
+  line-height: 1.6;
+  word-break: break-word;
 }
 
 .quick-links .single-cat::before {
@@ -4026,7 +4040,7 @@ hr {
   content: "";
   width: 100%;
   height: 0;
-  background: #560BBF;
+  background: #1b2187;
   transition: .6s;
   bottom: 0;
   left: 0;
@@ -4068,9 +4082,32 @@ hr {
   align-items: center;
 }
 
+@media  only screen and (min-width: 576px) and (max-width: 867px){
+  .quick-links .row > div {
+    margin-bottom: 30px; /* Adjust spacing as needed */
+  }
+
+  /* Optional: Remove bottom margin from the last card */
+  .quick-links .row > div:last-child {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 575px){
+  .quick-links .row > div {
+    margin-bottom: 30px; /* Adjust spacing as needed */
+  }
+
+  /* Optional: Remove bottom margin from the last card */
+  .quick-links .row > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
 
 /* Responsive padding adjustment */
 @media (max-width: 575px) {
+
   .service-area .single-cat {
     padding: 30px 15px;
     /* Adjusted for smaller screens */
@@ -4085,7 +4122,7 @@ hr {
   content: "";
   width: 100%;
   height: 0;
-  background: #560BBF;
+  background: #1b2187;
   transition: .6s;
   bottom: 0;
   left: 0;
@@ -4140,7 +4177,7 @@ hr {
 }
 
 .service-area .single-cat:hover .cat-icon {
-  background: #560BBF;
+  background: #1b2187;
 }
 
 .service-area.single-cat .cat-icon:hover img {
@@ -4155,7 +4192,7 @@ hr {
   color: #ffffff;
 }
 
-. .service-area .single-cat:hover .cat-cap a {
+.service-area .single-cat:hover .cat-cap a {
   color: #ffffff;
 }
 
@@ -4813,7 +4850,7 @@ hr {
 
 /* line 42, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_team.scss */
 .team-area .single-team .team-caption h3 a:hover {
-  color: #560BBF;
+  color: #1b2187;
 }
 
 /* line 47, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_team.scss */
@@ -4923,12 +4960,12 @@ hr {
   display: inline-block;
   font-weight: 700;
   text-transform: uppercase;
-  color: #560BBF;
+  color: #1b2187;
 }
 
 /* line 31, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_count_down.scss */
 .count-down-area .count-down-wrapper .single-counter span {
-  color: #560BBF;
+  color: #1b2187;
   font-size: 24px;
 }
 
@@ -4941,7 +4978,7 @@ hr {
   font-weight: 300;
   display: block;
   font-family: "Muli", sans-serif;
-  color: #560BBF;
+  color: #1b2187;
 }
 
 /* line 50, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_count_down.scss */
@@ -5168,7 +5205,7 @@ hr {
 
 /* line 160, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_footer.scss */
 .footer-bottom-area .footer-social>a:hover {
-  color: #560BBF;
+  color: #1b2187;
 }
 
 /* line 3, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_blog_page.scss */
@@ -5515,19 +5552,25 @@ a.glightbox:hover {
 
 .btn-download,
 .btn-download-all {
-  display: inline-block;
+  display: inline-flex; /* Use flex for vertical centering */
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #007bff;
+  background-color: #0f63bc;
   color: #fff;
   border-radius: 4px;
   text-decoration: none;
+  height: 35px; /* Increased for better vertical alignment */
   transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center
 }
 
 .btn-download:hover,
 .btn-download-all:hover {
-  background-color: #0056b3;
+  background-color: #00254d;
 }
 
 /* Mobile Optimization */
@@ -6874,6 +6917,10 @@ a.glightbox:hover {
 .single-post-area .navigation-top {
   padding-top: 15px;
   border-top: 1px solid #f0e9ff;
+}
+
+#navigation li a {
+  font-weight: bold;
 }
 
 /* line 1269, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_blog_page.scss */
