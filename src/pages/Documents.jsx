@@ -49,25 +49,36 @@ const documentSections = [
     code: "CG-01",
     documents: [
       {
-        title: "Installation Guidelines - Coming Soon",
-        file: "/docs/installation-guidelines.pdf",
+        title: "Installation Guidelines",
+        file: "/assets/docs/Clubs Installation Guidelines, RY 2026-27.pdf",
       },
+      // {
+      //   title: "Reporting Guidelines - Coming Soon",
+      //   file: "/docs/reporting-guidelines.pdf",
+      // },
+      // {
+      //   title: "Brand Guidelines - Coming Soon",
+      //   file: "/docs/brand-guidelines.pdf",
+      // },
       {
-        title: "Reporting Guidelines - Coming Soon",
-        file: "/docs/reporting-guidelines.pdf",
+        title: "Club Dues Structure",
+        file: "/assets/docs/Club Dues 2026-27.pdf",
       },
+    ],
+  },
+  {
+    id: 2,
+    category: "Recognition Guidelines",
+    code: "CG-01",
+    documents: [
       {
-        title: "Brand Guidelines - Coming Soon",
-        file: "/docs/brand-guidelines.pdf",
-      },
-      {
-        title: "Q1 Recognition Guide - Coming Soon",
+        title: "Q1 Recognition Guidelines",
         file: "/docs/q1-recognition.pdf",
       },
     ],
   },
   {
-    id: 1,
+    id: 3,
     category: "District Updates",
     code: "DU-3191",
     documents: [
@@ -129,8 +140,8 @@ export default function Documents() {
 
             <div className="hidden md:grid grid-cols-3 gap-3">
               {[
-                ["FILES", "5"],
-                ["MODULES", "2"],
+                ["FILES", documentSections.reduce((sum, s) => sum + s.documents.length, 0)],
+                ["MODULES", documentSections.length],
                 ["STATUS", "READY"],
               ].map(([label, value]) => (
                 <div
