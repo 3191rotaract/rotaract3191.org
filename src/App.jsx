@@ -17,6 +17,7 @@ import AboutRotaract from './pages/AboutRotaract.jsx'
 import AboutRotaract3191 from './pages/AboutRotaract3191.jsx'
 import Documents from './pages/Documents.jsx'
 import Profiles from './pages/Profiles.jsx'
+import QuickLinks from './pages/QuickLinks.jsx'
 
 function App() {
   const [preloaderDone, setPreloaderDone] = useState(false)
@@ -33,15 +34,16 @@ function App() {
             <Route path="about" element={<AboutRotaract />} />
             <Route path="about-3191" element={<AboutRotaract3191 />} />
             <Route path="newsletters" element={<Newsletters />} />
-            <Route path="brand-center" element={<BrandCenter />} />
-            <Route path="brand-center/logos" element={<Logos />} />
-            <Route path="brand-center/documents" element={<Documents />} />
-            <Route path="brand-center/profiles" element={<Profiles />} />
+            <Route path="resources" element={<BrandCenter />} />
+            <Route path="resources/logos" element={<Logos />} />
+            <Route path="resources/documents" element={<Documents />} />
+            <Route path="resources/profiles" element={<Profiles />} />
             <Route path="team" element={<Team />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="events" element={<Events />} />
             <Route path="events/:slug" element={<EventDetails />} />
             <Route path="zones" element={<Zones />} />
+            <Route path="quick-links" element={<QuickLinks />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
