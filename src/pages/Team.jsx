@@ -142,6 +142,7 @@ const council = [
         executive: true,
         district: false,
       },
+
       {
         id: 2,
         name: "Rtr. M V Karthik",
@@ -284,7 +285,7 @@ const council = [
         id: 1,
         name: "PP. Rtr. Tagore Maddali",
         position: "District Professional Development Director",
-        photo: "/assets/team/2026-27/council/Tagore.jpeg",
+        photo: "/assets/team/2026-27/council/Tagore.jpg",
         rtr_id: "10040898",
         executive: true,
         district: false,
