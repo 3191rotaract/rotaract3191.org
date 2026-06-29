@@ -178,7 +178,7 @@ const SLIDES = [
 const QUICK_LINKS = [
   { icon: '🚀', title: '3191 Showcase', href: 'https://showcase.rotaract3191.org/', desc: 'Your go-to platform for reporting and displaying your club’s projects. Highlight initiatives, share impact and connect.', tag: 'EXTERNAL', internal: false },
   { icon: '📋', title: 'Forms & Links', href: 'https://go.rotaract3191.org/links', desc: 'Access essential forms and links for seamless club operations — RIDE applications, event registrations, all in one place.', tag: 'RESOURCES', internal: false },
-  { icon: '🎨', title: 'Brand Center', href: '/brand-center', desc: 'Resources and guidelines to maintain consistent branding across all platforms for a unified and professional image.', tag: 'INTERNAL', internal: true },
+  { icon: '🎨', title: 'Resources', href: '/resources', desc: 'Resources and guidelines to maintain consistent branding across all platforms for a unified and professional image.', tag: 'INTERNAL', internal: true },
 ]
 
 const EVENTS = [

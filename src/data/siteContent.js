@@ -16,6 +16,6 @@ export const navItems = [
       { label: 'Team', path: '/team' }
     ]
   },
-  { label: 'Brand Center', path: '/brand-center' },
+  { label: 'Brand Centre', path: '/resources' },
   { label: 'Showcase', path: 'https://showcase.rotaract3191.org/'}
 ]
