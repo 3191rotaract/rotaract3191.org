@@ -18,7 +18,7 @@ const telemetry = [
     { label: "AIRBORNE CLUBS", value: "120+", status: "TRACKING" },
     { label: "CREW MEMBERS", value: "3000+", status: "DEPLOYED" },
     { label: "MISSIONS", value: "500+", status: "EXECUTING" },
-    { label: "DISTRICTS", value: "04", status: "CONNECTED" },
+    { label: "REVENUE DISTRICTS", value: "04", status: "CONNECTED" },
 ];
 
 export default function AboutRotaract3191() {
@@ -48,7 +48,7 @@ export default function AboutRotaract3191() {
 
                         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
                             An ensemble of dynamic young leaders from Bangalore,
-                            Ramanagara, Kolar and Chittoor determined to create
+                            Ramanagara, Kolar, Chittoor and Tirupathi determined to create
                             meaningful impact through service, fellowship and leadership.
                         </p>
 
@@ -94,10 +94,9 @@ export default function AboutRotaract3191() {
                                 <p className="mt-2 text-xs font-bold">CHITTOOR</p>
                             </div>
 
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-sm font-black tracking-[0.3em] text-slate-400">
-                                    DISTRICT MAP
-                                </span>
+                            <div className="absolute right-[10%] bottom-[12%]">
+                                <div className="h-4 w-4 rounded-full bg-[#d41367]" />
+                                <p className="mt-2 text-xs font-bold">TIRUPATHI</p>
                             </div>
                         </div>
                     </div>
@@ -152,7 +151,7 @@ export default function AboutRotaract3191() {
 
                     <p className="mt-6 leading-relaxed text-slate-600">
                         Rotaract District 3191 comprises clubs from Bangalore,
-                        Ramanagara, Kolar and Chittoor. Rotaract serves as a
+                        Ramanagara, Kolar, Chittoor and Tirupathi. Rotaract serves as a
                         launchpad for leadership, service and fellowship while
                         empowering young leaders to create lasting impact.
                     </p>

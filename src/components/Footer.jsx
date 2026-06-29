@@ -47,6 +47,7 @@ function Footer() {
               "RAMANAGARA",
               "KOLAR",
               "CHITTOOR",
+              "TIRUPATHI",
             ].map((region) => (
               <div
                 key={region}
