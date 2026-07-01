@@ -28,7 +28,7 @@ const brandSections = [
 const cockpitMetrics = [
     { label: 'District', value: '3191' },
     { label: 'Zones', value: '4' },
-    { label: 'Clubs', value: '78' },
+    { label: 'Clubs', value: '83' },
 ]
 
 export default function BrandCenter() {

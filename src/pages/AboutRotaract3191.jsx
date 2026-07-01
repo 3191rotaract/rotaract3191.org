@@ -15,9 +15,9 @@ function SectionHeader({ title }) {
 }
 
 const telemetry = [
-    { label: "AIRBORNE CLUBS", value: "120+", status: "TRACKING" },
-    { label: "CREW MEMBERS", value: "3000+", status: "DEPLOYED" },
-    { label: "MISSIONS", value: "500+", status: "EXECUTING" },
+    { label: "AIRBORNE CLUBS", value: "83", status: "TRACKING" },
+    { label: "CREW MEMBERS", value: "1903", status: "DEPLOYED" },
+    { label: "COUNCIL MEMBERS", value: "86", status: "EXECUTING" },
     { label: "REVENUE DISTRICTS", value: "04", status: "CONNECTED" },
 ];
 
@@ -64,40 +64,14 @@ export default function AboutRotaract3191() {
                         </div>
                     </div>
 
-                    {/* MAP PLACEHOLDER */}
+                    {/* DISTRICT MAP */}
                     <div className="relative">
                         <div className="aspect-square rounded-4xl border border-slate-200 bg-slate-50 overflow-hidden">
-
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,19,103,0.15),transparent_60%)]" />
-
-                            <div className="absolute left-1/2 top-1/2 h-[85%] w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d41367]/10" />
-                            <div className="absolute left-1/2 top-1/2 h-[65%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d41367]/10" />
-                            <div className="absolute left-1/2 top-1/2 h-[45%] w-[45%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d41367]/10" />
-
-                            <div className="absolute left-[30%] top-[30%]">
-                                <div className="h-4 w-4 rounded-full bg-[#d41367] animate-pulse" />
-                                <p className="mt-2 text-xs font-bold">BANGALORE</p>
-                            </div>
-
-                            <div className="absolute right-[20%] top-[40%]">
-                                <div className="h-4 w-4 rounded-full bg-slate-900" />
-                                <p className="mt-2 text-xs font-bold">KOLAR</p>
-                            </div>
-
-                            <div className="absolute left-[35%] bottom-[20%]">
-                                <div className="h-4 w-4 rounded-full bg-[#d41367]" />
-                                <p className="mt-2 text-xs font-bold">RAMANAGARA</p>
-                            </div>
-
-                            <div className="absolute right-[25%] bottom-[25%]">
-                                <div className="h-4 w-4 rounded-full bg-slate-900" />
-                                <p className="mt-2 text-xs font-bold">CHITTOOR</p>
-                            </div>
-
-                            <div className="absolute right-[10%] bottom-[12%]">
-                                <div className="h-4 w-4 rounded-full bg-[#d41367]" />
-                                <p className="mt-2 text-xs font-bold">TIRUPATHI</p>
-                            </div>
+                            <img
+                                src="/assets/images/map.png"
+                                alt="Rotaract District 3191 Map"
+                                className="h-full w-full object-contain"
+                            />
                         </div>
                     </div>
                 </div>

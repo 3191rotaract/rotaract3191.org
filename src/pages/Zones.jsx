@@ -264,10 +264,7 @@ export default function Zones() {
                     <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-white shadow">
 
                       <img
-                        src={
-                          club.presidentPhoto ||
-                          `https://ui-avatars.com/api/?name=${encodeURIComponent(club.name)}&size=120`
-                        }
+                        src={club.presidentPhoto || '/assets/images/placeholder.png'}
                         alt={club.name}
                         className="h-full w-full object-cover"
                       />

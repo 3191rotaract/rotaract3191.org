@@ -429,9 +429,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative p-5 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="relative p-5 flex flex-wrap justify-center gap-4">
           {TEAM.map((m, i) => (
-            <div key={i} id={`tm-${i}`} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367]">
+            <div key={i} id={`tm-${i}`} className="w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367]">
               <div className="aspect-square overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]">
                 <img
                   src={m.photo}

@@ -3,43 +3,43 @@ import { NavLink } from "react-router-dom";
 const focusAreas = [
   {
     title: "Promoting Peace",
-    icon: "/assets/areas-of-focus/AOF_peace_color_bottom_title_EN.webp",
+    icon: "/assets/areas-of-focus/AOF_peace_color_no_title.png",
     description:
       "Training leaders to foster understanding, empathy and conflict resolution.",
   },
   {
     title: "Fighting Disease",
-    icon: "/assets/areas-of-focus/AOF_disease_color_bottom_title_EN.webp",
+    icon: "/assets/areas-of-focus/AOF_disease_color_no_title.png",
     description:
       "Supporting healthcare initiatives and improving access to treatment.",
   },
   {
     title: "Clean Water",
-    icon: "/assets/areas-of-focus/AOF_water_color_bottom_title_EN.webp",
+    icon: "/assets/areas-of-focus/AOF_water_color_no_title.png",
     description:
       "Improving sanitation and access to clean water worldwide.",
   },
   {
     title: "Supporting Education",
-    icon: "/assets/areas-of-focus/AOF_education_color_bottom_title_EN.webp",
+    icon: "/assets/areas-of-focus/AOF_education_color_no_title.png",
     description:
       "Creating opportunities through quality education and literacy.",
   },
   {
     title: "Maternal & Child Health",
-    icon: "/assets/areas-of-focus/AOF_maternal_color_bottom_title_EN.webp",
+    icon: "/assets/areas-of-focus/AOF_maternal_color_no_title.png",
     description:
       "Improving health and wellbeing of mothers and children.",
   },
   {
     title: "Growing Local Economies",
-    icon: "/assets/areas-of-focus/AOF_economic_color_bottom_title_EN.webp",
+    icon: "/assets/areas-of-focus/AOF_economic_color_no_title.png",
     description:
       "Supporting entrepreneurship and sustainable development.",
   },
   {
     title: "Protecting Environment",
-    icon: "/assets/areas-of-focus/AOF_environment_color_bottom_title_EN.webp",
+    icon: "/assets/areas-of-focus/AOF_environment_color_no_title.png",
     description:
       "Driving environmental conservation and sustainability projects.",
   },
@@ -152,21 +152,24 @@ export default function AboutRotaract() {
       {/* FOCUS AREAS */}
       <SectionHeader title="SEVEN AREAS OF FOCUS" />
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="flex flex-wrap justify-center gap-6">
         {focusAreas.map((area) => (
           <div
             key={area.title}
-            className="rounded-4xl border border-slate-200 bg-white p-5"
+            className="w-full md:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)] rounded-4xl border border-slate-200 bg-white p-5"
           >
             <div className="flex items-center justify-between">
               <div className="h-3 w-3 rounded-full bg-[#d41367]" />
             </div>
 
             <div className="mt-5 flex justify-center">
-              <div className="w-48 rounded-full flex items-center justify-center">
+              <div className="w-42 rounded-full flex items-center justify-center">
                 <img src={area.icon} alt={area.title} />
               </div>
             </div>
+            <p className="mt-4 text-center text-slate-800 text-xl font-semibold">
+              {area.title}
+            </p>
             <p className="mt-4 text-center text-slate-600">
               {area.description}
             </p>

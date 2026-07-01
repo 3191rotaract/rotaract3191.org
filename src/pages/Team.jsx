@@ -1,5 +1,9 @@
 import React from "react";
 
+function memberPhoto(member) {
+  return member.photo || '/assets/images/placeholder.png';
+}
+
 const core_team = [
   {
     id: 1,
@@ -958,7 +962,7 @@ function LeadershipCard({ member }) {
 "
     >
       <img
-        src={member.photo}
+        src={memberPhoto(member)}
         alt={member.name}
         className="
     h-[350px]
@@ -989,7 +993,7 @@ function ZRRCard({ member }) {
 
       <div className="relative aspect-square overflow-hidden">
         <img
-          src={member.photo}
+          src={memberPhoto(member)}
           alt={member.name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -1025,7 +1029,7 @@ function CouncilCard({ member }) {
 
       <div className="relative aspect-square overflow-hidden">
         <img
-          src={member.photo}
+          src={memberPhoto(member)}
           alt={member.name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -1055,7 +1059,7 @@ function DistrictCard({ member }) {
     <div className="group overflow-hidden rounded-2xl border border-pink-100 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative aspect-square overflow-hidden">
         <img
-          src={member.photo}
+          src={memberPhoto(member)}
           alt={member.name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
