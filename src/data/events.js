@@ -3,7 +3,7 @@ export const DISTRICT_EVENTS = [
     slug: 'district-learning-assembly',
     title: 'District Learning Assembly',
     date: '30th August 2026',
-    description: 'The District Learning Assembly is our flagship learning and training event designed to equip Rotaractors with the skills, knowledge, and leadership capabilities needed for the year ahead. Join us for a full day of engaging workshops, expert panels, and networking opportunities that will set the tone for an impactful year of service.',
+    description: 'The District Learning Assembly is our flagship learning event designed to equip Rotaractors with the skills, knowledge, and leadership capabilities needed for the year ahead. Join us for a full day of engaging workshops, expert panels, and networking opportunities that will set the tone for an impactful year of service.',
     photos: [
       'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80',
@@ -125,7 +125,7 @@ export const DISTRICT_EVENTS = [
     slug: 'rota-camp',
     title: 'Rota Camp',
     date: '30th April, 1st & 2nd May 2027',
-    description: 'Step away from the city and dive into nature! Rota Camp is an adventure-filled leadership retreat focusing on outbound training, survival skills, bonfire fellowships, and creating unbreakable bonds away from the digital world.',
+    description: 'Step away from the city and dive into nature! Rota Camp is an adventure-filled leadership retreat focusing on survival skills, bonfire fellowships, and creating unbreakable bonds away from the digital world.',
     photos: [
       'https://images.unsplash.com/photo-1537565266751-34dd6b0b0010?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80'

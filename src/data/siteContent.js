@@ -1,13 +1,7 @@
 export const navItems = [
   { label: 'Home', path: '/' },
   { label: 'Zones', path: '/zones' },
-  { 
-    label: 'Events', 
-    dropdown: [
-      { label: 'All Events', path: '/events' },
-      { label: 'Calendar', path: '/calendar' }
-    ]
-  },
+  { label: 'Calendar', path: '/calendar' },
   { 
     label: 'About', 
     dropdown: [

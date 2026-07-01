@@ -1,6 +1,48 @@
 import React, { useState } from 'react';
 import { ZONES } from '../data/zones.js';
 
+function LeaderCard({ leader, themeColor }) {
+  return (
+    <div
+      className="
+    group rounded-[1.5rem]
+    border border-slate-200
+    bg-slate-50
+    p-5 text-center
+    transition-all duration-300
+    hover:-translate-y-1
+    hover:shadow-lg
+  "
+    >
+
+      <div className="relative mx-auto h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-lg">
+
+        <img
+          src={`${leader.picture}`}
+          alt={leader.picture}
+          className="h-full w-full object-cover"
+        />
+
+      </div>
+
+      <h3 className="mt-4 text-lg font-bold text-slate-900">
+        {leader.name}
+      </h3>
+
+      <div
+        className="mt-3 inline-flex rounded-full px-3 py-1 text-[10px] font-black tracking-[0.2em]"
+        style={{
+          backgroundColor: `${themeColor}15`,
+          color: themeColor,
+        }}
+      >
+        ZRR COMMAND
+      </div>
+
+    </div>
+  );
+}
+
 export default function Zones() {
   const [activeZone, setActiveZone] = useState(ZONES[0].id);
 
@@ -59,36 +101,26 @@ export default function Zones() {
                   style={{ backgroundColor: zone.themeColor }}
                 />
               )}
-
-              <img
-                src={zone.jetImage}
-                alt={zone.name}
+              <div
                 className="
-              h-40 md:h-52 w-full object-cover
+              flex items-center justify-center
+              h-40 md:h-52 w-full p-3
               transition-transform duration-700
               group-hover:scale-105
             "
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-
-              <div className="absolute top-4 left-4">
-                <span
-                  className="rounded-full px-3 py-1 text-[10px] font-black tracking-[0.2em] text-white"
-                  style={{ backgroundColor: zone.themeColor }}
-                >
-                  AIRSPACE
-                </span>
+                style={{ backgroundColor: `${zone.themeColor}15` }}
+              >
+                <img
+                  src={zone.logo}
+                  alt={zone.name}
+                  className="h-full w-full object-contain"
+                />
               </div>
 
-              <div className="absolute bottom-4 left-4 right-4 text-left">
-
-                <p className="text-xs uppercase tracking-[0.25em] text-white/70">
-                  Zone Command
-                </p>
+              <div className="p-4 text-left">
 
                 <h3
-                  className="text-2xl font-black text-white"
+                  className="text-2xl font-black text-slate-900"
                   style={{ fontFamily: "'Rajdhani','Inter',sans-serif" }}
                 >
                   {zone.name}
@@ -119,82 +151,54 @@ export default function Zones() {
 
         <div className="p-8">
 
-          <div className="text-center">
-
-            <div
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2"
-              style={{
-                backgroundColor: `${activeZoneData.themeColor}15`,
-                color: activeZoneData.themeColor,
-              }}
-            >
-              <div
-                className="h-2 w-2 rounded-full animate-pulse"
-                style={{ backgroundColor: activeZoneData.themeColor }}
-              />
-
-              <span className="text-xs font-black tracking-[0.3em]">
-                FLIGHT CREW
-              </span>
-            </div>
-
-            <h2
-              className="mt-5 text-4xl font-black"
-              style={{ fontFamily: "'Rajdhani','Inter',sans-serif" }}
-            >
-              {activeZoneData.name}
-            </h2>
-
-            <p className="mt-2 text-slate-500 uppercase tracking-[0.25em] text-xs">
-              Zonal Rotaract Representatives
-            </p>
-
-          </div>
-
           {/* ZRRS */}
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-center max-w-5xl mx-auto">
 
-            {activeZoneData.leaders.map((leader, idx) => (
-              <div
-                key={idx}
-                className="
-              group rounded-[1.5rem]
-              border border-slate-200
-              bg-slate-50
-              p-5 text-center
-              transition-all duration-300
-              hover:-translate-y-1
-              hover:shadow-lg
-            "
-              >
+            <LeaderCard leader={activeZoneData.leaders[0]} themeColor={activeZoneData.themeColor} />
 
-                <div className="relative mx-auto h-40 w-40 overflow-hidden rounded-full border-4 border-white shadow-lg">
+            <div className="text-center">
 
-                  <img
-                    src={`${leader.picture}`}
-                    alt={leader.picture}
-                    className="h-full w-full object-cover"
-                  />
-
-                </div>
-
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
-                  {leader.name}
-                </h3>
-
-                <div
-                  className="mt-3 inline-flex rounded-full px-3 py-1 text-[10px] font-black tracking-[0.2em]"
-                  style={{
-                    backgroundColor: `${activeZoneData.themeColor}15`,
-                    color: activeZoneData.themeColor,
-                  }}
-                >
-                  ZRR COMMAND
-                </div>
-
+              <div className="mx-auto h-20 w-20 overflow-hidden rounded-full border-4 border-white shadow-lg">
+                <img
+                  src={activeZoneData.logo}
+                  alt={`${activeZoneData.name} logo`}
+                  className="h-full w-full object-contain"
+                />
               </div>
-            ))}
+
+              <div
+                className="mt-4 inline-flex items-center gap-2 rounded-full px-4 py-2"
+                style={{
+                  backgroundColor: `${activeZoneData.themeColor}15`,
+                  color: activeZoneData.themeColor,
+                }}
+              >
+                <div
+                  className="h-2 w-2 rounded-full animate-pulse"
+                  style={{ backgroundColor: activeZoneData.themeColor }}
+                />
+
+                <span className="text-xs font-black tracking-[0.3em]">
+                  FLIGHT CREW
+                </span>
+              </div>
+
+              <h2
+                className="mt-3 text-3xl font-black"
+                style={{ fontFamily: "'Rajdhani','Inter',sans-serif" }}
+              >
+                {activeZoneData.name}
+              </h2>
+
+              <p className="mt-1 text-slate-500 uppercase tracking-[0.2em] text-[11px]">
+                Zonal Rotaract Representatives
+              </p>
+
+            </div>
+
+            <LeaderCard leader={activeZoneData.leaders[1]} themeColor={activeZoneData.themeColor} />
+
           </div>
 
         </div>
@@ -272,23 +276,30 @@ export default function Zones() {
 
                     <div>
 
-                      <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400">
-                        Club Commander
-                      </p>
+                      {club.presidentName ? (
+                        <>
+                          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400">
+                            Club Commander
+                          </p>
 
-                      <h3 className="mt-1 font-bold text-slate-900 line-clamp-2">
-                        {club.name}
-                      </h3>
-                      <p
-                        className="mt-2 text-xs font-black tracking-[0.15em]"
-                        style={{ color: activeZoneData.themeColor }}
-                      >
-                        PRESIDENT
-                      </p>
-                      <h3 className="mt-1 font-bold text-slate-900 line-clamp-2">
-                        {club.name}
-                      </h3>
-
+                          <h3 className="mt-1 font-bold text-slate-900 line-clamp-2">
+                            {club.presidentName}
+                          </h3>
+                          <p
+                            className="mt-2 text-xs font-black tracking-[0.15em]"
+                            style={{ color: activeZoneData.themeColor }}
+                          >
+                            PRESIDENT
+                          </p>
+                          <h3 className="mt-1 font-bold text-slate-900 line-clamp-2">
+                            {club.name}
+                          </h3>
+                        </>
+                      ) : (
+                        <h3 className="font-bold text-slate-900 line-clamp-2">
+                          {club.name}
+                        </h3>
+                      )}
 
                     </div>
 

@@ -33,9 +33,9 @@ export default function Events() {
   <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
     {DISTRICT_EVENTS.map((event) => (
-      <Link
-        key={event.slug}
-        to={`/events/${event.slug}`}
+      <div
+        // key={event.slug}
+        // to={`/events/${event.slug}`}
         className="
           group
           overflow-hidden
@@ -106,7 +106,7 @@ export default function Events() {
           </p>
 
           {/* CTA */}
-          <div
+          {/* <div
             className="
               mt-6 flex items-center gap-2
               text-sm font-black uppercase
@@ -132,10 +132,10 @@ export default function Events() {
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
-          </div>
+          </div> */}
 
         </div>
-      </Link>
+      </div>
     ))}
 
   </div>

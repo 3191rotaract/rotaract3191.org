@@ -8,6 +8,7 @@ const HOME_CSS = `
   @keyframes sliderFadeIn { from{opacity:0;transform:scale(1.03);} to{opacity:1;transform:scale(1);} }
   @keyframes roundelSpin  { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
   @keyframes trailDraw    { from{stroke-dashoffset:600;opacity:0;} 10%{opacity:.65;} to{stroke-dashoffset:0;opacity:.28;} }
+  @keyframes moePulse     { 0%,100%{opacity:.7;} 50%{opacity:1;} }
 
   @keyframes reticleCW  { from{transform:rotate(0deg);}  to{transform:rotate(360deg);}  }
   @keyframes reticleCCW { from{transform:rotate(0deg);}  to{transform:rotate(-360deg);} }
@@ -140,31 +141,6 @@ function Roundel({ size = 80 }) {
 /* ─────────────────────────────────────────────────────────────
    HUD RETICLE
 ───────────────────────────────────────────────────────────── */
-function HUDReticle({ size = 210 }) {
-  const c = size / 2
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none">
-      <circle cx={c} cy={c} r={c - 4} stroke="rgba(255,255,255,.25)" strokeWidth="1" strokeDasharray="7 6" />
-      <circle cx={c} cy={c} r={c - 16} stroke="rgba(255,107,26,.5)" strokeWidth="1.5" strokeDasharray="36 18"
-        style={{ animation: 'reticleCW 7s linear infinite', transformOrigin: `${c}px ${c}px` }} />
-      <circle cx={c} cy={c} r={c - 32} stroke="rgba(212,19,103,.5)" strokeWidth="1.5" strokeDasharray="18 10"
-        style={{ animation: 'reticleCCW 5s linear infinite', transformOrigin: `${c}px ${c}px` }} />
-      <circle cx={c} cy={c} r={c - 50} stroke="rgba(255,255,255,.45)" strokeWidth="1" />
-      <line x1={c} y1={6} x2={c} y2={c - 44} stroke="rgba(255,255,255,.38)" strokeWidth="1" />
-      <line x1={c} y1={c + 44} x2={c} y2={size - 6} stroke="rgba(255,255,255,.38)" strokeWidth="1" />
-      <line x1={6} y1={c} x2={c - 44} y2={c} stroke="rgba(255,255,255,.38)" strokeWidth="1" />
-      <line x1={c + 44} y1={c} x2={size - 6} y2={c} stroke="rgba(255,255,255,.38)" strokeWidth="1" />
-      {[[32, 32], [size - 32, 32], [32, size - 32], [size - 32, size - 32]].map(([x, y], i) => {
-        const dx = x < c ? 12 : -12, dy = y < c ? 12 : -12
-        return <g key={i}><line x1={x} y1={y} x2={x + dx} y2={y} stroke="rgba(255,107,26,.7)" strokeWidth="1.8" /><line x1={x} y1={y} x2={x} y2={y + dy} stroke="rgba(255,107,26,.7)" strokeWidth="1.8" /></g>
-      })}
-      <circle cx={c} cy={c} r={c - 50} stroke="rgba(255,107,26,.5)" strokeWidth="2"
-        style={{ animation: 'reticlePing 2.2s ease-out infinite', transformOrigin: `${c}px ${c}px` }} />
-      <circle cx={c} cy={c} r={5} fill="rgba(255,107,26,.8)" />
-      <circle cx={c} cy={c} r={2} fill="#fff" />
-    </svg>
-  )
-}
 
 /* ─────────────────────────────────────────────────────────────
    DATA
@@ -350,7 +326,11 @@ export default function Home() {
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'clamp(32px,5vw,60px)', padding: 'clamp(36px,6vw,64px) clamp(20px,5vw,52px)' }}>
           {/* HUDReticle — kept intact on left */}
           <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center', width: 'clamp(160px,30vw,210px)', margin: '0 auto' }}>
-            <HUDReticle size={205} />
+            <img
+              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.png"
+              alt="Rotaract Mark of Excellence"
+              style={{ width: 205, height: 205, objectFit: 'contain', animation: 'moePulse 3s ease-in-out infinite' }}
+            />
           </div>
 
           {/* Right content */}

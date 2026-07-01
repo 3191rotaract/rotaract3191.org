@@ -141,19 +141,6 @@ function FighterJet({ id, scale = 1 }) {
   )
 }
 
-/* ─── IAF Roundel ─── */
-function IAFRoundel({ size = 72 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="48" fill="#138808" />
-      <circle cx="50" cy="50" r="36" fill="#ffffff" />
-      <circle cx="50" cy="50" r="24" fill="#FF9933" />
-      <circle cx="50" cy="50" r="11" fill="#000080" />
-      {/* Ashoka Chakra hint */}
-      <circle cx="50" cy="50" r="3" fill="#ffffff" opacity="0.8" />
-    </svg>
-  )
-}
 
 /* ─── Preloader component ─── */
 export default function Preloader({ onComplete }) {
@@ -270,9 +257,15 @@ export default function Preloader({ onComplete }) {
       {/* ── TEXT PHASE ── */}
       {phase === 'text' && (
         <div className="pl-enter" style={{ textAlign: 'center', position: 'relative', padding: '0 24px' }}>
-          {/* IAF Roundel spin-in */}
+          {/* Rotaract Mark of Excellence spin-in */}
           <div className="pl-roundel" style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>
-            <IAFRoundel size={68} />
+            <img
+              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.png"
+              alt="Rotaract Mark of Excellence"
+              width={68}
+              height={68}
+              style={{ objectFit: 'contain' }}
+            />
           </div>
 
           {/* Title reveal with clip-path wipe */}

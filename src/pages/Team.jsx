@@ -1156,7 +1156,6 @@ export default function Team() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <StatCard label="Personnel" value="120+" />
               <StatCard label="Zones" value="4" />
             </div>
           </div>
