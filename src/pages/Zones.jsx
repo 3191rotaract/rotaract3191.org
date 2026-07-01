@@ -119,12 +119,12 @@ export default function Zones() {
 
               <div className="p-4 text-left">
 
-                <h3
+                <h2
                   className="text-2xl font-black text-slate-900"
                   style={{ fontFamily: "'Rajdhani','Inter',sans-serif" }}
                 >
                   {zone.name}
-                </h3>
+                </h2>
 
               </div>
             </button>

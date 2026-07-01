@@ -3,43 +3,43 @@ import { NavLink } from "react-router-dom";
 const focusAreas = [
   {
     title: "Promoting Peace",
-    icon: "/assets/areas-of-focus/AOF_peace_color_no_title.png",
+    icon: "/assets/areas-of-focus/AOF_peace_color_no_title.webp",
     description:
       "Training leaders to foster understanding, empathy and conflict resolution.",
   },
   {
     title: "Fighting Disease",
-    icon: "/assets/areas-of-focus/AOF_disease_color_no_title.png",
+    icon: "/assets/areas-of-focus/AOF_disease_color_no_title.webp",
     description:
       "Supporting healthcare initiatives and improving access to treatment.",
   },
   {
     title: "Clean Water",
-    icon: "/assets/areas-of-focus/AOF_water_color_no_title.png",
+    icon: "/assets/areas-of-focus/AOF_water_color_no_title.webp",
     description:
       "Improving sanitation and access to clean water worldwide.",
   },
   {
     title: "Supporting Education",
-    icon: "/assets/areas-of-focus/AOF_education_color_no_title.png",
+    icon: "/assets/areas-of-focus/AOF_education_color_no_title.webp",
     description:
       "Creating opportunities through quality education and literacy.",
   },
   {
     title: "Maternal & Child Health",
-    icon: "/assets/areas-of-focus/AOF_maternal_color_no_title.png",
+    icon: "/assets/areas-of-focus/AOF_maternal_color_no_title.webp",
     description:
       "Improving health and wellbeing of mothers and children.",
   },
   {
     title: "Growing Local Economies",
-    icon: "/assets/areas-of-focus/AOF_economic_color_no_title.png",
+    icon: "/assets/areas-of-focus/AOF_economic_color_no_title.webp",
     description:
       "Supporting entrepreneurship and sustainable development.",
   },
   {
     title: "Protecting Environment",
-    icon: "/assets/areas-of-focus/AOF_environment_color_no_title.png",
+    icon: "/assets/areas-of-focus/AOF_environment_color_no_title.webp",
     description:
       "Driving environmental conservation and sustainability projects.",
   },
@@ -66,9 +66,9 @@ export default function AboutRotaract() {
       <section className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm">
         <div className="grid gap-8 md:grid-cols-3 items-center">
           <div className="md:col-span-2">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">
+            <h1 className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">
               INTERNATIONAL NETWORK
-            </p>
+            </h1>
 
             <p className="mt-6 text-slate-600 leading-relaxed">
               Rotaract is a <span className="font-semibold text-slate-900">global movement of young leaders, changemakers, and professionals</span> dedicated to creating meaningful impact through service, innovation, and collaboration. Operating in over{" "}

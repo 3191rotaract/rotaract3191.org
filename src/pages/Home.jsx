@@ -166,7 +166,7 @@ const EVENTS = [
 const TEAM = [
   { name: 'Rtn. Rtr. Anirudh Kulkarni', role: 'District Rotaract Representative', photo: '/assets/team/2026-27/core-team/Karthik U Chikmath.jpeg' },
   { name: 'Rtn. Rtr. Karthik Chikmath', role: 'Immediate Past DRR', photo: '/assets/team/2026-27/core-team/Karthik U Chikmath.jpeg' },
-  { name: 'Rtn. Rtr. Rohan A', role: 'District Rotaract Representative Elect', photo: '/assets/team/2026-27/core-team/Rohan A.JPG' },
+  { name: 'Rtn. Rtr. Rohan A', role: 'District Rotaract Representative Elect', photo: '/assets/team/2026-27/core-team/Rohan A.jpg' },
   { name: 'PP. Rtr. Girish AR', role: 'General Secretary', photo: '/assets/team/2026-27/core-team/Girish A R.jpeg' },
   { name: 'PP. Rtr. Soumi Bhattacharyya', role: 'District Rotaract Secretary - Admin', photo: '/assets/team/2026-27/core-team/Soumi Bhattacharyya.jpeg' },
   { name: 'PP. Rtr. Padma Nesar R', role: 'District Rotaract Secretary - Operations', photo: '/assets/team/2026-27/core-team/Padma Nesar R.jpg' },
@@ -203,7 +203,7 @@ function HeroSlider() {
         {/* Photo background */}
         <div key={current} style={{
           position: 'absolute', inset: 0, zIndex: 0,
-          backgroundImage: 'url(/assets/hero-bg.jpg)',
+          backgroundImage: 'url(/assets/hero-bg.webp)',
           backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
           animation: 'sliderFadeIn .9s ease forwards',
         }} />
@@ -231,16 +231,28 @@ function HeroSlider() {
               onClick={() => goTo(i)}
               aria-label={`Slide ${i + 1}`}
               style={{
-                height: 8,
-                width: current === i ? 24 : 8,
-                borderRadius: 4,
+                height: 24,
+                width: current === i ? 40 : 24,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 border: 'none',
                 cursor: 'pointer',
                 padding: 0,
-                background: current === i ? '#d41367' : 'rgba(255,255,255,.4)',
-                transition: 'width .32s ease, background .32s ease',
+                background: 'transparent',
               }}
-            />
+            >
+              <span
+                style={{
+                  display: 'block',
+                  height: 8,
+                  width: current === i ? 24 : 8,
+                  borderRadius: 4,
+                  background: current === i ? '#d41367' : 'rgba(255,255,255,.4)',
+                  transition: 'width .32s ease, background .32s ease',
+                }}
+              />
+            </button>
           ))}
         </div>
 
@@ -290,7 +302,7 @@ export default function Home() {
             <h2 className="font-black text-slate-900">Quick Links</h2>
             <p className="text-xs tracking-[0.25em] text-slate-500">FLIGHT CONTROLS</p>
           </div>
-          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-xs font-bold text-[#d41367]">
+          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
             {QUICK_LINKS.length} LINKS
           </div>
         </div>
@@ -327,8 +339,13 @@ export default function Home() {
           {/* HUDReticle — kept intact on left */}
           <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center', width: 'clamp(160px,30vw,210px)', margin: '0 auto' }}>
             <img
-              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.png"
+              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.webp"
               alt="Rotaract Mark of Excellence"
+              width={205}
+              height={205}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
               style={{ width: 205, height: 205, objectFit: 'contain', animation: 'moePulse 3s ease-in-out infinite' }}
             />
           </div>
@@ -336,9 +353,9 @@ export default function Home() {
           {/* Right content */}
           <div style={{ flex: '1 1 280px' }}>
             <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">ABOUT US</p>
-            <h2 className="mt-2 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-2 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
               About Rotaract<br />District 3191
-            </h2>
+            </h1>
             <div className="mt-3 h-[3px] w-11 rounded-full bg-[#d41367]" />
 
             <p className="mt-4 text-base leading-8 text-slate-600">
@@ -376,7 +393,7 @@ export default function Home() {
             <h2 className="font-black text-slate-900">District Events</h2>
             <p className="text-xs tracking-[0.25em] text-slate-500">MISSION CALENDAR</p>
           </div>
-          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-xs font-bold text-[#d41367]">
+          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
             {EVENTS.length} EVENTS
           </div>
         </div>
@@ -424,7 +441,7 @@ export default function Home() {
             <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">DISTRICT COMMAND CENTER</p>
             <h2 className="font-black text-slate-900">Meet The Team</h2>
           </div>
-          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-xs font-bold text-[#d41367]">
+          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
             {TEAM.length} MEMBERS
           </div>
         </div>
@@ -442,7 +459,7 @@ export default function Home() {
               </div>
               <div className="p-3">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500">PERSONNEL</p>
-                <h4 className="mt-1 text-sm font-black text-slate-900 leading-tight">{m.name}</h4>
+                <h3 className="mt-1 text-sm font-black text-slate-900 leading-tight">{m.name}</h3>
                 <p className="mt-1 text-xs leading-5 text-slate-600">{m.role}</p>
               </div>
             </div>

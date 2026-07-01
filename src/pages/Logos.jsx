@@ -34,7 +34,7 @@ function LogoCard({ collection, onPreview }) {
                     <button
                         type="button"
                         onClick={() => AcquireZip(collection)}
-                        className="cursor-pointer inline-flex items-center justify-center rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-4 py-2 text-sm font-semibold text-[#d41367] transition hover:bg-[#d41367]/15"
+                        className="cursor-pointer inline-flex items-center justify-center rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-4 py-2 text-sm font-semibold text-[#d41367] transition hover:bg-[#d41367]/15"
                     >
                         {collection.zipLabel}
                     </button>

@@ -3,7 +3,7 @@ export const ZONES = [
     id: 'mirage',
     name: 'Zone Mirage',
     themeColor: '#38bdf8', // Sky Blue
-    logo: '/assets/brand-centre/2026-27/zonal-logos/mirage.png',
+    logo: '/assets/brand-centre/2026-27/zonal-logos/mirage.webp',
     leaders: [{
       name: 'IPP. Rtr. Hitha',
       picture: '/assets/team/2026-27/council/Hitha.jpg'
@@ -38,7 +38,7 @@ export const ZONES = [
     id: 'rafale',
     name: 'Zone Rafale',
     themeColor: '#ec4899', // Pink
-    logo: '/assets/brand-centre/2026-27/zonal-logos/rafale.png',
+    logo: '/assets/brand-centre/2026-27/zonal-logos/rafale.webp',
     leaders: [
       { name: 'PP. Rtr. Hemanth', picture: '/assets/team/2026-27/council/Hemant.jpg' },
       { name: 'IPP. Rtr. Rohith', picture: '/assets/team/2026-27/council/Rohith.jpeg' }
@@ -70,7 +70,7 @@ export const ZONES = [
     id: 'sukhoi',
     name: 'Zone Sukhoi',
     themeColor: '#a855f7', // Purple
-    logo: '/assets/brand-centre/2026-27/zonal-logos/sukhoi.png',
+    logo: '/assets/brand-centre/2026-27/zonal-logos/sukhoi.webp',
     leaders: [
       { name: 'PP. Rtn. Rtr. Gagan', picture: '/assets/team/2026-27/council/Gagan.webp' },
       { name: 'PP. Rtr. Madan', picture: '/assets/team/2026-27/council/Madan.jpg' }
@@ -102,7 +102,7 @@ export const ZONES = [
     id: 'tejas',
     name: 'Zone Tejas',
     themeColor: '#fb923c', // Orange
-    logo: '/assets/brand-centre/2026-27/zonal-logos/tejas.png',
+    logo: '/assets/brand-centre/2026-27/zonal-logos/tejas.webp',
     leaders: [
       { name: 'IPP. Rtr. Akhilesh', picture: '/assets/team/2026-27/council/Akhilesh.png' },
       { name: 'PP. Rtn. Rtr. Akshay', picture: '/assets/team/2026-27/council/Akshay Kumar BS.jpeg' }

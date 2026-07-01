@@ -41,9 +41,9 @@ export default function BrandCenter() {
                         <div className="flex flex-row items-center gap-6 justify-center">
                             <div className="h-3 w-3 rounded-full bg-[#d41367] shadow-[0_0_0_7px_rgba(212,19,103,0.14)]" />
                             <div>
-                                <p className="text-2xl md:text-5xl font-black tracking-tight text-slate-900">
+                                <h1 className="text-2xl md:text-5xl font-black tracking-tight text-slate-900">
                                     RESOURCES
-                                </p>
+                                </h1>
                             </div>
                         </div>
 
@@ -67,7 +67,7 @@ export default function BrandCenter() {
                                     <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500">Your deck</p>
                                     <h2 className="mt-2 text-lg font-bold text-slate-900 sm:text-xl">Resources - Logos, Documents and Profiles</h2>
                                 </div>
-                                <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#d41367]">
+                                <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#d41367]">
                                     UNDER CONTROL
                                 </div>
                             </div>

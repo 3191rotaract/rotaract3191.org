@@ -189,7 +189,7 @@ export default function Documents() {
                 </div>
               </div>
 
-              <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-xs font-bold text-[#d41367]">
+              <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
                 {section.documents.length} FILES
               </div>
             </div>

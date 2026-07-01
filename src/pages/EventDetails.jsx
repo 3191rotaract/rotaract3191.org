@@ -82,7 +82,7 @@ export default function EventDetails() {
             </div>
           </div>
 
-          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-xs font-bold text-[#d41367]">
+          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
             {event.photos.length} SHOTS
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function EventDetails() {
                 <h2 className="font-black text-slate-900">Event Sponsors</h2>
                 <p className="text-xs tracking-[0.25em] text-slate-500">ALLIED PARTNERS</p>
               </div>
-              <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-xs font-bold text-[#d41367]">
+              <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
                 {event.sponsors.length} PARTNERS
               </div>
             </div>

@@ -52,6 +52,7 @@ function ProfileCard({ profile }) {
             <div className="relative aspect-square overflow-hidden">
                 <img
                     src={profile.photo}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/assets/images/placeholder.png' }}
                     alt={profile.name}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

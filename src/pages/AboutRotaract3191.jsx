@@ -97,7 +97,7 @@ export default function AboutRotaract3191() {
                                 {item.value}
                             </h3>
 
-                            <div className="mt-5 inline-flex rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-xs font-bold tracking-[0.15em] text-[#d41367]">
+                            <div className="mt-5 inline-flex rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold tracking-[0.15em] text-[#d41367]">
                                 {item.status}
                             </div>
                         </div>
@@ -132,7 +132,7 @@ export default function AboutRotaract3191() {
                 </div>
 
                 <div className="aspect-video flex items-center justify-center">
-                    <img src="/assets/hero-bg.jpg" alt="" className="border border-dashed border-[#d41367] rounded-4xl"/>
+                    <img src="/assets/hero-bg.webp" alt="" className="border border-dashed border-[#d41367] rounded-4xl"/>
                 </div>
 
             </div>

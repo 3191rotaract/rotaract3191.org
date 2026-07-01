@@ -4,6 +4,11 @@ function memberPhoto(member) {
   return member.photo || '/assets/images/placeholder.png';
 }
 
+function handlePhotoError(e) {
+  e.currentTarget.onerror = null;
+  e.currentTarget.src = '/assets/images/placeholder.png';
+}
+
 const core_team = [
   {
     id: 1,
@@ -21,7 +26,7 @@ const core_team = [
     id: 3,
     position: "District Rotaract Representative Elect, RI District 3191",
     name: "Rtn. Rtr. Rohan A",
-    photo: "/assets/team/2026-27/core-team/Rohan A.JPG",
+    photo: "/assets/team/2026-27/core-team/Rohan A.jpg",
   },
   {
     id: 4,
@@ -508,7 +513,7 @@ const council = [
         id: 2,
         name: "Rtr. Nandan Kumar V S",
         position: "District Design & Visual Communications Director",
-        photo: "/assets/team/2026-27/council/Nandan.heic",
+        photo: "/assets/team/2026-27/council/Nandan.jpg",
         rtr_id: "11914938",
         executive: true,
         district: false,
@@ -920,9 +925,9 @@ function StatCard({ label, value }) {
         {label}
       </p>
 
-      <h3 className="mt-1 text-2xl font-black text-[#d41367]">
+      <h2 className="mt-1 text-2xl font-black text-[#d41367]">
         {value}
-      </h3>
+      </h2>
     </div>
   );
 }
@@ -963,6 +968,7 @@ function LeadershipCard({ member }) {
     >
       <img
         src={memberPhoto(member)}
+        onError={handlePhotoError}
         alt={member.name}
         className="
     h-[350px]
@@ -994,6 +1000,7 @@ function ZRRCard({ member }) {
       <div className="relative aspect-square overflow-hidden">
         <img
           src={memberPhoto(member)}
+          onError={handlePhotoError}
           alt={member.name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -1030,6 +1037,7 @@ function CouncilCard({ member }) {
       <div className="relative aspect-square overflow-hidden">
         <img
           src={memberPhoto(member)}
+          onError={handlePhotoError}
           alt={member.name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -1060,6 +1068,7 @@ function DistrictCard({ member }) {
       <div className="relative aspect-square overflow-hidden">
         <img
           src={memberPhoto(member)}
+          onError={handlePhotoError}
           alt={member.name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

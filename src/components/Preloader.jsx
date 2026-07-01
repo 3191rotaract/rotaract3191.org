@@ -57,15 +57,15 @@ const PRELOADER_CSS = `
     0%   { r: 6; opacity: 1; }
     100% { r: 48; opacity: 0; }
   }
-  .pl-jet1 { animation: pl-jet1 2.2s cubic-bezier(0.2, 0.1, 0.35, 1) forwards; }
-  .pl-jet2 { animation: pl-jet2 2.1s cubic-bezier(0.2, 0.1, 0.35, 1) 0.32s forwards; }
-  .pl-jet3 { animation: pl-jet3 2.2s cubic-bezier(0.2, 0.1, 0.35, 1) 0.6s forwards; }
-  .pl-grid  { animation: pl-gridPulse 2s ease-in-out infinite; }
-  .pl-title { animation: pl-titleReveal 1.1s cubic-bezier(0.4,0,0.2,1) forwards; }
-  .pl-subtitle { animation: pl-subtitleFade 0.9s ease-out 0.6s forwards; opacity: 0; }
-  .pl-roundel  { animation: pl-roundelIn 0.9s cubic-bezier(0.34,1.56,0.64,1) forwards; }
-  .pl-exit  { animation: pl-fadeOut 0.55s ease-in forwards; }
-  .pl-enter { animation: pl-fadeIn 0.4s ease-out forwards; }
+  .pl-jet1 { animation: pl-jet1 0.636s cubic-bezier(0.2, 0.1, 0.35, 1) forwards; }
+  .pl-jet2 { animation: pl-jet2 0.607s cubic-bezier(0.2, 0.1, 0.35, 1) 0.093s forwards; }
+  .pl-jet3 { animation: pl-jet3 0.636s cubic-bezier(0.2, 0.1, 0.35, 1) 0.173s forwards; }
+  .pl-grid  { animation: pl-gridPulse 0.578s ease-in-out infinite; }
+  .pl-title { animation: pl-titleReveal 0.318s cubic-bezier(0.4,0,0.2,1) forwards; }
+  .pl-subtitle { animation: pl-subtitleFade 0.26s ease-out 0.173s forwards; opacity: 0; }
+  .pl-roundel  { animation: pl-roundelIn 0.26s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+  .pl-exit  { animation: pl-fadeOut 0.159s ease-in forwards; }
+  .pl-enter { animation: pl-fadeIn 0.116s ease-out forwards; }
 `
 
 /* ─── Fighter jet SVG (top-down view, nose pointing UP) ─── */
@@ -155,9 +155,9 @@ export default function Preloader({ onComplete }) {
     styleEl.current = el
 
     /* Timeline */
-    const t1 = setTimeout(() => setPhase('text'), 2200)
-    const t2 = setTimeout(() => setPhase('exit'), 3600)
-    const t3 = setTimeout(() => onComplete(),     4150)
+    const t1 = setTimeout(() => setPhase('text'), 650)
+    const t2 = setTimeout(() => setPhase('exit'), 1050)
+    const t3 = setTimeout(() => onComplete(),     1200)
 
     return () => {
       clearTimeout(t1); clearTimeout(t2); clearTimeout(t3)
@@ -260,10 +260,13 @@ export default function Preloader({ onComplete }) {
           {/* Rotaract Mark of Excellence spin-in */}
           <div className="pl-roundel" style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>
             <img
-              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.png"
+              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.webp"
               alt="Rotaract Mark of Excellence"
               width={68}
               height={68}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
               style={{ objectFit: 'contain' }}
             />
           </div>
@@ -312,7 +315,7 @@ export default function Preloader({ onComplete }) {
               position: 'absolute', left: 0, right: 0, height: 2,
               background: 'linear-gradient(90deg,transparent,rgba(0,200,255,0.9),transparent)',
               boxShadow: '0 0 14px rgba(0,200,255,0.8)',
-              animation: 'pl-scanLine 1.3s linear forwards',
+              animation: 'pl-scanLine 0.376s linear forwards',
             }} />
           </div>
         </div>
