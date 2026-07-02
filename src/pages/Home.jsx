@@ -8,7 +8,6 @@ const HOME_CSS = `
   @keyframes sliderFadeIn { from{opacity:0;transform:scale(1.03);} to{opacity:1;transform:scale(1);} }
   @keyframes roundelSpin  { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
   @keyframes trailDraw    { from{stroke-dashoffset:600;opacity:0;} 10%{opacity:.65;} to{stroke-dashoffset:0;opacity:.28;} }
-  @keyframes moePulse     { 0%,100%{opacity:.7;} 50%{opacity:1;} }
 
   @keyframes reticleCW  { from{transform:rotate(0deg);}  to{transform:rotate(360deg);}  }
   @keyframes reticleCCW { from{transform:rotate(0deg);}  to{transform:rotate(-360deg);} }
@@ -141,20 +140,45 @@ function Roundel({ size = 80 }) {
 /* ─────────────────────────────────────────────────────────────
    HUD RETICLE
 ───────────────────────────────────────────────────────────── */
+function HUDReticle({ size = 210 }) {
+  const c = size / 2
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none">
+      <circle cx={c} cy={c} r={c - 4} stroke="rgba(255,255,255,.25)" strokeWidth="1" strokeDasharray="7 6" />
+      <circle cx={c} cy={c} r={c - 16} stroke="rgba(255,107,26,.5)" strokeWidth="1.5" strokeDasharray="36 18"
+        style={{ animation: 'reticleCW 7s linear infinite', transformOrigin: `${c}px ${c}px` }} />
+      <circle cx={c} cy={c} r={c - 32} stroke="rgba(212,19,103,.5)" strokeWidth="1.5" strokeDasharray="18 10"
+        style={{ animation: 'reticleCCW 5s linear infinite', transformOrigin: `${c}px ${c}px` }} />
+      <circle cx={c} cy={c} r={c - 50} stroke="rgba(255,255,255,.45)" strokeWidth="1" />
+      <line x1={c} y1={6} x2={c} y2={c - 44} stroke="rgba(255,255,255,.38)" strokeWidth="1" />
+      <line x1={c} y1={c + 44} x2={c} y2={size - 6} stroke="rgba(255,255,255,.38)" strokeWidth="1" />
+      <line x1={6} y1={c} x2={c - 44} y2={c} stroke="rgba(255,255,255,.38)" strokeWidth="1" />
+      <line x1={c + 44} y1={c} x2={size - 6} y2={c} stroke="rgba(255,255,255,.38)" strokeWidth="1" />
+      {[[32, 32], [size - 32, 32], [32, size - 32], [size - 32, size - 32]].map(([x, y], i) => {
+        const dx = x < c ? 12 : -12, dy = y < c ? 12 : -12
+        return <g key={i}><line x1={x} y1={y} x2={x + dx} y2={y} stroke="rgba(255,107,26,.7)" strokeWidth="1.8" /><line x1={x} y1={y} x2={x} y2={y + dy} stroke="rgba(255,107,26,.7)" strokeWidth="1.8" /></g>
+      })}
+      <circle cx={c} cy={c} r={c - 50} stroke="rgba(255,107,26,.5)" strokeWidth="2"
+        style={{ animation: 'reticlePing 2.2s ease-out infinite', transformOrigin: `${c}px ${c}px` }} />
+      <circle cx={c} cy={c} r={5} fill="rgba(255,107,26,.8)" />
+      <circle cx={c} cy={c} r={2} fill="#fff" />
+    </svg>
+  )
+}
 
 /* ─────────────────────────────────────────────────────────────
    DATA
 ───────────────────────────────────────────────────────────── */
 const SLIDES = [
   { tag: 'ROTARACT DISTRICT 3191 · 2026–27', title: 'SOAR ABOVE.', titleAccent: 'SERVE BEYOND.', sub: 'Empowering communities through innovative service projects and dynamic youth engagement.' },
-  { tag: 'LEADERSHIP · SERVICE · FELLOWSHIP', title: 'LEAD WITH', titleAccent: 'PURPOSE.', sub: 'Join 50+ clubs and 2,000+ Rotaractors on a mission that creates lasting impact.' },
+  { tag: 'LEADERSHIP · SERVICE · FELLOWSHIP', title: 'LEAD WITH', titleAccent: 'PURPOSE.', sub: 'Join 80+ clubs and 1900+ Rotaractors on a mission that creates lasting impact.' },
   { tag: 'DISTRICT EVENTS · 2026–27', title: 'FLY HIGH.', titleAccent: 'GIVE BACK.', sub: 'From the District Learning Assembly to Vaayu — our flagship events bring the district together.' },
 ]
 
 const QUICK_LINKS = [
-  { icon: '🚀', title: '3191 Showcase', href: 'https://showcase.rotaract3191.org/', desc: 'Your go-to platform for reporting and displaying your club’s projects. Highlight initiatives, share impact and connect.', tag: 'EXTERNAL', internal: false },
-  { icon: '📋', title: 'Forms & Links', href: 'https://go.rotaract3191.org/links', desc: 'Access essential forms and links for seamless club operations — RIDE applications, event registrations, all in one place.', tag: 'RESOURCES', internal: false },
-  { icon: '🎨', title: 'Resources', href: '/resources', desc: 'Resources and guidelines to maintain consistent branding across all platforms for a unified and professional image.', tag: 'INTERNAL', internal: true },
+  { icon: '', title: '3191 Showcase', href: 'https://showcase.rotaract3191.org/', desc: 'Your go-to platform for reporting and displaying your club’s projects. Highlight initiatives, share impact and connect.', tag: '', internal: false },
+  { icon: '', title: 'Forms & Links', href: '/quick-links', desc: 'Access essential forms and links for seamless club operations — RIDE applications, event registrations, all in one place.', tag: '', internal: false },
+  { icon: '', title: 'Resources', href: '/resources', desc: 'Resources and guidelines to maintain consistent branding across all platforms for a unified and professional image.', tag: '', internal: true },
 ]
 
 const EVENTS = [
@@ -166,7 +190,7 @@ const EVENTS = [
 const TEAM = [
   { name: 'Rtn. Rtr. Anirudh Kulkarni', role: 'District Rotaract Representative', photo: '/assets/team/2026-27/core-team/Karthik U Chikmath.jpeg' },
   { name: 'Rtn. Rtr. Karthik Chikmath', role: 'Immediate Past DRR', photo: '/assets/team/2026-27/core-team/Karthik U Chikmath.jpeg' },
-  { name: 'Rtn. Rtr. Rohan A', role: 'District Rotaract Representative Elect', photo: '/assets/team/2026-27/core-team/Rohan A.jpg' },
+  { name: 'Rtn. Rtr. Rohan A', role: 'District Rotaract Representative Elect', photo: '/assets/team/2026-27/core-team/Rohan A.JPG' },
   { name: 'PP. Rtr. Girish AR', role: 'General Secretary', photo: '/assets/team/2026-27/core-team/Girish A R.jpeg' },
   { name: 'PP. Rtr. Soumi Bhattacharyya', role: 'District Rotaract Secretary - Admin', photo: '/assets/team/2026-27/core-team/Soumi Bhattacharyya.jpeg' },
   { name: 'PP. Rtr. Padma Nesar R', role: 'District Rotaract Secretary - Operations', photo: '/assets/team/2026-27/core-team/Padma Nesar R.jpg' },
@@ -203,7 +227,7 @@ function HeroSlider() {
         {/* Photo background */}
         <div key={current} style={{
           position: 'absolute', inset: 0, zIndex: 0,
-          backgroundImage: 'url(/assets/hero-bg.webp)',
+          backgroundImage: 'url(/assets/hero-bg.jpg)',
           backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
           animation: 'sliderFadeIn .9s ease forwards',
         }} />
@@ -231,28 +255,16 @@ function HeroSlider() {
               onClick={() => goTo(i)}
               aria-label={`Slide ${i + 1}`}
               style={{
-                height: 24,
-                width: current === i ? 40 : 24,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                height: 8,
+                width: current === i ? 24 : 8,
+                borderRadius: 4,
                 border: 'none',
                 cursor: 'pointer',
                 padding: 0,
-                background: 'transparent',
+                background: current === i ? '#d41367' : 'rgba(255,255,255,.4)',
+                transition: 'width .32s ease, background .32s ease',
               }}
-            >
-              <span
-                style={{
-                  display: 'block',
-                  height: 8,
-                  width: current === i ? 24 : 8,
-                  borderRadius: 4,
-                  background: current === i ? '#d41367' : 'rgba(255,255,255,.4)',
-                  transition: 'width .32s ease, background .32s ease',
-                }}
-              />
-            </button>
+            />
           ))}
         </div>
 
@@ -299,12 +311,10 @@ export default function Home() {
       <section id="quick-links" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4">
           <div>
-            <h2 className="font-black text-slate-900">Quick Links</h2>
+            <h2 className="font-black text-xl text-slate-900">Quick Links</h2>
             <p className="text-xs tracking-[0.25em] text-slate-500">FLIGHT CONTROLS</p>
           </div>
-          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
-            {QUICK_LINKS.length} LINKS
-          </div>
+
         </div>
 
         <div className="p-5 grid gap-5 md:grid-cols-3">
@@ -319,11 +329,7 @@ export default function Home() {
                 style={{ textDecoration: 'none' }}
               >
                 <div className="absolute inset-x-0 top-0 h-2 bg-linear-to-r from-[#d41367] via-[#ff8fb0] to-slate-900" />
-                <div className="mt-2 flex items-center justify-between">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500">{ql.tag}</p>
-                  <span className="text-lg">{ql.icon}</span>
-                </div>
-                <h3 className="mt-3 text-xl font-black tracking-tight text-slate-900">{ql.title}</h3>
+                <h3 className="mt-2 text-xl font-black tracking-tight text-slate-900">{ql.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">{ql.desc}</p>
               </Wrap>
             )
@@ -339,23 +345,19 @@ export default function Home() {
           {/* HUDReticle — kept intact on left */}
           <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center', width: 'clamp(160px,30vw,210px)', margin: '0 auto' }}>
             <img
-              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.webp"
+              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.png"
               alt="Rotaract Mark of Excellence"
-              width={205}
-              height={205}
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-              style={{ width: 205, height: 205, objectFit: 'contain', animation: 'moePulse 3s ease-in-out infinite' }}
+              style={{ width: 205, height: 205, objectFit: 'contain' }}
             />
+
           </div>
 
           {/* Right content */}
           <div style={{ flex: '1 1 280px' }}>
             <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">ABOUT US</p>
-            <h1 className="mt-2 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className="mt-2 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
               About Rotaract<br />District 3191
-            </h1>
+            </h2>
             <div className="mt-3 h-[3px] w-11 rounded-full bg-[#d41367]" />
 
             <p className="mt-4 text-base leading-8 text-slate-600">
@@ -366,7 +368,7 @@ export default function Home() {
             </p>
 
             <div className="mt-4 space-y-2">
-              {['50+ active Rotaract clubs across the district', '2,000+ young leaders united in service', '100+ community projects completed'].map((t, i) => (
+              {['80+ active Rotaract clubs across the district', '1,900+ young leaders united in service', '100+ community projects completed'].map((t, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-[#d41367]" />
                   <p className="text-sm leading-7 text-slate-600">{t}</p>
@@ -387,13 +389,13 @@ export default function Home() {
       </section>
 
       {/* ══ §4 EVENTS ══ */}
-      <section id="events" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
+      {/* <section id="events" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4">
           <div>
             <h2 className="font-black text-slate-900">District Events</h2>
             <p className="text-xs tracking-[0.25em] text-slate-500">MISSION CALENDAR</p>
           </div>
-          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
+          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/10 px-3 py-1 text-xs font-bold text-[#d41367]">
             {EVENTS.length} EVENTS
           </div>
         </div>
@@ -427,7 +429,7 @@ export default function Home() {
             View All Events →
           </Link>
         </div>
-      </section>
+      </section> */}
 
       {/* ══ §5 TEAM ══ */}
       <section id="team-preview" className="relative overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
@@ -441,14 +443,11 @@ export default function Home() {
             <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">DISTRICT COMMAND CENTER</p>
             <h2 className="font-black text-slate-900">Meet The Team</h2>
           </div>
-          <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
-            {TEAM.length} MEMBERS
-          </div>
         </div>
 
-        <div className="relative p-5 flex flex-wrap justify-center gap-4">
+        <div className="relative p-5 grid grid-cols-2 gap-4 md:grid-cols-4">
           {TEAM.map((m, i) => (
-            <div key={i} id={`tm-${i}`} className="w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367]">
+            <div key={i} id={`tm-${i}`} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367]">
               <div className="aspect-square overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]">
                 <img
                   src={m.photo}
@@ -458,8 +457,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-3">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500">PERSONNEL</p>
-                <h3 className="mt-1 text-sm font-black text-slate-900 leading-tight">{m.name}</h3>
+                <h4 className="mt-1 text-sm font-black text-slate-900 leading-tight">{m.name}</h4>
                 <p className="mt-1 text-xs leading-5 text-slate-600">{m.role}</p>
               </div>
             </div>
