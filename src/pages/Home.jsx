@@ -227,7 +227,7 @@ function HeroSlider() {
         {/* Photo background */}
         <div key={current} style={{
           position: 'absolute', inset: 0, zIndex: 0,
-          backgroundImage: 'url(/assets/hero-bg.jpg)',
+          backgroundImage: 'url(/assets/hero-bg.webp)',
           backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
           animation: 'sliderFadeIn .9s ease forwards',
         }} />
