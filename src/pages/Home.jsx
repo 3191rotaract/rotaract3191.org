@@ -477,7 +477,7 @@ export default function Home() {
       </section>
 
       {/* ══ §6 SPONSORS ══ */}
-      <section id="sponsors" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
+      {/* <section id="sponsors" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center border-b border-slate-200 bg-slate-50 px-6 py-4">
           <span className="mr-3 h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
           <div>
@@ -501,7 +501,7 @@ export default function Home() {
             Interested in partnering? Contact us at the district office.
           </p>
         </div>
-      </section>
+      </section> */}
 
     </div>
   )
