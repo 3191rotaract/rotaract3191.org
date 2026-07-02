@@ -345,7 +345,7 @@ export default function Home() {
           {/* HUDReticle — kept intact on left */}
           <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center', width: 'clamp(160px,30vw,210px)', margin: '0 auto' }}>
             <img
-              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.png"
+              src="/assets/brand-centre/2026-27/Rotaract Mark of Excellence.webp"
               alt="Rotaract Mark of Excellence"
               style={{ width: 205, height: 205, objectFit: 'contain' }}
             />
