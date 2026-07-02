@@ -11,7 +11,7 @@ const links = [
   { id: 8, title: "Squadron District Council Info", type: "link", href: null },
   { id: 9, title: "Guest Profile & Photos", type: "link", href: null },
   { id: 10, title: "Annual District Club Dues", type: "pdf", href: '/assets/docs/Club Dues 2026-27.pdf' },
-  { id: 11, title: "Q1 Recognition Guidelines", type: "pdf", href: null },
+  { id: 11, title: "Q1 - Top Gun Recognition Guidelines", type: "pdf", href: '/assets/docs/Top Gun Recognition Guidelines, Quarter 1.pdf' },
 ];
 
 function LinkRow({ item }) {

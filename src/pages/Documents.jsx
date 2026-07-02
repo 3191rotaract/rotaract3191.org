@@ -68,12 +68,12 @@ const documentSections = [
   },
   {
     id: 2,
-    category: "Recognition Guidelines",
-    code: "CG-01",
+    category: "Top Gun Recognition Guidelines",
+    code: "TG-RecGuide",
     documents: [
       {
-        title: "Q1 Recognition Guidelines",
-        file: "/docs/q1-recognition.pdf",
+        title: "Q1 - Top Gun Recognition Guidelines",
+        file: "/assets/docs/Top Gun Recognition Guidelines, Quarter 1.pdf",
       },
     ],
   },
