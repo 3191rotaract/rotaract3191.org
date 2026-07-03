@@ -190,7 +190,7 @@ export default function AboutRotaract() {
             {[
               ["1968", "MISSION INITIATED — First Rotaract Club Chartered"],
               ["1968", "GLOBAL DEPLOYMENT — Rotaract Adopted by Rotary International"],
-              ["1969", "INDIA ENTRY — First Indian Rotaract Club Chartered"],
+              ["1968", "INDIA ENTRY — First Indian Rotaract Club Chartered"],
               ["1980s", "WORLD EXPANSION — Presence Established Across Continents"],
               ["1990s", "SERVICE SCALE-UP — Large Community Impact Projects Begin"],
               ["2013", "ELEVATE ROTARACT — Leadership Pathways Enhanced"],
