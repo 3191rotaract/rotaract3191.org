@@ -7,6 +7,7 @@ export const navItems = [
     dropdown: [
       { label: 'About Rotaract', path: '/about' },
       { label: 'About Rotaract 3191', path: '/about-3191' },
+      { label: 'Know Your DRR-Elect', path: '/know-your-drr-elect' },
       { label: 'Team', path: '/team' }
     ]
   },

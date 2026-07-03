@@ -4,7 +4,7 @@ import { Download, FileText, Image as ImageIcon } from "lucide-react";
 const profiles = [
     {
         id: 1,
-        name: "Rtn. Sridhar B R",
+        name: "Rtn. Anil Gupta",
         position: "District Governor",
         photo: "/assets/profiles/sridhar-br.jpg",
         pdf: "/assets/profiles/DG-Sridhar-BR.pdf",

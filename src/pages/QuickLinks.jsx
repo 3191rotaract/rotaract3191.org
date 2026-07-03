@@ -2,16 +2,16 @@ import { FileText, ExternalLink, Download, Zap } from "lucide-react";
 
 const links = [
   { id: 1, title: "Year Calendar", type: "pdf", href: '/assets/RI Dist. 3191 - Squadron Year Calendar - RY 2026-27.pdf' },
-  { id: 2, title: "Brand Guidelines", type: "pdf", href: null },
-  { id: 3, title: "Club Installation Slot Booking", type: "link", href: 'https://go.rotaract3191.org/bookinstallation2627' },
   { id: 4, title: "Squadron Club Installation Guidelines", type: "pdf", href: '/assets/docs/Clubs Installation Guidelines, RY 2026-27.pdf' },
+  { id: 3, title: "Club Installation Slot Booking", type: "link", href: 'https://go.rotaract3191.org/bookinstallation2627' },
   { id: 5, title: "3191 Brand Centre", type: "link", href: '/resources/logos' },
   { id: 6, title: "Club Leaders Form", type: "link", href: 'https://forms.gle/YneKinPpxXSec9rJ8' },
-  { id: 7, title: "Squadron Club Leaders Info", type: "link", href: null },
-  { id: 8, title: "Squadron District Council Info", type: "link", href: null },
-  { id: 9, title: "Guest Profile & Photos", type: "link", href: null },
+  { id: 7, title: "Squadron Club Leaders Info", type: "link", href: 'https://docs.google.com/spreadsheets/d/1mxPqp4e6ztpHA0cCgXHwh73UuHJiXk1SDNG-OisGfB0/edit?gid=0#gid=0 ' },
+  // { id: 8, title: "Squadron District Council Info", type: "link", href: null },
+  { id: 9, title: "Guest Profile & Photos", type: "link", href: '/resources/profiles' },
   { id: 10, title: "Annual District Club Dues", type: "pdf", href: '/assets/docs/Club Dues 2026-27.pdf' },
   { id: 11, title: "Q1 - Top Gun Recognition Guidelines", type: "pdf", href: '/assets/docs/Top Gun Recognition Guidelines, Quarter 1.pdf' },
+  // { id: 2, title: "Brand Guidelines", type: "pdf", href: null },
 ];
 
 function LinkRow({ item }) {

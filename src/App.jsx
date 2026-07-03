@@ -16,6 +16,7 @@ const EventDetails = lazy(() => import('./pages/EventDetails.jsx'))
 const Zones = lazy(() => import('./pages/Zones.jsx'))
 const AboutRotaract = lazy(() => import('./pages/AboutRotaract.jsx'))
 const AboutRotaract3191 = lazy(() => import('./pages/AboutRotaract3191.jsx'))
+const DrrElect = lazy(() => import('./pages/DrrElect.jsx'))
 const Documents = lazy(() => import('./pages/Documents.jsx'))
 const Profiles = lazy(() => import('./pages/Profiles.jsx'))
 const QuickLinks = lazy(() => import('./pages/QuickLinks.jsx'))
@@ -35,6 +36,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<AboutRotaract />} />
               <Route path="about-3191" element={<AboutRotaract3191 />} />
+              <Route path="know-your-drr-elect" element={<DrrElect />} />
               <Route path="newsletters" element={<Newsletters />} />
               <Route path="resources" element={<BrandCenter />} />
               <Route path="resources/logos" element={<Logos />} />
