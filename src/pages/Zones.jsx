@@ -261,7 +261,7 @@ export default function Zones() {
 
                   <div className="flex gap-4 items-center">
 
-                    <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-white shadow">
+                    <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-white shadow">
 
                       <img
                         src={club.presidentPhoto || '/assets/images/placeholder.png'}
@@ -275,10 +275,6 @@ export default function Zones() {
 
                       {club.presidentName ? (
                         <>
-                          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400">
-                            Club Commander
-                          </p>
-
                           <h3 className="mt-1 font-bold text-slate-900 line-clamp-2">
                             {club.presidentName}
                           </h3>
@@ -288,7 +284,7 @@ export default function Zones() {
                           >
                             PRESIDENT
                           </p>
-                          <h3 className="mt-1 font-bold text-slate-900 line-clamp-2">
+                          <h3 className="mt-1 text-sm font-semibold text-slate-900 line-clamp-2">
                             {club.name}
                           </h3>
                         </>

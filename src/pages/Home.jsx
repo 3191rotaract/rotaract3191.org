@@ -190,7 +190,7 @@ const EVENTS = [
 const TEAM = [
   { name: 'Rtn. Rtr. Anirudh Kulkarni', role: 'District Rotaract Representative', photo: '/assets/team/2026-27/core-team/Anirudh.webp' },
   { name: 'Rtn. Rtr. Karthik Chikmath', role: 'Immediate Past DRR', photo: '/assets/team/2026-27/core-team/Karthik U Chikmath.jpeg' },
-  { name: 'Rtn. Rtr. Rohan A', role: 'District Rotaract Representative Elect', photo: '/assets/team/2026-27/core-team/Rohan A.JPG' },
+  { name: 'Rtn. Rtr. Rohan A', role: 'District Rotaract Representative Elect', photo: '/assets/team/2026-27/core-team/Rohan A.jpg' },
   { name: 'PP. Rtr. Girish AR', role: 'General Secretary', photo: '/assets/team/2026-27/core-team/Girish A R.jpeg' },
   { name: 'PP. Rtr. Soumi Bhattacharyya', role: 'District Rotaract Secretary - Admin', photo: '/assets/team/2026-27/core-team/Soumi Bhattacharyya.jpeg' },
   { name: 'PP. Rtr. Padma Nesar R', role: 'District Rotaract Secretary - Operations', photo: '/assets/team/2026-27/core-team/Padma Nesar R.jpg' },
