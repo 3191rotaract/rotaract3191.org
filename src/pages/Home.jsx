@@ -198,12 +198,7 @@ const TEAM = [
 ]
 
 const SPONSORS = [
-  { name: 'Rotary International', abbr: 'RI' },
-  { name: 'Title Sponsor A', abbr: 'TS–A' },
-  { name: 'Title Sponsor B', abbr: 'TS–B' },
-  { name: 'Gold Sponsor', abbr: 'GOLD' },
-  { name: 'Silver Sponsor', abbr: 'SILVER' },
-  { name: 'Associate Sponsor', abbr: 'ASSOC' },
+  { name: 'Tixora', role: 'Tech Partners', logo: '/assets/sponsors/tixora.svg' },
 ]
 
 /* ─────────────────────────────────────────────────────────────
@@ -477,7 +472,7 @@ export default function Home() {
       </section>
 
       {/* ══ §6 SPONSORS ══ */}
-      {/* <section id="sponsors" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
+      <section id="sponsors" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center border-b border-slate-200 bg-slate-50 px-6 py-4">
           <span className="mr-3 h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
           <div>
@@ -492,8 +487,13 @@ export default function Home() {
               <div key={i} id={`sp-${i}`}
                 className="rounded-2xl border border-slate-200 bg-slate-50 px-6 py-4 text-center min-w-28 transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367]"
               >
-                <div className="text-lg font-black tracking-wide text-slate-900">{sp.abbr}</div>
-                <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-slate-500">{sp.name}</div>
+                {sp.logo && (
+                  <img src={sp.logo} alt={sp.name} className="mx-auto mb-2 h-8 w-auto object-contain" />
+                )}
+                {sp.role && (
+                  <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-slate-500">{sp.role}</div>
+                )}
+                <div className="text-lg font-black tracking-wide text-slate-900">{sp.name}</div>
               </div>
             ))}
           </div>
@@ -501,7 +501,7 @@ export default function Home() {
             Interested in partnering? Contact us at the district office.
           </p>
         </div>
-      </section> */}
+      </section>
 
     </div>
   )

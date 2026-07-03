@@ -8,7 +8,7 @@ function LogoCard({ collection, onPreview }) {
             <button
                 type="button"
                 onClick={() => onPreview(collection)}
-                className="relative aspect-4/3 overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]"
+                className="relative aspect-4/3 overflow-hidden bg-[linear-gradient(180deg,#e2e8f0_0%,#cbd5e1_100%)]"
             >
                 <img
                     src={collection.cover}
@@ -227,7 +227,7 @@ function Logos() {
                                 <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
 
                                     {/* Main Asset */}
-                                    <div className="rounded-[1.75rem] border border-slate-200 bg-[linear-gradient(180deg,#f9fafb_0%,#eef2f7_100%)] p-4">
+                                    <div className="rounded-[1.75rem] border border-slate-200 bg-[linear-gradient(180deg,#e2e8f0_0%,#cbd5e1_100%)] p-4">
 
                                         <div className="mb-4 flex items-center justify-between">
                                             <div>
@@ -288,7 +288,7 @@ function Logos() {
                                                         <span className="h-2.5 w-2.5 rounded-full bg-[#d41367]" />
                                                     </div>
 
-                                                    <div className="rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)] p-3">
+                                                    <div className="rounded-[1.25rem] bg-[linear-gradient(180deg,#e2e8f0_0%,#cbd5e1_100%)] p-3">
                                                         <img
                                                             src={variant.file}
                                                             alt={variant.label}
