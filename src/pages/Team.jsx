@@ -82,7 +82,7 @@ const zrrs = [
   {
     id: 4,
     position: "Zonal Rotaract Representative",
-    zone: "Zone Mirage",
+    zone: "Zone Rafale",
     name: "Rtr. Rohith K R",
     photo: "/assets/team/2026-27/council/Rohith.jpeg",
     rtr_id: "12131373",
@@ -140,7 +140,7 @@ const zrrs = [
 const council = [
   {
     id: 1,
-    avenue: "Vikrant - 4th Annual Rotaract District Conference",
+    avenue: "Vaayu - 4th Annual Rotaract District Conference",
     members: [
       {
         id: 1,
