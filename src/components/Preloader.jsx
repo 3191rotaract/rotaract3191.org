@@ -57,15 +57,15 @@ const PRELOADER_CSS = `
     0%   { r: 6; opacity: 1; }
     100% { r: 48; opacity: 0; }
   }
-  .pl-jet1 { animation: pl-jet1 0.636s cubic-bezier(0.2, 0.1, 0.35, 1) forwards; }
-  .pl-jet2 { animation: pl-jet2 0.607s cubic-bezier(0.2, 0.1, 0.35, 1) 0.093s forwards; }
-  .pl-jet3 { animation: pl-jet3 0.636s cubic-bezier(0.2, 0.1, 0.35, 1) 0.173s forwards; }
-  .pl-grid  { animation: pl-gridPulse 0.578s ease-in-out infinite; }
-  .pl-title { animation: pl-titleReveal 0.318s cubic-bezier(0.4,0,0.2,1) forwards; }
-  .pl-subtitle { animation: pl-subtitleFade 0.26s ease-out 0.173s forwards; opacity: 0; }
-  .pl-roundel  { animation: pl-roundelIn 0.26s cubic-bezier(0.34,1.56,0.64,1) forwards; }
-  .pl-exit  { animation: pl-fadeOut 0.159s ease-in forwards; }
-  .pl-enter { animation: pl-fadeIn 0.116s ease-out forwards; }
+  .pl-jet1 { animation: pl-jet1 0.992s cubic-bezier(0.2, 0.1, 0.35, 1) forwards; }
+  .pl-jet2 { animation: pl-jet2 0.947s cubic-bezier(0.2, 0.1, 0.35, 1) 0.145s forwards; }
+  .pl-jet3 { animation: pl-jet3 0.992s cubic-bezier(0.2, 0.1, 0.35, 1) 0.27s forwards; }
+  .pl-grid  { animation: pl-gridPulse 0.901s ease-in-out infinite; }
+  .pl-title { animation: pl-titleReveal 0.496s cubic-bezier(0.4,0,0.2,1) forwards; }
+  .pl-subtitle { animation: pl-subtitleFade 0.406s ease-out 0.27s forwards; opacity: 0; }
+  .pl-roundel  { animation: pl-roundelIn 0.406s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+  .pl-exit  { animation: pl-fadeOut 0.248s ease-in forwards; }
+  .pl-enter { animation: pl-fadeIn 0.181s ease-out forwards; }
 `
 
 /* ─── Fighter jet SVG (top-down view, nose pointing UP) ─── */
@@ -155,9 +155,9 @@ export default function Preloader({ onComplete }) {
     styleEl.current = el
 
     /* Timeline */
-    const t1 = setTimeout(() => setPhase('text'), 650)
-    const t2 = setTimeout(() => setPhase('exit'), 1050)
-    const t3 = setTimeout(() => onComplete(),     1200)
+    const t1 = setTimeout(() => setPhase('text'), 1014)
+    const t2 = setTimeout(() => setPhase('exit'), 1638)
+    const t3 = setTimeout(() => onComplete(),     1872)
 
     return () => {
       clearTimeout(t1); clearTimeout(t2); clearTimeout(t3)
@@ -182,7 +182,7 @@ export default function Preloader({ onComplete }) {
         transparent 100%)`,
       borderRadius: width / 2,
       filter: `blur(${width * 0.8}px)`,
-      animation: `pl-afterburn 0.13s ease-in-out ${delay}s infinite`,
+      animation: `pl-afterburn 0.203s ease-in-out ${delay}s infinite`,
       transformOrigin: 'top center',
     }} />
   )
@@ -240,7 +240,7 @@ export default function Preloader({ onComplete }) {
             width: 62, height: 155, marginLeft: -31,
           }}>
             <FighterJet id="b" />
-            <Trail width={5} height={90} delay={0.04} />
+            <Trail width={5} height={90} delay={0.062} />
           </div>
 
           {/* ── Right jet ── */}
@@ -249,7 +249,7 @@ export default function Preloader({ onComplete }) {
             width: 46, height: 115, marginLeft: -23,
           }}>
             <FighterJet id="c" />
-            <Trail width={3} height={60} delay={0.07} />
+            <Trail width={3} height={60} delay={0.109} />
           </div>
         </>
       )}
@@ -315,7 +315,7 @@ export default function Preloader({ onComplete }) {
               position: 'absolute', left: 0, right: 0, height: 2,
               background: 'linear-gradient(90deg,transparent,rgba(0,200,255,0.9),transparent)',
               boxShadow: '0 0 14px rgba(0,200,255,0.8)',
-              animation: 'pl-scanLine 0.376s linear forwards',
+              animation: 'pl-scanLine 0.587s linear forwards',
             }} />
           </div>
         </div>

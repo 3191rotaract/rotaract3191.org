@@ -1,45 +1,23 @@
 const CONTACT_DETAILS = [
   {
     label: 'Email',
-    value: 'To be updated',
+    value: 'rotaract3191drr2728@gmail.com',
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
     ),
   },
   {
-    label: 'Phone',
-    value: 'To be updated',
-    icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a1 1 0 01.98.8l1.06 5.3a1 1 0 01-.5 1.08L7.09 11.2a11.04 11.04 0 005.71 5.71l1.02-1.73a1 1 0 011.08-.5l5.3 1.06a1 1 0 01.8.98V19a2 2 0 01-2 2h-1C9.82 21 3 14.18 3 6V5z" />
-    ),
-  },
-  {
     label: 'Home Club',
-    value: 'To be updated',
+    value: 'Rotaract Club of Bangalore Orchards',
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 11h.01M15 11h.01M9 15h.01M15 15h.01" />
     ),
-  },
-  {
-    label: 'Based In',
-    value: 'To be updated',
-    icon: (
-      <>
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </>
-    ),
-  },
+  }
 ]
 
 function ContactCard({ label, value, icon }) {
   return (
     <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#d41367]/20 bg-[#d41367]/10 text-[#d41367]">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          {icon}
-        </svg>
-      </div>
       <div>
         <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
           {label}
@@ -88,7 +66,7 @@ export default function DrrElect() {
                 Rtn. Rtr. Rohan A
               </h2>
               <p className="mt-3 text-sm leading-7 text-slate-600">
-                Profile details to be updated.
+
               </p>
             </div>
 

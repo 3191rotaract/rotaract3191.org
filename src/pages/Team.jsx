@@ -1084,7 +1084,7 @@ function DistrictCard({ member }) {
 
         {member.rtr_id && (
           <div className="absolute bottom-2 right-2 rounded-full bg-white/95 px-2 py-1 text-[10px] font-semibold text-[#d41367] shadow">
-            #{member.rtr_id}
+            {member.rtr_id}
           </div>
         )}
       </div>
