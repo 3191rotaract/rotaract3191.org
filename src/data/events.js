@@ -9,7 +9,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Rotary International', logo: '/assets/brand-centre/2026-27/Rotaract 3191 Masterbrand Simplified.png' },
       { name: 'Sponsor A', logo: '' },
       { name: 'Sponsor B', logo: '' }
@@ -24,7 +24,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Alumni Network', logo: '' }
     ]
   },
@@ -37,7 +37,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Rotary Foundation', logo: '' }
     ]
   },
@@ -50,7 +50,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1516483638261-f40af5bf27c1?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'State Tourism', logo: '' }
     ]
   },
@@ -63,7 +63,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1621619894361-9c3f0b0933af?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1601823984263-b87b59798b70?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Cultural Ministry', logo: '' }
     ]
   },
@@ -76,7 +76,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Education NGO', logo: '' }
     ]
   },
@@ -89,7 +89,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Sports Gear Co', logo: '' }
     ]
   },
@@ -102,7 +102,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Rotary Foundation', logo: '' }
     ]
   },
@@ -116,7 +116,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Title Sponsor', logo: '' },
       { name: 'Associate Sponsor', logo: '' }
     ]
@@ -130,7 +130,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1537565266751-34dd6b0b0010?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Outdoor Gear', logo: '' }
     ]
   },
@@ -143,7 +143,7 @@ export const DISTRICT_EVENTS = [
       'https://images.unsplash.com/photo-1531685250784-afb5c5422fbc?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1561489422-45de3d015e3e?auto=format&fit=crop&w=1200&q=80'
     ],
-    sponsors: [
+    partners: [
       { name: 'Award Sponsor', logo: '' }
     ]
   }

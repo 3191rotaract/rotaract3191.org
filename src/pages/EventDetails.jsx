@@ -60,10 +60,10 @@ export default function EventDetails() {
                 <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500">Photos</div>
                 <div className="mt-2 text-2xl font-black text-slate-900">{event.photos.length}</div>
               </div>
-              {event.sponsors?.length > 0 && (
+              {event.partners?.length > 0 && (
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-center min-w-32">
-                  <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500">Sponsors</div>
-                  <div className="mt-2 text-2xl font-black text-slate-900">{event.sponsors.length}</div>
+                  <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500">Partners</div>
+                  <div className="mt-2 text-2xl font-black text-slate-900">{event.partners.length}</div>
                 </div>
               )}
             </div>
@@ -139,8 +139,8 @@ export default function EventDetails() {
         </div>
       </section>
 
-      {/* ABOUT + SPONSORS */}
-      <div className={`mt-6 grid gap-6 ${event.sponsors?.length > 0 ? 'lg:grid-cols-[1.4fr_1fr]' : ''}`}>
+      {/* ABOUT + PARTNERS */}
+      <div className={`mt-6 grid gap-6 ${event.partners?.length > 0 ? 'lg:grid-cols-[1.4fr_1fr]' : ''}`}>
 
         {/* ABOUT */}
         <div className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
@@ -159,22 +159,22 @@ export default function EventDetails() {
           </div>
         </div>
 
-        {/* SPONSORS */}
-        {event.sponsors?.length > 0 && (
+        {/* PARTNERS */}
+        {event.partners?.length > 0 && (
           <div className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
             <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4">
               <div>
-                <h2 className="font-black text-slate-900">Event Sponsors</h2>
+                <h2 className="font-black text-slate-900">Event Partners</h2>
                 <p className="text-xs tracking-[0.25em] text-slate-500">ALLIED PARTNERS</p>
               </div>
               <div className="rounded-full border border-[#d41367]/20 bg-[#d41367]/5 px-3 py-1 text-xs font-bold text-[#d41367]">
-                {event.sponsors.length} PARTNERS
+                {event.partners.length} PARTNERS
               </div>
             </div>
 
             <div className="p-6">
               <div className="flex flex-wrap justify-center gap-5">
-                {event.sponsors.map((sponsor, idx) => (
+                {event.partners.map((sponsor, idx) => (
                   <div
                     key={idx}
                     className="group flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-1"

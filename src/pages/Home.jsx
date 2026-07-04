@@ -184,7 +184,7 @@ const QUICK_LINKS = [
 const EVENTS = [
   { name: 'District Learning Assembly', slug: 'district-learning-assembly', abbr: 'DLA', icon: '📚', desc: 'The flagship learning event bringing Rotaractors together for workshops and knowledge-sharing.', color: '#38bdf8' },
   { name: 'Nadda Habba', slug: 'nadda-habba', abbr: 'NH', icon: '🎉', desc: 'A cultural celebration uniting clubs in a spirit of fellowship, music and tradition.', color: '#fb923c' },
-  { name: 'Vaayu – 4th Annual District Conference', slug: 'vaayu-district-conference', abbr: 'VAAYU', icon: '✈', desc: 'The premier district conference bringing leaders, sponsors and members together — an unmissable milestone.', color: '#fb923c' },
+  { name: 'Vaayu – 4th Annual District Conference', slug: 'vaayu-district-conference', abbr: 'VAAYU', icon: '✈', desc: 'The premier district conference bringing leaders, partners and members together — an unmissable milestone.', color: '#fb923c' },
 ]
 
 const TEAM = [
@@ -197,8 +197,8 @@ const TEAM = [
   { name: 'PP. Rtr. Ram M Narayanan', role: 'District Rotaract Secretary - Initiatives', photo: '/assets/team/2026-27/core-team/Ram M Narayanan.jpeg' },
 ]
 
-const SPONSORS = [
-  { name: 'Tixora', role: 'Tech Partners', logo: '/assets/sponsors/tixora.svg' },
+const PARTNERS = [
+  { name: 'Tixora', role: 'Tech Partners', logo: '/assets/partners/tixora.svg' },
 ]
 
 /* ─────────────────────────────────────────────────────────────
@@ -471,19 +471,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ §6 SPONSORS ══ */}
-      <section id="sponsors" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
+      {/* ══ §6 patterns ══ */}
+      <section id="patterns" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center border-b border-slate-200 bg-slate-50 px-6 py-4">
           <span className="mr-3 h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
           <div>
-            <h2 className="font-black text-slate-900">Year-Long Sponsors</h2>
+            <h2 className="font-black text-slate-900">Year-Long Partners</h2>
             <p className="text-xs tracking-[0.25em] text-slate-500">OUR YEAR LONG · ALLIED PARTNERS</p>
           </div>
         </div>
 
         <div className="p-8">
           <div className="flex flex-wrap justify-center gap-4">
-            {SPONSORS.map((sp, i) => (
+            {PARTNERS.map((sp, i) => (
               <div key={i} id={`sp-${i}`}
                 className="rounded-2xl border border-slate-200 bg-slate-50 px-6 py-4 text-center min-w-28 transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367]"
               >
