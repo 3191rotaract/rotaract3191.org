@@ -696,7 +696,7 @@ const council = [
         id: 4,
         name: "Rtr. Aman Agarwal",
         position: "District Next Gen Committee",
-        photo: "/assets/team/2026-27/council/Aman.webp",
+        photo: "/assets/team/2026-27/council/Aman.jpeg",
         rtr_id: "11933517",
         executive: false,
         district: true,
