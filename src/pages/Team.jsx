@@ -511,15 +511,6 @@ const council = [
       },
       {
         id: 2,
-        name: "Rtr. Nandan Kumar V S",
-        position: "District Design & Visual Communications Director",
-        photo: "/assets/team/2026-27/council/Nandan.jpg",
-        rtr_id: "11914938",
-        executive: true,
-        district: false,
-      },
-      {
-        id: 3,
         name: "Rtr. Deeksha A J",
         position: "District Design & Visual Communications Director",
         photo: "/assets/team/2026-27/council/Deeksha.jpg",
@@ -528,7 +519,7 @@ const council = [
         district: false,
       },
       {
-        id: 4,
+        id: 3,
         name: "Rtr. Shravanth Kumar P.",
         position: "District Design & Visual Communications Committee",
         photo: "/assets/team/2026-27/council/Shravanth.webp",
@@ -705,7 +696,7 @@ const council = [
         id: 4,
         name: "Rtr. Aman Agarwal",
         position: "District Next Gen Committee",
-        photo: "/assets/team/2026-27/council/Aman.webp",
+        photo: "/assets/team/2026-27/council/Aman.jpeg",
         rtr_id: "11933517",
         executive: false,
         district: true,
