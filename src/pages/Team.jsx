@@ -154,7 +154,7 @@ const council = [
       {
         id: 2,
         name: "Rtr. Laasya A Bhagawan",
-        position: "District Secretary",
+        position: "Conference Secretary",
         photo: "/assets/team/2026-27/council/Laasya.jpeg",
         rtr_id: "11820886",
         executive: true,
