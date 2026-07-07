@@ -103,7 +103,7 @@ export default function ProfileDetails() {
 
                     <div className="p-6 space-y-4">
                         {profile.paragraphs.map((paragraph, idx) => (
-                            <p key={idx} className="text-base leading-8 text-slate-600">
+                            <p key={idx} className="text-sm md:text-base leading-8 text-slate-600">
                                 {paragraph}
                             </p>
                         ))}

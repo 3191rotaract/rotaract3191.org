@@ -7,7 +7,7 @@ import './App.css'
 
 const BrandCenter = lazy(() => import('./pages/BrandCenter.jsx'))
 const Newsletters = lazy(() => import('./pages/Newsletters.jsx'))
-const NotFound = lazy(() => import('./pages/NotFound.jsx'))
+const LinkRedirect = lazy(() => import('./pages/LinkRedirect.jsx'))
 const Team = lazy(() => import('./pages/Team.jsx'))
 const Logos = lazy(() => import('./pages/Logos.jsx'))
 const Calendar = lazy(() => import('./pages/Calendar.jsx'))
@@ -50,7 +50,7 @@ function App() {
               <Route path="events/:slug" element={<EventDetails />} />
               <Route path="zones" element={<Zones />} />
               <Route path="resource-hub" element={<ResourceHub />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="*" element={<LinkRedirect />} />
             </Route>
           </Routes>
         </Suspense>
