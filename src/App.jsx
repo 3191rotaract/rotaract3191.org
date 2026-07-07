@@ -19,6 +19,7 @@ const AboutRotaract3191 = lazy(() => import('./pages/AboutRotaract3191.jsx'))
 const DrrElect = lazy(() => import('./pages/DrrElect.jsx'))
 const Documents = lazy(() => import('./pages/Documents.jsx'))
 const Profiles = lazy(() => import('./pages/Profiles.jsx'))
+const ProfileDetails = lazy(() => import('./pages/ProfileDetails.jsx'))
 const ResourceHub = lazy(() => import('./pages/ResourceHub.jsx'))
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
               <Route path="resources/logos" element={<Logos />} />
               <Route path="resources/documents" element={<Documents />} />
               <Route path="resources/profiles" element={<Profiles />} />
+              <Route path="resources/profiles/:slug" element={<ProfileDetails />} />
               <Route path="team" element={<Team />} />
               <Route path="calendar" element={<Calendar />} />
               <Route path="events" element={<Events />} />

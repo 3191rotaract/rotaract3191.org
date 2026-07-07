@@ -76,7 +76,7 @@ const zrrs = [
     position: "Zonal Rotaract Representative",
     zone: "Zone Rafale",
     name: "Rtr. Hemant Chhajer",
-    photo: "/assets/team/2026-27/council/Hemant.jpg",
+    photo: "/assets/team/2026-27/council/Hemant.jpeg",
     rtr_id: "10334499",
   },
   {
