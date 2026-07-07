@@ -177,7 +177,7 @@ const SLIDES = [
 
 const QUICK_LINKS = [
   { icon: '', title: '3191 Showcase', href: 'https://showcase.rotaract3191.org/', desc: 'Your go-to platform for reporting and displaying your club’s projects. Highlight initiatives, share impact and connect.', tag: '', internal: false },
-  { icon: '', title: 'Forms & Links', href: '/quick-links', desc: 'Access essential forms and links for seamless club operations — RIDE applications, event registrations, all in one place.', tag: '', internal: false },
+  { icon: '', title: 'Forms & Links', href: '/resource-hub', desc: 'Access essential forms and links for seamless club operations — RIDE applications, event registrations, all in one place.', tag: '', internal: true },
   { icon: '', title: 'Resources', href: '/resources', desc: 'Resources and guidelines to maintain consistent branding across all platforms for a unified and professional image.', tag: '', internal: true },
 ]
 
@@ -303,10 +303,10 @@ export default function Home() {
       <HeroSlider />
 
       {/* ══ §2 QUICK LINKS ══ */}
-      <section id="quick-links" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
+      <section id="resource-hub" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4">
           <div>
-            <h2 className="font-black text-xl text-slate-900">Quick Links</h2>
+            <h2 className="font-black text-xl text-slate-900">Resource Hub</h2>
             <p className="text-xs tracking-[0.25em] text-slate-500">FLIGHT CONTROLS</p>
           </div>
 

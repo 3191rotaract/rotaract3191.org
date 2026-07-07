@@ -55,7 +55,7 @@ function LinkRow({ item }) {
   );
 }
 
-export default function QuickLinks() {
+export default function ResourceHub() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-6">
 
@@ -67,7 +67,7 @@ export default function QuickLinks() {
             <Zap size={16} className="text-[#d41367]" />
           </div>
           <div>
-            <h1 className="text-lg font-black tracking-tight text-slate-900">Quick Links</h1>
+            <h1 className="text-lg font-black tracking-tight text-slate-900">Resource Hub</h1>
             <p className="text-xs text-slate-500">Fast access to squadron forms, documents and resources</p>
           </div>
         </div>

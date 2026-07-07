@@ -19,7 +19,7 @@ const AboutRotaract3191 = lazy(() => import('./pages/AboutRotaract3191.jsx'))
 const DrrElect = lazy(() => import('./pages/DrrElect.jsx'))
 const Documents = lazy(() => import('./pages/Documents.jsx'))
 const Profiles = lazy(() => import('./pages/Profiles.jsx'))
-const QuickLinks = lazy(() => import('./pages/QuickLinks.jsx'))
+const ResourceHub = lazy(() => import('./pages/ResourceHub.jsx'))
 
 function App() {
   const [preloaderDone, setPreloaderDone] = useState(false)
@@ -47,7 +47,7 @@ function App() {
               <Route path="events" element={<Events />} />
               <Route path="events/:slug" element={<EventDetails />} />
               <Route path="zones" element={<Zones />} />
-              <Route path="quick-links" element={<QuickLinks />} />
+              <Route path="resource-hub" element={<ResourceHub />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
