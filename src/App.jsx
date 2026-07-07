@@ -1,13 +1,14 @@
-import { lazy, Suspense, useState } from 'react'
+import { lazy, Suspense, useLayoutEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Preloader from './components/Preloader.jsx'
 import SiteLayout from './components/SiteLayout.jsx'
 import Home from './pages/Home.jsx'
+import { CUSTOM_LINKS } from './data/links.js'
 import './App.css'
 
 const BrandCenter = lazy(() => import('./pages/BrandCenter.jsx'))
 const Newsletters = lazy(() => import('./pages/Newsletters.jsx'))
-const LinkRedirect = lazy(() => import('./pages/LinkRedirect.jsx'))
+const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 const Team = lazy(() => import('./pages/Team.jsx'))
 const Logos = lazy(() => import('./pages/Logos.jsx'))
 const Calendar = lazy(() => import('./pages/Calendar.jsx'))
@@ -23,14 +24,37 @@ const ProfileDetails = lazy(() => import('./pages/ProfileDetails.jsx'))
 const ResourceHub = lazy(() => import('./pages/ResourceHub.jsx'))
 
 function App() {
+  const [isHomeLanding] = useState(() => window.location.pathname === '/')
   const [preloaderDone, setPreloaderDone] = useState(false)
+  const showPreloader = isHomeLanding && !preloaderDone
+
+  const slug = window.location.pathname.replace(/^\/+|\/+$/g, '')
+  const redirectTarget = CUSTOM_LINKS[slug]
+
+  useLayoutEffect(() => {
+    if (redirectTarget) {
+      window.location.replace(redirectTarget)
+    }
+  }, [redirectTarget])
+
+  if (redirectTarget) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+        <img
+          src="/assets/brand-centre/2026-27/Rotaract 3191 CLA - Cranberry.png"
+          alt="Rotaract District 3191"
+          className="h-16 w-auto animate-pulse"
+        />
+      </div>
+    )
+  }
 
   return (
     <>
-      {!preloaderDone && (
+      {showPreloader && (
         <Preloader onComplete={() => setPreloaderDone(true)} />
       )}
-      <div style={{ opacity: preloaderDone ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+      <div style={{ opacity: showPreloader ? 0 : 1, transition: 'opacity 0.6s ease' }}>
         <Suspense fallback={null}>
           <Routes>
             <Route element={<SiteLayout />}>
@@ -50,7 +74,7 @@ function App() {
               <Route path="events/:slug" element={<EventDetails />} />
               <Route path="zones" element={<Zones />} />
               <Route path="resource-hub" element={<ResourceHub />} />
-              <Route path="*" element={<LinkRedirect />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </Suspense>
