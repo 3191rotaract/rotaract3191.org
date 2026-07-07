@@ -81,12 +81,17 @@ export const PROFILES = [
     designation: 'DRRE',
     designationFull: 'District Rotaract Representative Elect | Rotary International District 3191, RY 2026-27',
     name: 'Rtn. Rtr. Rohan A',
-    primaryPhoto: '/assets/team/2026-27/core-team/Rohan A.jpg',
+    primaryPhoto: '/assets/team/2026-27/profiles/Rtn. Rtr. Rohan A/Rtn. Rtr. Rohan A. 1.JPG',
     photos: [
-      '/assets/team/2026-27/core-team/Rohan A.jpg',
+      '/assets/team/2026-27/profiles/Rtn. Rtr. Rohan A/Rtn. Rtr. Rohan A. 1.JPG',
+      '/assets/team/2026-27/profiles/Rtn. Rtr. Rohan A/Rtn. Rtr. Rohan A. 2.JPG',
+      '/assets/team/2026-27/profiles/Rtn. Rtr. Rohan A/Rtn. Rtr. Rohan A. 3.JPG',
     ],
     paragraphs: [
-      'Profile coming soon',
+      'Rtr. Rohan A began his Rotaract journey in 2016 with the Rotaract Club of Bangalore Orchards, where his passion for leadership and service transformed into an inspiring journey of impact. Over the years, he has served his club in multiple capacities, including Secretary, President, Immediate Past President, Treasurer, and Club Advisor, demonstrating unwavering commitment to strengthening his club and empowering fellow Rotaractors.',
+      'At the district level, Rohan has consistently taken on key leadership responsibilities, serving as District Club Service Director, District Rotacamp Chair, Zonal Rotaract Representative for Zone Titans, District Events & Resources Head, District Rotaract Conference Chair, and District Secretary – Operations. His ability to build teams, execute large-scale initiatives, and lead with collaboration has made him one of the most respected leaders in the district.',
+      'Professionally, Rohan is a first-generation entrepreneur and the Founder & Director of Hype Experts, an event management and production company specializing in corporate events, experiential setups, and turnkey event solutions. A graduate in Bachelor of Business Administration (HR Specialisation), he has successfully combined his entrepreneurial mindset with his passion for creating meaningful experiences.',
+      'Currently serving as the District Rotaract Representative-Elect for RI District 3191 (RIY 2026–27), Rohan believes that every Rotaractor has the potential to lead, every club has a unique story to tell, and every opportunity is a chance to create lasting impact. With humility, vision, and an unwavering commitment to service, he looks forward to leading the district towards a more connected, inclusive, and purpose-driven future.',
     ],
   },
 ];
