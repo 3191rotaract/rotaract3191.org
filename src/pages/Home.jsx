@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { HeartHandshake, ExternalLink, FileText } from 'lucide-react'
 
 /* ─────────────────────────────────────────────────────────────
    INJECTED CSS — keyframes only; UI classes replaced by Tailwind
@@ -218,7 +219,10 @@ function HeroSlider() {
     <div className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
       <div className="h-1 bg-linear-to-r from-[#d41367] via-pink-300 to-slate-900" />
 
-      <section style={{ position: 'relative', minHeight: 'clamp(300px,65vh,550px)', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+      <section
+        className="aspect-[3/2] sm:aspect-auto sm:min-h-[clamp(300px,65vh,550px)]"
+        style={{ position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}
+      >
         {/* Photo background */}
         <div key={current} style={{
           position: 'absolute', inset: 0, zIndex: 0,
@@ -379,6 +383,73 @@ export default function Home() {
             >
               KNOW MORE →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ §3.5 THE ROTARY FOUNDATION ══ */}
+      <section
+        id="rotary-foundation"
+        className="relative overflow-hidden rounded-4xl border border-[#0a2f6b] shadow-[0_24px_80px_rgba(10,47,107,0.35)]"
+        style={{ background: 'linear-gradient(135deg, #0a2f6b 0%, #123a7d 55%, #0a2f6b 100%)' }}
+      >
+        <div className="h-1 bg-linear-to-r from-[#F7A81B] via-[#ffd166] to-[#0a2f6b]" />
+
+        <div className="relative flex flex-col gap-6 p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#F7A81B]/40 bg-[#F7A81B]/10 px-4 py-2">
+              <HeartHandshake size={14} className="text-[#F7A81B]" />
+              <span className="text-xs font-bold tracking-[0.25em] text-[#F7A81B]">
+                The Rotary Foundation
+              </span>
+            </div>
+
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-4xl">
+              Fund the Work That Outlives Us
+            </h2>
+
+            <p className="mt-2 text-sm md:text-base leading-8 text-blue-100/85">
+              You can easily contribute to The Rotary Foundation by making a secure online donation through the Rotary International Donation Portal.
+            </p>
+            <p className="mt-3 text-sm md:text-base leading-8 text-blue-100/85">
+              Whether you're looking to support global health, education, or disaster relief, your contribution directly funds sustainable service projects — with several ways to manage your giving.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2 items-center justify-center">
+              <a
+                href="https://my.rotary.org/en/donate"
+                target="_blank"
+                rel="noreferrer"
+                id="trf-donate-cta"
+                className="inline-flex items-center gap-2 rounded-full bg-[#F7A81B] px-6 py-3 text-sm font-bold uppercase tracking-[0.15em] text-[#0a2f6b] shadow-[0_10px_24px_rgba(247,168,27,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffbe3d] hover:shadow-[0_0_25px_rgba(247,168,27,0.5)]"
+                style={{ textDecoration: 'none' }}
+              >
+                DONATE TO TRF
+                <ExternalLink size={14} />
+              </a>
+
+              <a
+                href="/assets/159-rotary-foundation-facts-en.pdf"
+                target="_blank"
+                rel="noreferrer"
+                id="trf-facts-cta"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-6 py-3 text-sm font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F7A81B] hover:bg-white/10"
+                style={{ textDecoration: 'none' }}
+              >
+                <FileText size={14} />
+                See TRF Impact
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-shrink-0 justify-center lg:justify-end">
+            <div className="rounded-3xl bg-white p-5 shadow-[0_10px_24px_rgba(0,0,0,0.2)] sm:p-6">
+              <img
+                src="/assets/brand-centre/2026-27/TRF-Simple_RGB.png"
+                alt="The Rotary Foundation"
+                className="h-16 w-auto object-contain sm:h-20"
+              />
+            </div>
           </div>
         </div>
       </section>
