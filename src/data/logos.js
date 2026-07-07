@@ -200,4 +200,18 @@ export const logoCollections = [
             },
         ],
     },
+    {
+        id: 'trf',
+        title: 'The Rotary Foundation',
+        subtitle: 'TRF identity mark',
+        cover: '/assets/brand-centre/2026-27/TRF-Simple_RGB.png',
+        zipName: 'TheRotaryFoundation.zip',
+        zipLabel: 'Acquire ZIP',
+        variants: [
+            {
+                label: 'Primary',
+                file: '/assets/brand-centre/2026-27/TRF-Simple_RGB.png',
+            },
+        ],
+    },
 ]
