@@ -40,7 +40,7 @@ export const ZONES = [
     themeColor: '#ec4899', // Pink
     logo: '/assets/brand-centre/2026-27/zonal-logos/rafale.webp',
     leaders: [
-      { name: 'PP. Rtr. Hemanth', picture: '/assets/team/2026-27/council/Hemant.jpg' },
+      { name: 'PP. Rtr. Hemant', picture: '/assets/team/2026-27/council/Hemant.jpeg' },
       { name: 'IPP. Rtr. Rohith', picture: '/assets/team/2026-27/council/Rohith.jpeg' }
     ],
     clubs: [
