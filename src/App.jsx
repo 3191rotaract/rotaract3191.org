@@ -22,6 +22,7 @@ const Documents = lazy(() => import('./pages/Documents.jsx'))
 const Profiles = lazy(() => import('./pages/Profiles.jsx'))
 const ProfileDetails = lazy(() => import('./pages/ProfileDetails.jsx'))
 const ResourceHub = lazy(() => import('./pages/ResourceHub.jsx'))
+const DlaChairNominations = lazy(() => import('./pages/DlaChairNominations.jsx'))
 
 function App() {
   const [isHomeLanding] = useState(() => window.location.pathname === '/')
@@ -74,6 +75,7 @@ function App() {
               <Route path="events/:slug" element={<EventDetails />} />
               <Route path="zones" element={<Zones />} />
               <Route path="resource-hub" element={<ResourceHub />} />
+              <Route path="DLA-Chair-Nominations" element={<DlaChairNominations />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
