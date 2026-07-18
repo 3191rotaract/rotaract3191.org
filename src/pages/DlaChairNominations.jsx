@@ -127,6 +127,8 @@ export default function DlaChairNominations() {
         badgeText="DLA CHAIR NOMINATIONS"
         title="Siddhi - 4th District Learning Assembly"
         description="Put yourself forward to chair the 4th District Learning Assembly. Fill in the details below, we'll get back to you."
+        logo="/assets/brand-centre/2026-27/event-logos/Siddhi.png"
+        logoAlt="Siddhi — 4th District Learning Assembly logo"
       />
 
       <form
