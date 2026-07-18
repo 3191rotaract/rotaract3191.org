@@ -8,4 +8,7 @@ export default createSheetsFormHandler({
     { name: 'phone', required: true, maxLength: 20 },
     { name: 'designation', required: true, maxLength: 80 },
   ],
+  uniqueFields: [
+    { name: 'phone', message: 'This contact number has already been used for a DLA Chair nomination.' },
+  ],
 })

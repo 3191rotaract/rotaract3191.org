@@ -21,7 +21,7 @@ function jsonResponse(status, data) {
  * to CORS at all, so we get Apps Script's real JSON response back and can
  * surface a genuine success/error state to the user.
  */
-export function createSheetsFormHandler({ sheetName, fields }) {
+export function createSheetsFormHandler({ sheetName, fields, uniqueFields }) {
   return async (req) => {
     if (req.method !== 'POST') {
       return jsonResponse(405, { error: 'Method not allowed' })
@@ -53,15 +53,22 @@ export function createSheetsFormHandler({ sheetName, fields }) {
       const scriptRes = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sheetName, fields: clean }),
+        body: JSON.stringify({ sheetName, fields: clean, uniqueFields }),
         redirect: 'follow',
       })
 
       const data = await scriptRes.json().catch(() => ({}))
 
-      if (!scriptRes.ok || data.ok !== true) {
-        console.error('Apps Script rejected the submission:', scriptRes.status, data)
+      if (!scriptRes.ok) {
+        console.error('Apps Script request failed:', scriptRes.status, data)
         return jsonResponse(502, { error: 'Something went wrong. Please try again later.' })
+      }
+
+      // data.ok === false here means Apps Script deliberately rejected the
+      // submission (e.g. a uniqueFields duplicate) — surface its message
+      // rather than the generic failure text.
+      if (data.ok !== true) {
+        return jsonResponse(409, { error: data.error || 'This submission could not be processed.' })
       }
 
       return jsonResponse(201, { ok: true })

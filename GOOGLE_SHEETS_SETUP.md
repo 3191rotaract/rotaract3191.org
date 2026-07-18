@@ -79,6 +79,11 @@ a tab per `sheetName`. To add a new form to the site:
        { name: 'name', required: true, maxLength: 120 },
        // ...
      ],
+     // optional — reject a submission if this column already holds the
+     // same value (case-insensitive) in an existing row
+     uniqueFields: [
+       { name: 'phone', message: 'This contact number has already been used.' },
+     ],
    })
    ```
 2. Add a new page in `src/pages/`, following `DlaChairNominations.jsx` as a
