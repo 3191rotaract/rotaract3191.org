@@ -1,9 +1,22 @@
 import { useState } from 'react'
-import { Award, Send, AlertCircle, Loader2, User, Building2, Phone, IdCard, ChevronDown } from 'lucide-react'
+import {
+  Award,
+  Send,
+  AlertCircle,
+  Loader2,
+  User,
+  Building2,
+  Phone,
+  IdCard,
+  ChevronDown,
+  CalendarCheck,
+  Users,
+  FileText,
+  Trophy,
+} from 'lucide-react'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import FormField from '../components/forms/FormField.jsx'
 import FormPageHeader from '../components/forms/FormPageHeader.jsx'
-import FormSectionHeader from '../components/forms/FormSectionHeader.jsx'
 import FormSuccessMessage from '../components/forms/FormSuccessMessage.jsx'
 import { inputClasses, selectClasses } from '../components/forms/formStyles.js'
 import { ZONES } from '../data/zones.js'
@@ -12,10 +25,39 @@ const FIELDS = [
   { name: 'name', label: 'Full Name', icon: User, placeholder: 'e.g. Rtr. Girish A R', maxLength: 120 },
   { name: 'clubName', label: 'Club Name', icon: Building2, type: 'select' },
   { name: 'phone', label: 'Contact Number', icon: Phone, type: 'tel', placeholder: 'e.g. 98765 43210', maxLength: 20 },
-  { name: 'designation', label: 'Designation', icon: IdCard, placeholder: 'e.g. Club President, Secretary', maxLength: 80 },
+  { name: 'designation', label: 'Designation in Club', icon: IdCard, placeholder: 'e.g. Club President, Secretary', maxLength: 80 },
 ]
 
-const EMPTY_FORM = { name: '', clubName: '', phone: '', designation: '' }
+const YES_NO_FIELDS = [
+  {
+    name: 'chairedEvent',
+    label: 'Chaired any district or club event in the past?',
+    icon: CalendarCheck,
+    detailsName: 'chairedEventDetails',
+    detailsLabel: 'If yes, please describe your experience',
+    detailsPlaceholder: 'Briefly describe the event(s) and your role in chairing them',
+  },
+  {
+    name: 'workedCommittee',
+    label: 'Worked in any committees in District Events?',
+    icon: Users,
+    detailsName: 'workedCommitteeDetails',
+    detailsLabel: 'If yes, describe your roles & responsibilities',
+    detailsPlaceholder: 'Briefly describe the committee(s) and what you were responsible for',
+  },
+]
+
+const EMPTY_FORM = {
+  name: '',
+  clubName: '',
+  phone: '',
+  designation: '',
+  chairedEvent: '',
+  chairedEventDetails: '',
+  workedCommittee: '',
+  workedCommitteeDetails: '',
+  justification: '',
+}
 
 export default function DlaChairNominations() {
   const [form, setForm] = useState(EMPTY_FORM)
@@ -26,6 +68,14 @@ export default function DlaChairNominations() {
     setForm((prev) => ({ ...prev, [name]: value }))
   }
 
+  function updateYesNo(name, detailsName, value) {
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+      ...(value === 'no' ? { [detailsName]: '' } : {}),
+    }))
+  }
+
   function validate() {
     const errors = {}
 
@@ -34,6 +84,18 @@ export default function DlaChairNominations() {
       if (!value) {
         errors[field.name] = 'This field is required'
       }
+    }
+
+    for (const field of YES_NO_FIELDS) {
+      if (!form[field.name]) {
+        errors[field.name] = 'Please select an option'
+      } else if (form[field.name] === 'yes' && !form[field.detailsName].trim()) {
+        errors[field.detailsName] = 'This field is required'
+      }
+    }
+
+    if (!form.justification.trim()) {
+      errors.justification = 'This field is required'
     }
 
     setFieldErrors(errors)
@@ -65,6 +127,8 @@ export default function DlaChairNominations() {
         badgeText="DLA CHAIR NOMINATIONS"
         title="Siddhi - 4th District Learning Assembly"
         description="Put yourself forward to chair the 4th District Learning Assembly. Fill in the details below, we'll get back to you."
+        logo="/assets/brand-centre/2026-27/event-logos/Siddhi.png"
+        logoAlt="Siddhi — 4th District Learning Assembly logo"
       />
 
       <form
@@ -132,6 +196,63 @@ export default function DlaChairNominations() {
               </FormField>
             )
           })}
+
+          {YES_NO_FIELDS.map((field) => {
+            const Icon = field.icon
+            return (
+              <div key={field.name} className="space-y-6">
+                <FormField label={field.label} error={fieldErrors[field.name]}>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['yes', 'no'].map((option) => (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => updateYesNo(field.name, field.detailsName, option)}
+                        className={`flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-bold uppercase tracking-widest transition ${
+                          form[field.name] === option
+                            ? 'border-[#d41367] bg-[#d41367] text-white'
+                            : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300'
+                        }`}
+                      >
+                        <Icon size={16} />
+                        {option === 'yes' ? 'Yes' : 'No'}
+                      </button>
+                    ))}
+                  </div>
+                </FormField>
+
+                {form[field.name] === 'yes' && (
+                  <FormField label={field.detailsLabel} error={fieldErrors[field.detailsName]}>
+                    <div className="relative">
+                      <FileText size={18} className="pointer-events-none absolute left-4 top-4 text-slate-400" />
+                      <textarea
+                        value={form[field.detailsName]}
+                        maxLength={2000}
+                        rows={3}
+                        placeholder={field.detailsPlaceholder}
+                        onChange={(e) => updateField(field.detailsName, e.target.value)}
+                        className={inputClasses}
+                      />
+                    </div>
+                  </FormField>
+                )}
+              </div>
+            )
+          })}
+
+          <FormField label="Justify why you think you will be perfect as a DLA Chairperson." error={fieldErrors.justification}>
+            <div className="relative">
+              <Trophy size={18} className="pointer-events-none absolute left-4 top-4 text-slate-400" />
+              <textarea
+                value={form.justification}
+                maxLength={2000}
+                rows={4}
+                placeholder="Tell us what makes you the right fit for this role"
+                onChange={(e) => updateField('justification', e.target.value)}
+                className={inputClasses}
+              />
+            </div>
+          </FormField>
 
           {status === 'error' && (
             <div className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
