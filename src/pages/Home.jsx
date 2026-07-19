@@ -38,62 +38,13 @@ const HOME_CSS = `
 /* ─────────────────────────────────────────────────────────────
    FIGHTER JET SVG (top-down, nose pointing UP)
 ───────────────────────────────────────────────────────────── */
-function Jet({ id, flipped = false }) {
-  const gId = `jg-${id}`
-  const cId = `jc-${id}`
-  const fId = `jf-${id}`
-  const bId = `jb-${id}`
-  return (
-    <svg viewBox="0 0 100 240" fill="none" xmlns="http://www.w3.org/2000/svg"
-      style={{ width: '100%', height: '100%', transform: flipped ? 'scaleX(-1)' : 'none', filter: 'drop-shadow(0 0 6px rgba(255,107,26,.5))' }}>
-      <defs>
-        <radialGradient id={gId} cx="50%" cy="0%" r="100%">
-          <stop offset="0%" stopColor="#fff" stopOpacity="1" />
-          <stop offset="22%" stopColor="#ffcc44" stopOpacity=".95" />
-          <stop offset="55%" stopColor="#ff4400" stopOpacity=".5" />
-          <stop offset="100%" stopColor="#ff2200" stopOpacity="0" />
-        </radialGradient>
-        <linearGradient id={fId} x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#3a5060" />
-          <stop offset="48%" stopColor="#9fb8cc" />
-          <stop offset="100%" stopColor="#3a5060" />
-        </linearGradient>
-        <radialGradient id={cId} cx="50%" cy="30%" r="70%">
-          <stop offset="0%" stopColor="#c0f8ff" stopOpacity=".95" />
-          <stop offset="100%" stopColor="#00c8ff" stopOpacity=".5" />
-        </radialGradient>
-        <filter id={bId}><feGaussianBlur stdDeviation="4" /></filter>
-      </defs>
-      <ellipse cx="50" cy="204" rx="16" ry="38" fill={`url(#${gId})`} filter={`url(#${bId})`} opacity=".7" />
-      <path d="M50 7 C53 24 55 55 54 116 L50 198 L46 116 C45 55 47 24 50 7Z" fill={`url(#${fId})`} />
-      <path d="M46 68 L3 150 L9 158 L44 122 Z" fill="#7a9aaa" opacity=".88" />
-      <path d="M54 68 L97 150 L91 158 L56 122 Z" fill="#7a9aaa" opacity=".88" />
-      <path d="M47 43 L22 67 L24 73 L46 57 Z" fill="#7a9aaa" opacity=".92" />
-      <path d="M53 43 L78 67 L76 73 L54 57 Z" fill="#7a9aaa" opacity=".92" />
-      <path d="M47 154 L36 187 L41 185 L48 162 Z" fill="#7a9aaa" opacity=".9" />
-      <path d="M53 154 L64 187 L59 185 L52 162 Z" fill="#7a9aaa" opacity=".9" />
-      <ellipse cx="50" cy="27" rx="4.5" ry="10" fill={`url(#${cId})`} />
-      <ellipse cx="50" cy="25" rx="2" ry="5" fill="#d8f8ff" opacity=".65" />
-      <line x1="12" y1="128" x2="36" y2="118" stroke="#FF9933" strokeWidth="2" opacity=".7" />
-      <line x1="10" y1="135" x2="34" y2="125" stroke="#ffffff" strokeWidth="1" opacity=".5" />
-      <rect x="6" y="132" width="6" height="22" rx="3" fill="#ff6b1a" opacity=".9" />
-      <rect x="88" y="132" width="6" height="22" rx="3" fill="#ff6b1a" opacity=".9" />
-      <polygon points="9,132 6,122 12,122" fill="#ffcc44" opacity=".85" />
-      <polygon points="91,132 88,122 94,122" fill="#ffcc44" opacity=".85" />
-      <ellipse cx="50" cy="200" rx="10" ry="28" fill={`url(#${gId})`} />
-      <ellipse cx="50" cy="197" rx="5" ry="13" fill="#fffde8" opacity=".8" />
-      <ellipse cx="50" cy="195" rx="2" ry="6" fill="#fff" opacity=".95" />
-    </svg>
-  )
-}
-
 /* ─────────────────────────────────────────────────────────────
-   SIDE JETS (fixed, both edges of viewport)
+   SIDE ZONAL LOGOS (fixed, both edges of viewport)
 ───────────────────────────────────────────────────────────── */
 function SideJets() {
   const Trail = ({ w = 3, h = 55, delay = 0 }) => (
     <div className="ab" style={{
-      position: 'absolute', bottom: -h * .6, left: '50%', transform: 'translateX(-50%)',
+      position: 'absolute', bottom: -h * .65, left: '50%', transform: 'translateX(-50%)',
       width: w, height: h,
       background: `linear-gradient(to bottom,#fff 0%,#ffcc44 18%,#ff6b1a 45%,#ff2200 75%,transparent 100%)`,
       borderRadius: w / 2, filter: `blur(${w * .9}px)`,
@@ -103,20 +54,47 @@ function SideJets() {
 
   return (
     <div>
-      <div style={{ position: 'fixed', left: 6, top: 0, bottom: 0, width: 52, zIndex: 5, pointerEvents: 'none', overflow: 'hidden' }}>
-        <div className="sj-a" style={{ position: 'absolute', bottom: 0, left: 0, width: 48, height: 118 }}>
-          <Jet id="la" /><Trail w={4} h={62} delay={0} />
+      {/* Left side: Mirage and Sukhoi */}
+      <div style={{ position: 'fixed', left: 6, top: 0, bottom: 0, width: 80, zIndex: 5, pointerEvents: 'none', overflow: 'hidden' }}>
+        {/* Zone Mirage */}
+        <div className="sj-a" style={{ position: 'absolute', bottom: 0, left: 8, width: 64, height: 64 }}>
+          <img
+            src="/assets/brand-centre/2026-27/zonal-logos/mirage.webp"
+            alt="Zone Mirage Logo"
+            className="w-full h-full object-contain"
+          />
+          <Trail w={5} h={75} delay={0} />
         </div>
-        <div className="sj-b" style={{ position: 'absolute', bottom: 0, left: 6, width: 34, height: 84 }}>
-          <Jet id="lb" /><Trail w={2.5} h={44} delay={.06} />
+        {/* Zone Sukhoi */}
+        <div className="sj-c" style={{ position: 'absolute', bottom: 0, right: 8, width: 64, height: 64 }}>
+          <img
+            src="/assets/brand-centre/2026-27/zonal-logos/sukhoi.webp"
+            alt="Zone Sukhoi Logo"
+            className="w-full h-full object-contain"
+          />
+          <Trail w={5} h={75} delay={0} />
         </div>
       </div>
-      <div style={{ position: 'fixed', right: 6, top: 0, bottom: 0, width: 52, zIndex: 5, pointerEvents: 'none', overflow: 'hidden' }}>
-        <div className="sj-c" style={{ position: 'absolute', bottom: 0, right: 0, width: 48, height: 118 }}>
-          <Jet id="rc" flipped /><Trail w={4} h={62} delay={0} />
+
+      {/* Right side: Rafale and Tejas */}
+      <div style={{ position: 'fixed', right: 6, top: 0, bottom: 0, width: 80, zIndex: 5, pointerEvents: 'none', overflow: 'hidden' }}>
+        {/* Zone Rafale */}
+        <div className="sj-b" style={{ position: 'absolute', bottom: 0, left: 14, width: 52, height: 52 }}>
+          <img
+            src="/assets/brand-centre/2026-27/zonal-logos/rafale.webp"
+            alt="Zone Rafale Logo"
+            className="w-full h-full object-contain"
+          />
+          <Trail w={3.5} h={55} delay={.06} />
         </div>
-        <div className="sj-d" style={{ position: 'absolute', bottom: 0, right: 6, width: 34, height: 84 }}>
-          <Jet id="rd" flipped /><Trail w={2.5} h={44} delay={.06} />
+        {/* Zone Tejas */}
+        <div className="sj-d" style={{ position: 'absolute', bottom: 0, right: 14, width: 52, height: 52 }}>
+          <img
+            src="/assets/brand-centre/2026-27/zonal-logos/tejas.webp"
+            alt="Zone Tejas Logo"
+            className="w-full h-full object-contain"
+          />
+          <Trail w={3.5} h={55} delay={.06} />
         </div>
       </div>
     </div>
@@ -171,9 +149,9 @@ function HUDReticle({ size = 210 }) {
    DATA
 ───────────────────────────────────────────────────────────── */
 const SLIDES = [
-  { tag: 'ROTARACT DISTRICT 3191 · 2026–27', title: 'SOAR ABOVE.', titleAccent: 'SERVE BEYOND.', sub: 'Empowering communities through innovative service projects and dynamic youth engagement.' },
-  { tag: 'LEADERSHIP · SERVICE · FELLOWSHIP', title: 'LEAD WITH', titleAccent: 'PURPOSE.', sub: 'Join 80+ clubs and 1900+ Rotaractors on a mission that creates lasting impact.' },
-  { tag: 'DISTRICT EVENTS · 2026–27', title: 'FLY HIGH.', titleAccent: 'GIVE BACK.', sub: 'From the District Learning Assembly to Vaayu — our flagship events bring the district together.' },
+  { tag: 'ROTARACT DISTRICT 3191 · 2026–27', title: 'SOAR ABOVE.', titleAccent: 'SERVE BEYOND.', sub: 'Empowering communities through innovative service projects and dynamic youth engagement.', image: '/assets/hero-bg.webp' },
+  { tag: 'LEADERSHIP · SERVICE · FELLOWSHIP', title: 'LEAD WITH', titleAccent: 'PURPOSE.', sub: 'Join 80+ clubs and 1900+ Rotaractors on a mission that creates lasting impact.', image: '/assets/hero-bg-2.webp' },
+  { tag: 'DISTRICT EVENTS · 2026–27', title: 'FLY HIGH.', titleAccent: 'GIVE BACK.', sub: 'From the District Learning Assembly to Vaayu — our flagship events bring the district together.', image: '/assets/hero-bg-3.webp' },
 ]
 
 const QUICK_LINKS = [
@@ -226,7 +204,7 @@ function HeroSlider() {
         {/* Photo background */}
         <div key={current} style={{
           position: 'absolute', inset: 0, zIndex: 0,
-          backgroundImage: 'url(/assets/hero-bg.webp)',
+          backgroundImage: `url(${SLIDES[current].image})`,
           backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
           animation: 'sliderFadeIn .9s ease forwards',
         }} />
