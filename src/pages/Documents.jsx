@@ -88,6 +88,17 @@ const documentSections = [
       },
     ],
   },
+  {
+    id: 3,
+    category: "Avenue Updates",
+    code: "AU-3191",
+    documents: [
+      {
+        title: "Twin Club Agreement Guidelines - RY 2026-27",
+        file: "public/assets/docs/Twin Club Agreement - RY 2026-27.pdf",
+      },
+    ],
+  },
 ];
 
 function SectionHeader({ title }) {
