@@ -33,11 +33,12 @@ export default function Events() {
   <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
     {DISTRICT_EVENTS.map((event) => (
-      <div
-        // key={event.slug}
-        // to={`/events/${event.slug}`}
+      <Link
+        key={event.slug}
+        to={`/events/${event.slug}`}
         className="
           group
+          flex flex-col
           overflow-hidden
           rounded-4xl
           border border-slate-200
@@ -106,7 +107,7 @@ export default function Events() {
           </p>
 
           {/* CTA */}
-          {/* <div
+          <div
             className="
               mt-6 flex items-center gap-2
               text-sm font-black uppercase
@@ -116,7 +117,7 @@ export default function Events() {
               group-hover:translate-x-1
             "
           >
-            Access Event
+            View Details
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -132,10 +133,10 @@ export default function Events() {
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
-          </div> */}
+          </div>
 
         </div>
-      </div>
+      </Link>
     ))}
 
   </div>

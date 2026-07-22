@@ -5,4 +5,5 @@ export const CUSTOM_LINKS = {
   'ec-dc-dues': 'https://forms.gle/HsFsfNT8aaFN98Qs8',
   'district-club-dues': 'https://docs.google.com/forms/d/15O4kUFJD84LNQfibhddWZi4oiI8wnEq-4o70LEpkZ5s/',
   'club-leaders': 'https://forms.gle/YneKinPpxXSec9rJ8',
+  'wheels-of-hope-registration': 'https://forms.gle/jMxGg9mZqHKRQ91P9',
 };
