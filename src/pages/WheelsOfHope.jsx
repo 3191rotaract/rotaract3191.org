@@ -1,5 +1,22 @@
 import React from 'react';
-import { Heart, Bike, Accessibility, Award, ShieldCheck, Sparkles, Users } from 'lucide-react';
+import { Heart, Bike, Accessibility, Award, ShieldCheck, Sparkles, Phone, ExternalLink, MessageCircle, ClipboardList } from 'lucide-react';
+
+const CONTACTS = [
+  {
+    name: 'Rtr. Ishita Poddar',
+    role: 'EC Community Service Director',
+    phone: '+91 9376717679',
+    phoneRaw: '+919376717679',
+    waRaw: '919376717679'
+  },
+  {
+    name: 'Rtr. Mahalakshmi',
+    role: 'DC Community Service Director',
+    phone: '+91 9113967388',
+    phoneRaw: '+919113967388',
+    waRaw: '919113967388'
+  }
+];
 
 export default function WheelsOfHope() {
   return (
@@ -39,30 +56,53 @@ export default function WheelsOfHope() {
               <span className="font-semibold text-[#d41367]">wheelchairs to individuals with mobility challenges</span>.
             </p>
 
-            {/* IMPACT QUICK STATS */}
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 pt-2">
-              <div className="rounded-2xl border border-slate-100 bg-slate-50 p-3.5 text-center">
-                <div className="flex justify-center text-[#d41367] mb-1">
-                  <Bike size={20} />
-                </div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Education</p>
-                <p className="text-xs font-extrabold text-slate-900 mt-0.5">Bicycle Drive</p>
-              </div>
+            {/* HERO CTA BUTTON */}
+            <div className="pt-1">
+              <a
+                href="https://forms.gle/jMxGg9mZqHKRQ91P9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-2xl bg-[#d41367] px-6 py-3.5 text-sm font-extrabold uppercase tracking-wider text-white shadow-lg shadow-[#d41367]/25 transition hover:bg-[#b00e54] hover:shadow-xl hover:-translate-y-0.5"
+              >
+                <ClipboardList size={18} />
+                Club Registration Form
+                <ExternalLink size={16} />
+              </a>
+            </div>
 
-              <div className="rounded-2xl border border-slate-100 bg-slate-50 p-3.5 text-center">
-                <div className="flex justify-center text-[#d41367] mb-1">
-                  <Accessibility size={20} />
-                </div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Inclusion</p>
-                <p className="text-xs font-extrabold text-slate-900 mt-0.5">Wheelchair Support</p>
-              </div>
+            {/* CONTACT DETAILS REPLACING STAT BOXES */}
+            <div className="pt-2">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500 mb-2.5">
+                Initiative Contacts
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {CONTACTS.map((person) => (
+                  <div key={person.name} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-3.5 space-y-1.5 shadow-xs">
+                    <div>
+                      <p className="text-sm font-extrabold text-slate-900">{person.name}</p>
+                      <p className="text-[10px] font-bold text-[#d41367] uppercase tracking-wider">{person.role}</p>
+                    </div>
 
-              <div className="col-span-2 sm:col-span-1 rounded-2xl border border-slate-100 bg-slate-50 p-3.5 text-center">
-                <div className="flex justify-center text-[#d41367] mb-1">
-                  <Users size={20} />
-                </div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">District 3191</p>
-                <p className="text-xs font-extrabold text-slate-900 mt-0.5">Community Action</p>
+                    <div className="flex items-center gap-2 pt-1">
+                      <a
+                        href={`tel:${person.phoneRaw}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-[#d41367] transition bg-white border border-slate-200 rounded-xl px-2.5 py-1"
+                      >
+                        <Phone size={12} className="text-[#d41367]" />
+                        {person.phone}
+                      </a>
+                      <a
+                        href={`https://wa.me/${person.waRaw}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center p-1.5 text-emerald-600 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl transition"
+                        title="WhatsApp Chat"
+                      >
+                        <MessageCircle size={14} />
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
