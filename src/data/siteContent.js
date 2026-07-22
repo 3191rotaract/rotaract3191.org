@@ -1,7 +1,7 @@
 export const navItems = [
   { label: 'Home', path: '/' },
-  { 
-    label: 'About', 
+  {
+    label: 'About',
     dropdown: [
       { label: 'About Rotaract', path: '/about' },
       { label: 'About Rotaract 3191', path: '/about-3191' },
@@ -10,11 +10,12 @@ export const navItems = [
     ]
   },
   { label: 'Zones', path: '/zones' },
-  { 
-    label: 'Events', 
+  {
+    label: 'Events',
     dropdown: [
-      { label: 'Calendar', path: '/calendar' },
-      { label: 'DLA Chair Nominations', path: '/DLA-Chair-Nominations' }
+      { label: 'Wheels of Hope', path: '/wheels-of-hope' },
+      { label: 'DLA Chair Nominations', path: '/DLA-Chair-Nominations' },
+      { label: 'Calendar', path: '/calendar' }
     ]
   },
   { label: 'Brand Center', path: '/resources' },
