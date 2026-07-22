@@ -50,7 +50,7 @@ const documentSections = [
     documents: [
       {
         title: "Installation Guidelines",
-        file: "/assets/docs/Clubs Installation Guidelines, RY 2026-27.pdf",
+        file: "/assets/docs/Clubs Installation Guidelines RY 2026-27.pdf",
       },
       // {
       //   title: "Reporting Guidelines - Coming Soon",
