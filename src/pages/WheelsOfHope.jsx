@@ -112,7 +112,7 @@ export default function WheelsOfHope() {
             <img
               src="/assets/Events/wheels of hope.webp"
               alt="Wheels of Hope — Empowering Mobility"
-              className="w-full h-auto max-h-[580px] object-contain rounded-2xl"
+              className="w-full h-auto max-h-145 object-contain rounded-2xl"
             />
           </div>
         </div>
