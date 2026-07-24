@@ -10,7 +10,7 @@ const CONTACTS = [
     waRaw: '919376717679'
   },
   {
-    name: 'Rtr. Mahalakshmi',
+    name: 'Rtr. S.S. Mahalakshmi',
     role: 'DC Community Service Director',
     phone: '+91 9113967388',
     phoneRaw: '+919113967388',
