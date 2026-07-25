@@ -26,6 +26,7 @@ export default createSheetsFormHandler({
   fields: [
     { name: 'avenue', required: true, maxLength: 60, oneOf: AVENUES },
     { name: 'name', required: true, maxLength: 120 },
+    { name: 'clubName', required: true, maxLength: 120 },
     { name: 'phone', required: true, maxLength: 20 },
     { name: 'riId', required: false, maxLength: 30 },
     { name: 'email', required: true, maxLength: 160, pattern: EMAIL_PATTERN },

@@ -20,12 +20,14 @@ import {
   Code2,
   GraduationCap,
   Landmark,
+  ChevronDown,
 } from 'lucide-react'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import FormField from '../components/forms/FormField.jsx'
 import FormPageHeader from '../components/forms/FormPageHeader.jsx'
 import FormSuccessMessage from '../components/forms/FormSuccessMessage.jsx'
-import { inputClasses } from '../components/forms/formStyles.js'
+import { inputClasses, selectClasses } from '../components/forms/formStyles.js'
+import { ZONES } from '../data/zones.js'
 
 // Keep in sync with the AVENUES list in
 // netlify/functions/submit-avenue-directors-data.js — each name here becomes
@@ -46,6 +48,7 @@ const AVENUES = [
 
 const FIELDS = [
   { name: 'name', label: 'Full Name', icon: User, placeholder: 'e.g. Rtn. Rtr. Anirudh G Kulkarni', maxLength: 120 },
+  { name: 'clubName', label: 'Club Name', icon: Building2, type: 'select' },
   { name: 'phone', label: 'Contact Number', icon: Phone, type: 'tel', placeholder: 'e.g. 98765 43210', maxLength: 20 },
   { name: 'riId', label: 'RI ID', icon: IdCard, placeholder: 'e.g. 12345678', maxLength: 30, optional: true },
   { name: 'email', label: 'Email Address', icon: Mail, type: 'email', placeholder: 'e.g. name@example.com', maxLength: 160 },
@@ -54,6 +57,7 @@ const FIELDS = [
 const EMPTY_FORM = {
   avenue: '',
   name: '',
+  clubName: '',
   phone: '',
   riId: '',
   email: '',
@@ -184,14 +188,39 @@ export default function AvenueDirectorsData() {
                       size={18}
                       className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
                     />
-                    <input
-                      type={field.type ?? 'text'}
-                      value={form[field.name]}
-                      maxLength={field.maxLength}
-                      placeholder={field.placeholder}
-                      onChange={(e) => updateField(field.name, e.target.value)}
-                      className={inputClasses}
-                    />
+                    {field.type === 'select' ? (
+                      <>
+                        <select
+                          value={form[field.name]}
+                          onChange={(e) => updateField(field.name, e.target.value)}
+                          className={selectClasses}
+                        >
+                          <option value="">Select your club</option>
+                          {ZONES.map((zone) => (
+                            <optgroup key={zone.id} label={zone.name}>
+                              {zone.clubs.map((club) => (
+                                <option key={club.name} value={club.name}>
+                                  {club.name}
+                                </option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </select>
+                        <ChevronDown
+                          size={16}
+                          className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"
+                        />
+                      </>
+                    ) : (
+                      <input
+                        type={field.type ?? 'text'}
+                        value={form[field.name]}
+                        maxLength={field.maxLength}
+                        placeholder={field.placeholder}
+                        onChange={(e) => updateField(field.name, e.target.value)}
+                        className={inputClasses}
+                      />
+                    )}
                   </div>
                 </FormField>
               )
