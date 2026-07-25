@@ -23,7 +23,7 @@ const Profiles = lazy(() => import('./pages/Profiles.jsx'))
 const ProfileDetails = lazy(() => import('./pages/ProfileDetails.jsx'))
 const ResourceHub = lazy(() => import('./pages/ResourceHub.jsx'))
 const DlaChairNominations = lazy(() => import('./pages/DlaChairNominations.jsx'))
-const WebTechDirectorsData = lazy(() => import('./pages/WebTechDirectorsData.jsx'))
+const AvenueDirectorsData = lazy(() => import('./pages/AvenueDirectorsData.jsx'))
 const WheelsOfHope = lazy(() => import('./pages/WheelsOfHope.jsx'))
 
 function App() {
@@ -78,7 +78,7 @@ function App() {
               <Route path="zones" element={<Zones />} />
               <Route path="resource-hub" element={<ResourceHub />} />
               <Route path="DLA-Chair-Nominations" element={<DlaChairNominations />} />
-              <Route path="web-tech-directors-data" element={<WebTechDirectorsData />} />
+              <Route path="avenue-directors-data" element={<AvenueDirectorsData />} />
               <Route path="wheels-of-hope" element={<WheelsOfHope />} />
               <Route path="*" element={<NotFound />} />
             </Route>

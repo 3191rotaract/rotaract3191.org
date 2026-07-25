@@ -10,8 +10,12 @@ function jsonResponse(status, data) {
 
 /**
  * Builds a Netlify Functions v2 handler for a validate-then-append-to-Google-Sheet
- * form. `sheetName` selects (or creates) a tab in the Apps Script's spreadsheet;
- * `fields` describes the expected string fields, same shape as createFormHandler.
+ * form. `sheetName` selects (or creates) a tab in the Apps Script's spreadsheet
+ * — either a fixed string, or a function of the validated fields (e.g. to route
+ * each submission to a different tab based on a field the user picked, such as
+ * an avenue). `fields` describes the expected string fields, same shape as
+ * createFormHandler. `scriptUrl` overrides which Apps Script deployment (and so
+ * which spreadsheet) the submission is sent to; defaults to GOOGLE_SCRIPT_URL.
  *
  * Why this goes through a Netlify Function instead of the browser calling Apps
  * Script directly: Apps Script Web Apps don't send CORS headers, so a direct
@@ -21,14 +25,16 @@ function jsonResponse(status, data) {
  * to CORS at all, so we get Apps Script's real JSON response back and can
  * surface a genuine success/error state to the user.
  */
-export function createSheetsFormHandler({ sheetName, fields, uniqueFields }) {
+export function createSheetsFormHandler({ sheetName, fields, uniqueFields, scriptUrl }) {
+  const url = scriptUrl ?? GOOGLE_SCRIPT_URL
+
   return async (req) => {
     if (req.method !== 'POST') {
       return jsonResponse(405, { error: 'Method not allowed' })
     }
 
-    if (GOOGLE_SCRIPT_URL.includes('PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE')) {
-      console.error('GOOGLE_SCRIPT_URL is not configured in _lib/sheetsConfig.mjs')
+    if (url.includes('PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE')) {
+      console.error('Apps Script URL is not configured in _lib/sheetsConfig.mjs')
       return jsonResponse(500, { error: 'Form is not configured yet. Please try again later.' })
     }
 
@@ -49,11 +55,13 @@ export function createSheetsFormHandler({ sheetName, fields, uniqueFields }) {
       return jsonResponse(400, { error: errors.join('; ') })
     }
 
+    const resolvedSheetName = typeof sheetName === 'function' ? sheetName(clean) : sheetName
+
     try {
-      const scriptRes = await fetch(GOOGLE_SCRIPT_URL, {
+      const scriptRes = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sheetName, fields: clean, uniqueFields }),
+        body: JSON.stringify({ sheetName: resolvedSheetName, fields: clean, uniqueFields }),
         redirect: 'follow',
       })
 

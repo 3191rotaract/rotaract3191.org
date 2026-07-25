@@ -10,7 +10,7 @@ const CONTACTS = [
     waRaw: '919376717679'
   },
   {
-    name: 'Rtr. Mahalakshmi',
+    name: 'Rtr. S.S. Mahalakshmi',
     role: 'DC Community Service Director',
     phone: '+91 9113967388',
     phoneRaw: '+919113967388',
@@ -112,7 +112,7 @@ export default function WheelsOfHope() {
             <img
               src="/assets/Events/wheels of hope.webp"
               alt="Wheels of Hope — Empowering Mobility"
-              className="w-full h-auto max-h-[580px] object-contain rounded-2xl"
+              className="w-full h-auto max-h-145 object-contain rounded-2xl"
             />
           </div>
         </div>

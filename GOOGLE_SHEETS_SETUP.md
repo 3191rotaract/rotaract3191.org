@@ -102,3 +102,29 @@ existing tab automatically.
 
 Just open the spreadsheet — each form's submissions land in their own tab,
 newest at the bottom, with a Timestamp column first.
+
+## Second sheet: Avenue Directors Data
+
+The Avenue Directors Data form (`/avenue-directors-data`) is deliberately
+**not** part of the shared spreadsheet above — it uses its own spreadsheet
+and its own Apps Script Web App deployment, so it needs its own setup:
+
+1. Create a new spreadsheet (e.g. **"Rotaract 3191 — Avenue Directors Data"**).
+   No need to create tabs by hand — one tab per avenue is created
+   automatically the first time someone submits for that avenue.
+2. In that spreadsheet, go to **Extensions → Apps Script**, delete the
+   placeholder code, and paste in
+   [`google-apps-script/AvenueDirectorsCode.gs`](./google-apps-script/AvenueDirectorsCode.gs).
+3. Deploy it as a Web App — same steps as section 3 above (**Execute as: Me**,
+   **Who has access: Anyone**) — and copy the `/exec` URL.
+4. Open `netlify/functions/_lib/sheetsConfig.mjs` and replace:
+   ```js
+   export const AVENUE_DIRECTORS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'
+   ```
+   with that URL. Commit and deploy.
+
+The eleven avenue tabs (Club Service, Community Service, International
+Service, Professional Development, Public Image, SAA, Next Gen, Social
+Media, Web & Tech, Club Learning Facilitator, Club Foundation Chairman) are
+created lazily as each one receives its first submission — you don't need
+to pre-create any of them.
