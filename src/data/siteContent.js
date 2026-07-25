@@ -14,8 +14,14 @@ export const navItems = [
     label: 'Events',
     dropdown: [
       { label: 'Wheels of Hope', path: '/wheels-of-hope' },
-      { label: 'DLA Chair Nominations', path: '/DLA-Chair-Nominations' },
       { label: 'Calendar', path: '/calendar' }
+    ]
+  },
+  {
+    label: 'Forms',
+    dropdown: [
+      { label: 'DLA Chair Nominations', path: '/DLA-Chair-Nominations' },
+      { label: 'Avenue Directors Data', path: '/avenue-directors-data' }
     ]
   },
   { label: 'Brand Center', path: '/resources' },

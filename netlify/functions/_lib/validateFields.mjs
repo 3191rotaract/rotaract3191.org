@@ -27,6 +27,11 @@ export function validateFields(fields, body) {
       continue
     }
 
+    if (field.oneOf && value.length > 0 && !field.oneOf.includes(value)) {
+      errors.push(`${field.name} is not a valid option`)
+      continue
+    }
+
     if (field.pattern && value.length > 0 && !field.pattern.test(value)) {
       errors.push(`${field.name} is not valid`)
       continue
