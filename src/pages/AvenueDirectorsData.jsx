@@ -45,7 +45,7 @@ const AVENUES = [
 ]
 
 const FIELDS = [
-  { name: 'name', label: 'Full Name', icon: User, placeholder: 'e.g. Rtr. Samkit Samsukha', maxLength: 120 },
+  { name: 'name', label: 'Full Name', icon: User, placeholder: 'e.g. Rtn. Rtr. Anirudh G Kulkarni', maxLength: 120 },
   { name: 'phone', label: 'Contact Number', icon: Phone, type: 'tel', placeholder: 'e.g. 98765 43210', maxLength: 20 },
   { name: 'riId', label: 'RI ID', icon: IdCard, placeholder: 'e.g. 12345678', maxLength: 30, optional: true },
   { name: 'email', label: 'Email Address', icon: Mail, type: 'email', placeholder: 'e.g. name@example.com', maxLength: 160 },
