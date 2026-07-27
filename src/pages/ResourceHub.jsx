@@ -7,7 +7,7 @@ const links = [
   { id: 5, title: "3191 Brand Centre", type: "link", href: '/resources/logos' },
   { id: 6, title: "Club Leaders Form", type: "link", href: 'https://forms.gle/YneKinPpxXSec9rJ8' },
   { id: 7, title: "Squadron Club Leaders Info", type: "link", href: 'https://docs.google.com/spreadsheets/d/1mxPqp4e6ztpHA0cCgXHwh73UuHJiXk1SDNG-OisGfB0/edit?gid=0#gid=0 ' },
-  // { id: 8, title: "Squadron District Council Info", type: "link", href: null },
+  { id: 8, title: "Squadrons EC DC Details", type: "link", href: 'https://docs.google.com/spreadsheets/d/1UISFHAoyDRisuCPJGNWzzNcwF-oXzAIhXgdfjbywNUA/edit?usp=sharing' },
   { id: 9, title: "Guest Profile & Photos", type: "link", href: '/resources/profiles' },
   { id: 10, title: "Annual District Club Dues", type: "pdf", href: '/assets/docs/Club Dues 2026-27.pdf' },
   { id: 11, title: "Q1 - Top Gun Recognition Guidelines", type: "pdf", href: '/assets/docs/Top Gun Recognition Guidelines, Quarter 1.pdf' },
