@@ -49,11 +49,16 @@ export default function EventDetails() {
               <h1 className="mt-5 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
                 {event.title}
               </h1>
+              {event.tagline && (
+                <p className="mt-3 text-lg font-bold italic tracking-wide text-[#d41367]">
+                  "{event.tagline}"
+                </p>
+              )}
             </div>
 
             <div className="flex flex-wrap gap-3 lg:flex-nowrap">
               <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-center min-w-32">
-                <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500">Date</div>
+                <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500">Type</div>
                 <div className="mt-2 text-sm font-black text-slate-900">{event.date}</div>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-center min-w-32">
@@ -152,10 +157,34 @@ export default function EventDetails() {
             </div>
           </div>
 
-          <div className="p-6">
+          <div className="p-6 space-y-6">
             <p className="text-base leading-8 text-slate-600">
               {event.description}
             </p>
+
+            {event.sections?.map((sec, idx) => (
+              <div key={idx} className="rounded-3xl border border-slate-100 bg-slate-50/50 p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#d41367]/10 text-[#d41367] font-bold text-sm">
+                    {idx + 1}
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900" style={{ fontFamily: "'Rajdhani','Inter',sans-serif" }}>
+                    {sec.title}
+                  </h3>
+                </div>
+                {sec.content.map((p, pIdx) => (
+                  <p key={pIdx} className="text-base leading-8 text-slate-600">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            ))}
+
+            {event.closing?.map((p, cIdx) => (
+              <div key={cIdx} className="rounded-2xl border-l-4 border-[#d41367] bg-[#d41367]/5 p-5 text-base leading-8 text-slate-700 font-medium">
+                {p}
+              </div>
+            ))}
           </div>
         </div>
 

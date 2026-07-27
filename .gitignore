@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Secrets
+.env
+
+# Local export output
+*.xlsx
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -32,3 +38,6 @@ dist-ssr
 # Local scratch files
 deno.lock
 nominations_rdla_chair.xlsx
+# Local Netlify folder
+.netlify
+deno.lock

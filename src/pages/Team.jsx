@@ -14,7 +14,7 @@ const core_team = [
     id: 1,
     position: "District Rotaract Representative, RI District 3191",
     name: "Rtn. Rtr. Anirudh Kulkarni",
-    photo: "/assets/team/2026-27/core-team/Anirudh.webp",
+    photo: "/assets/team/2026-27/core-team/Anirudh.jpeg",
   },
   {
     id: 2,

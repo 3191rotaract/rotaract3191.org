@@ -52,7 +52,7 @@ export const ZONES = [
       { name: 'Bishop Cotton Womens Christian College', presidentPhoto: '/assets/team/2026-27/pres/Syeda.jpg', presidentName: 'Rtr. Syeda Sakina', clubWebsite: '' },
       { name: 'BMSCE', presidentPhoto: '/assets/team/2026-27/pres/Samyak.jpg', presidentName: 'Rtr. Samyak R.', clubWebsite: '' },
       { name: 'BSVP First Grade College', presidentPhoto: '', presidentName: '', clubWebsite: '' },
-      { name: 'Jain Evening College', presidentPhoto: '/assets/team/2026-27/pres/Akshidi.jpg', presidentName: 'Rtr. Akshidi J.', clubWebsite: '' },
+      { name: 'Jain Evening College', presidentPhoto: '/assets/team/2026-27/pres/Akshidi.webp', presidentName: 'Rtr. Akshidi J.', clubWebsite: '' },
       { name: 'K.G.F. Coummunity', presidentPhoto: '/assets/team/2026-27/pres/Vidya.jpg', presidentName: 'Rtr. Vidya Sagar S.', clubWebsite: '' },
       { name: 'Krupanidhi Group of Institutions', presidentPhoto: '/assets/team/2026-27/pres/Raja.png', presidentName: 'Rtr. Raja Kishore S.', clubWebsite: '' },
       { name: 'Madanapalle Institute of Technology and Sciences', presidentPhoto: '', presidentName: '', clubWebsite: '' },

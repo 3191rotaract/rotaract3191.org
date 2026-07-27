@@ -1,9 +1,7 @@
 export const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'Zones', path: '/zones' },
-  { label: 'Calendar', path: '/calendar' },
-  { 
-    label: 'About', 
+  {
+    label: 'About',
     dropdown: [
       { label: 'About Rotaract', path: '/about' },
       { label: 'About Rotaract 3191', path: '/about-3191' },
@@ -11,6 +9,21 @@ export const navItems = [
       { label: 'Team', path: '/team' }
     ]
   },
-  { label: 'Brand Centre', path: '/resources' },
-  { label: 'Showcase', path: 'https://showcase.rotaract3191.org/'}
+  { label: 'Zones', path: '/zones' },
+  {
+    label: 'Events',
+    dropdown: [
+      { label: 'Wheels of Hope', path: '/wheels-of-hope' },
+      { label: 'Calendar', path: '/calendar' }
+    ]
+  },
+  {
+    label: 'Forms',
+    dropdown: [
+      { label: 'DLA Chair Nominations', path: '/DLA-Chair-Nominations' },
+      { label: 'Avenue Directors Data', path: '/avenue-directors-data' }
+    ]
+  },
+  { label: 'Brand Center', path: '/resources' },
+  { label: 'Showcase', path: 'https://showcase.rotaract3191.org/' }
 ]

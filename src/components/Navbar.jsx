@@ -4,6 +4,13 @@ import { navItems } from '../data/siteContent.js'
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [openDropdowns, setOpenDropdowns] = useState({})
+
+  const toggleDropdown = (label) => {
+    setOpenDropdowns((prev) => ({
+      [label]: !prev[label],
+    }))
+  }
 
   return (
     <header className="sticky top-0 z-40 text-slate-900">
@@ -75,7 +82,10 @@ function Navbar() {
                 type="button"
                 aria-label="Toggle navigation menu"
                 aria-expanded={isMobileMenuOpen}
-                onClick={() => setIsMobileMenuOpen((open) => !open)}
+                onClick={() => {
+                  setIsMobileMenuOpen((open) => !open)
+                  setOpenDropdowns({})
+                }}
                 className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 lg:hidden"
               >
                 <span className="relative flex h-4 w-5 flex-col justify-between">
@@ -94,31 +104,60 @@ function Navbar() {
                 {navItems.map((item) => (
                   item.dropdown ? (
                     <div key={item.label} className="flex flex-col gap-1 w-full">
-                      <div className="rounded-2xl px-3 py-2 text-center text-sm font-semibold text-slate-400 bg-slate-50 uppercase tracking-widest mt-2">{item.label}</div>
-                      {item.dropdown.map(subItem => (
-                        <NavLink
-                          key={subItem.path}
-                          to={subItem.path}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className={({ isActive }) =>
-                            [
-                              'rounded-2xl px-3 py-2 text-center text-sm font-semibold transition duration-200 lg:rounded-full lg:px-4',
-                              isActive
-                                ? 'bg-[#d41367] text-white shadow-[0_10px_24px_rgba(212,19,103,0.24)]'
-                                : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
-                            ].join(' ')
-                          }
+                      <button
+                        type="button"
+                        onClick={() => toggleDropdown(item.label)}
+                        className="flex items-center justify-between w-full rounded-2xl px-4 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-colors duration-200"
+                      >
+                        <span className="flex-1 text-center pl-4">{item.label}</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
+                            openDropdowns[item.label] ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
                         >
-                          {subItem.label}
-                        </NavLink>
-                      ))}
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      <div
+                        className={`flex flex-col gap-1 overflow-hidden transition-all duration-300 ${
+                          openDropdowns[item.label] ? 'max-h-64 opacity-100 mt-1 mb-2' : 'max-h-0 opacity-0 pointer-events-none'
+                        }`}
+                      >
+                        {item.dropdown.map(subItem => (
+                          <NavLink
+                            key={subItem.path}
+                            to={subItem.path}
+                            onClick={() => {
+                              setIsMobileMenuOpen(false)
+                              setOpenDropdowns({})
+                            }}
+                            className={({ isActive }) =>
+                              [
+                                'rounded-2xl px-3 py-2 text-center text-sm font-semibold transition duration-200',
+                                isActive
+                                  ? 'bg-[#d41367] text-white shadow-[0_10px_24px_rgba(212,19,103,0.24)]'
+                                  : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
+                              ].join(' ')
+                            }
+                          >
+                            {subItem.label}
+                          </NavLink>
+                        ))}
+                      </div>
                     </div>
                   ) : (
                     <NavLink
                       key={item.path || item.label}
                       to={item.path || '#'}
                       end={item.path === '/'}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false)
+                        setOpenDropdowns({})
+                      }}
                       className={({ isActive }) =>
                         [
                           'rounded-2xl px-3 py-2 text-center text-sm font-semibold transition duration-200 lg:rounded-full lg:px-4',

@@ -50,7 +50,7 @@ const documentSections = [
     documents: [
       {
         title: "Installation Guidelines",
-        file: "/assets/docs/Clubs Installation Guidelines, RY 2026-27.pdf",
+        file: "/assets/docs/Clubs Installation Guidelines RY 2026-27.pdf",
       },
       // {
       //   title: "Reporting Guidelines - Coming Soon",
@@ -85,6 +85,17 @@ const documentSections = [
       {
         title: "Squadron Year Calendar - RY 2026-27",
         file: "/assets/RI Dist. 3191 - Squadron Year Calendar - RY 2026-27.pdf",
+      },
+    ],
+  },
+  {
+    id: 3,
+    category: "Avenue Updates",
+    code: "AU-3191",
+    documents: [
+      {
+        title: "Twin Club Agreement Guidelines - RY 2026-27",
+        file: "public/assets/docs/Twin Club Agreement - RY 2026-27.pdf",
       },
     ],
   },
