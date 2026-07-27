@@ -18,6 +18,11 @@ const AVENUES = [
   'Web & Tech',
   'Club Learning Facilitator',
   'Club Foundation Chairman',
+  'Events',
+  'Design and Visual Communications',
+  'Treasurer',
+  'Editorial',
+  'CSR',
 ]
 
 export default createSheetsFormHandler({

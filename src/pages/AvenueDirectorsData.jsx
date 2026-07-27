@@ -21,6 +21,11 @@ import {
   GraduationCap,
   Landmark,
   ChevronDown,
+  CalendarDays,
+  Palette,
+  Wallet,
+  Newspaper,
+  HandHeart,
 } from 'lucide-react'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import FormField from '../components/forms/FormField.jsx'
@@ -44,6 +49,11 @@ const AVENUES = [
   { name: 'Web & Tech', icon: Code2 },
   { name: 'Club Learning Facilitator', icon: GraduationCap },
   { name: 'Club Foundation Chairman', icon: Landmark },
+  { name: 'Events', icon: CalendarDays },
+  { name: 'Design and Visual Communications', icon: Palette },
+  { name: 'Treasurer', icon: Wallet },
+  { name: 'Editorial', icon: Newspaper },
+  { name: 'CSR', icon: HandHeart },
 ]
 
 const FIELDS = [
