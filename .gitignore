@@ -29,6 +29,15 @@ dist-ssr
 *.sln
 *.sw?
 
+# Environment secrets
+.env
+
+# Netlify CLI local state
+.netlify
+
+# Local scratch files
+deno.lock
+nominations_rdla_chair.xlsx
 # Local Netlify folder
 .netlify
 deno.lock
