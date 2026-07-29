@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HeartHandshake, ExternalLink, FileText } from 'lucide-react'
+import { PROFILES } from '../data/profiles.js'
 
 /* ─────────────────────────────────────────────────────────────
    INJECTED CSS — keyframes only; UI classes replaced by Tailwind
@@ -175,6 +176,10 @@ const TEAM = [
   { name: 'PP. Rtr. Padma Nesar R', role: 'District Rotaract Secretary - Operations', photo: '/assets/team/2026-27/core-team/Padma Nesar R.jpg' },
   { name: 'PP. Rtr. Ram M Narayanan', role: 'District Rotaract Secretary - Initiatives', photo: '/assets/team/2026-27/core-team/Ram M Narayanan.jpeg' },
 ]
+
+const LEADERSHIP = ['dg', 'drr', 'dir']
+  .map((slug) => PROFILES.find((p) => p.slug === slug))
+  .filter(Boolean)
 
 const PARTNERS = [
   { name: 'Tixora', role: 'Tech Partners', logo: '/assets/partners/tixora.svg' },
@@ -362,6 +367,41 @@ export default function Home() {
               KNOW MORE →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ══ §3.4 DISTRICT LEADERSHIP ══ */}
+      <section id="leadership" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
+        <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">DISTRICT LEADERSHIP</p>
+            <h2 className="font-black text-slate-900">Our Leaders</h2>
+          </div>
+        </div>
+
+        <div className="p-5 grid gap-5 sm:grid-cols-3">
+          {LEADERSHIP.map((p) => (
+            <Link
+              to={`/resources/profiles/${p.slug}`}
+              key={p.slug}
+              id={`leader-${p.slug}`}
+              className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367] hover:shadow-[0_18px_48px_rgba(15,23,42,0.08)]"
+              style={{ textDecoration: 'none' }}
+            >
+              <div className="aspect-[4/5] overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]">
+                <img
+                  src={p.primaryPhoto}
+                  alt={p.name}
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  onError={e => { e.target.style.display = 'none' }}
+                />
+              </div>
+              <div className="p-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#d41367]">{p.designation}</p>
+                <h4 className="mt-1 text-base font-black text-slate-900 leading-tight">{p.name}</h4>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
