@@ -24,7 +24,7 @@ export function useFormSubmit(endpoint) {
 
         if (!res.ok) {
           setStatus('error')
-          setError(data.error || 'Something went wrong. Please try again.')
+          setError(data.error || `Something went wrong (${res.status} ${res.statusText}). Please try again.`)
           return false
         }
 

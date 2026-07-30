@@ -54,7 +54,11 @@ that one file.
 ## 5. Re-deploying the Apps Script later
 
 If you ever edit `Code.gs` again (e.g. to tweak the logic), you must create
-a **new deployment version** for the changes to go live:
+a **new deployment version** for the changes to go live. This is also true
+the first time you deploy a version of `Code.gs` that includes the
+file-upload support (used by the Conference Core Team form) — since it now
+touches Drive, Google will prompt you to re-authorize the script with an
+additional Drive permission on the next deploy/run:
 
 1. **Deploy → Manage deployments**
 2. Click the pencil/edit icon on the existing deployment
@@ -97,6 +101,28 @@ If you later add a field to an **existing** form, add the matching column
 header to that tab in the sheet yourself (or delete the tab so the script
 recreates it with fresh headers) — the script won't add new columns to an
 existing tab automatically.
+
+### Forms with photo/file uploads
+
+A form can also collect files (e.g. the Conference Core Team form's formal
+and casual photographs). Add a `files` option alongside `fields`:
+
+```js
+export default createSheetsFormHandler({
+  sheetName: 'My New Form',
+  fields: [ /* ... */ ],
+  files: [
+    { name: 'formalPhoto', required: true, maxBytes: 6 * 1024 * 1024, mimePattern: /^image\/(jpeg|jpg|png|webp)$/ },
+  ],
+})
+```
+
+The frontend page reads the file, downscales/re-encodes it client-side via
+`src/lib/imageUpload.js` (`fileToUploadPayload`), and sends it as base64
+alongside the other fields. `Code.gs` uploads it to
+**Drive → Rotaract 3191 Form Uploads → &lt;sheet name&gt;** and writes a
+"anyone with the link can view" share URL into that column — no extra Drive
+setup needed, the folder is created automatically on first submission.
 
 ## Viewing responses
 

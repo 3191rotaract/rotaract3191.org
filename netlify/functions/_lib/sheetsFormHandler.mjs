@@ -1,5 +1,6 @@
 import { GOOGLE_SCRIPT_URL } from './sheetsConfig.mjs'
 import { validateFields } from './validateFields.mjs'
+import { validateFiles } from './validateFiles.mjs'
 
 function jsonResponse(status, data) {
   return new Response(JSON.stringify(data), {
@@ -16,6 +17,10 @@ function jsonResponse(status, data) {
  * an avenue). `fields` describes the expected string fields, same shape as
  * createFormHandler. `scriptUrl` overrides which Apps Script deployment (and so
  * which spreadsheet) the submission is sent to; defaults to GOOGLE_SCRIPT_URL.
+ * `files` (optional) describes photo/document fields, same shape as `fields`
+ * but with `mimePattern`/`maxBytes` instead of `pattern`/`maxLength` — the
+ * Apps Script uploads each to Drive and writes the share link into that
+ * column, so treat it like any other field everywhere else (headers, etc).
  *
  * Why this goes through a Netlify Function instead of the browser calling Apps
  * Script directly: Apps Script Web Apps don't send CORS headers, so a direct
@@ -25,7 +30,7 @@ function jsonResponse(status, data) {
  * to CORS at all, so we get Apps Script's real JSON response back and can
  * surface a genuine success/error state to the user.
  */
-export function createSheetsFormHandler({ sheetName, fields, uniqueFields, scriptUrl }) {
+export function createSheetsFormHandler({ sheetName, fields, files, uniqueFields, scriptUrl }) {
   const url = scriptUrl ?? GOOGLE_SCRIPT_URL
 
   return async (req) => {
@@ -50,9 +55,11 @@ export function createSheetsFormHandler({ sheetName, fields, uniqueFields, scrip
     }
 
     const { errors, clean } = validateFields(fields, body)
+    const { errors: fileErrors, clean: cleanFiles } = files ? validateFiles(files, body) : { errors: [], clean: {} }
+    const allErrors = [...errors, ...fileErrors]
 
-    if (errors.length > 0) {
-      return jsonResponse(400, { error: errors.join('; ') })
+    if (allErrors.length > 0) {
+      return jsonResponse(400, { error: allErrors.join('; ') })
     }
 
     const resolvedSheetName = typeof sheetName === 'function' ? sheetName(clean) : sheetName
@@ -61,7 +68,7 @@ export function createSheetsFormHandler({ sheetName, fields, uniqueFields, scrip
       const scriptRes = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sheetName: resolvedSheetName, fields: clean, uniqueFields }),
+        body: JSON.stringify({ sheetName: resolvedSheetName, fields: clean, files: cleanFiles, uniqueFields }),
         redirect: 'follow',
       })
 
