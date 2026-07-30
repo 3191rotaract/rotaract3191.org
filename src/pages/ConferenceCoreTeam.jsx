@@ -180,10 +180,18 @@ export default function ConferenceCoreTeam() {
 
   if (status === 'success') {
     return (
-      <FormSuccessMessage
-        title="Application Submitted"
-        description="Thanks for putting yourself forward for the Vaayu Conference Core Team. Our team will review it and get in touch."
-      />
+      <>
+        <FormSuccessMessage
+          title="Application Submitted"
+          description="Thanks for putting yourself forward for the Vaayu Conference Core Team. Our team will review it and get in touch."
+        />
+        <p className="mx-auto max-w-xl px-4 pb-10 text-center text-xs text-slate-500">
+          In case of submission issues, reach out to{' '}
+          <a href="mailto:rotaract3191webtech2627@gmail.com" className="font-semibold text-[#d41367] hover:underline">
+            rotaract3191webtech2627@gmail.com
+          </a>
+        </p>
+      </>
     )
   }
 
@@ -430,6 +438,12 @@ export default function ConferenceCoreTeam() {
 
             <p className="text-center text-[11px] uppercase tracking-[0.2em] text-slate-400">
               Secure Transmission · District 3191
+            </p>
+            <p className="text-center text-xs text-slate-500">
+              In case of submission issues, reach out to{' '}
+              <a href="mailto:rotaract3191webtech2627@gmail.com" className="font-semibold text-[#d41367] hover:underline">
+                rotaract3191webtech2627@gmail.com
+              </a>
             </p>
           </form>
         )}
