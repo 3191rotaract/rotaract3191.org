@@ -109,12 +109,15 @@ function doPost(e) {
 }
 
 // Saves a base64 file into Drive/Rotaract 3191 Form Uploads/<sheetName>/ and
-// returns a share link (anyone with the link can view). Folders are looked
-// up by name on every call rather than cached, since form submissions are
-// infrequent enough that this isn't worth optimizing.
+// returns a share link (anyone with the link can view). Each Drive call
+// here is a network round-trip the caller is waiting on synchronously, so
+// this is written to minimize them: the folder is looked up by ID (cached
+// in Script Properties) instead of by name after the first submission, and
+// link sharing is granted once on the folder itself — files inside a
+// link-shared Drive folder inherit its view access, so there's no need to
+// share each file individually.
 function uploadFileAndGetUrl(sheetName, fieldName, file) {
-  const rootFolder = getOrCreateFolder(DriveApp.getRootFolder(), 'Rotaract 3191 Form Uploads');
-  const formFolder = getOrCreateFolder(rootFolder, sheetName);
+  const formFolder = getOrCreateFormFolder(sheetName);
 
   const blob = Utilities.newBlob(
     Utilities.base64Decode(file.data),
@@ -125,9 +128,30 @@ function uploadFileAndGetUrl(sheetName, fieldName, file) {
   const timestamp = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyyMMdd_HHmmss');
   const driveFile = formFolder.createFile(blob);
   driveFile.setName(timestamp + '_' + fieldName + '_' + driveFile.getName());
-  driveFile.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
 
   return driveFile.getUrl();
+}
+
+function getOrCreateFormFolder(sheetName) {
+  const props = PropertiesService.getScriptProperties();
+  const cacheKey = 'folder:' + sheetName;
+  const cachedId = props.getProperty(cacheKey);
+
+  if (cachedId) {
+    try {
+      return DriveApp.getFolderById(cachedId);
+    } catch (err) {
+      // Cached ID no longer resolves (e.g. folder was deleted by hand) —
+      // fall through and recreate it below.
+    }
+  }
+
+  const rootFolder = getOrCreateFolder(DriveApp.getRootFolder(), 'Rotaract 3191 Form Uploads');
+  const formFolder = getOrCreateFolder(rootFolder, sheetName);
+  formFolder.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+
+  props.setProperty(cacheKey, formFolder.getId());
+  return formFolder;
 }
 
 function getOrCreateFolder(parent, name) {
