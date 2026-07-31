@@ -20,7 +20,6 @@ export const navItems = [
   {
     label: 'Forms',
     dropdown: [
-      { label: 'DLA Chair Nominations', path: '/DLA-Chair-Nominations' },
       { label: 'Avenue Directors Data', path: '/avenue-directors-data' },
       { label: 'Conference Core Team', path: '/conference-core-team' }
     ]

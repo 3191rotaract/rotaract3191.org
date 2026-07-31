@@ -4,6 +4,7 @@ import {
   Send,
   AlertCircle,
   Loader2,
+  Lock,
   User,
   Building2,
   Phone,
@@ -46,6 +47,9 @@ const YES_NO_FIELDS = [
     detailsPlaceholder: 'Briefly describe the committee(s) and what you were responsible for',
   },
 ]
+
+// Flip this back to false to reopen nominations.
+const FORM_CLOSED = true
 
 const EMPTY_FORM = {
   name: '',
@@ -105,6 +109,7 @@ export default function DlaChairNominations() {
   async function handleSubmit(e) {
     e.preventDefault()
 
+    if (FORM_CLOSED) return
     if (!validate()) return
 
     const ok = await submit(form)
@@ -142,14 +147,21 @@ export default function DlaChairNominations() {
             Nomination Form 
           </span>
           <span className="inline-flex items-center gap-2">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-600">
-              Active
+            <span className={`h-1.5 w-1.5 rounded-full ${FORM_CLOSED ? 'bg-red-500' : 'animate-pulse bg-emerald-500'}`} />
+            <span className={`text-[11px] font-bold uppercase tracking-[0.2em] ${FORM_CLOSED ? 'text-red-600' : 'text-emerald-600'}`}>
+              {FORM_CLOSED ? 'Closed' : 'Active'}
             </span>
           </span>
         </div>
 
-        <div className="space-y-6 p-8">
+        {FORM_CLOSED && (
+          <div className="flex items-start gap-2 border-b border-amber-100 bg-amber-50 px-8 py-3 text-sm font-semibold text-amber-800">
+            <AlertCircle size={16} className="mt-0.5 shrink-0" />
+            <span>Nominations for DLA Chair are now closed. The form below is read-only.</span>
+          </div>
+        )}
+
+        <fieldset disabled={FORM_CLOSED} className="space-y-6 p-8 disabled:opacity-60">
           {FIELDS.map((field) => {
             const Icon = field.icon
             return (
@@ -254,35 +266,47 @@ export default function DlaChairNominations() {
             </div>
           </FormField>
 
-          {status === 'error' && (
-            <div className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
-              <AlertCircle size={18} className="mt-0.5 shrink-0" />
-              <span>{error}</span>
-            </div>
-          )}
+          {FORM_CLOSED ? (
+            <button
+              type="submit"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-300 px-6 py-3 text-sm font-bold uppercase tracking-widest text-slate-600 disabled:cursor-not-allowed"
+            >
+              <Lock size={16} />
+              Nominations Closed
+            </button>
+          ) : (
+            <>
+              {status === 'error' && (
+                <div className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+                  <AlertCircle size={18} className="mt-0.5 shrink-0" />
+                  <span>{error}</span>
+                </div>
+              )}
 
-          <button
-            type="submit"
-            disabled={status === 'submitting'}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#d41367] px-6 py-3 text-sm font-bold uppercase tracking-widest text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {status === 'submitting' ? (
-              <>
-                <Loader2 size={16} className="animate-spin" />
-                Submitting...
-              </>
-            ) : (
-              <>
-                <Send size={16} />
-                Submit Nomination
-              </>
-            )}
-          </button>
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#d41367] px-6 py-3 text-sm font-bold uppercase tracking-widest text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {status === 'submitting' ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    <Send size={16} />
+                    Submit Nomination
+                  </>
+                )}
+              </button>
+            </>
+          )}
 
           <p className="text-center text-[11px] uppercase tracking-[0.2em] text-slate-400">
             Secure Transmission · District 3191
           </p>
-        </div>
+        </fieldset>
       </form>
     </div>
   )
