@@ -168,9 +168,9 @@ const council = [
     members: [
       {
         id: 1,
-        name: "Rtr. Dhruv Sundhesha",
+        name: "Rtn. Rtr. Dhruv Sundhesha",
         position: "District Treasurer",
-        photo: "/assets/team/2026-27/council/Dhruv.jpg",
+        photo: "/assets/team/2026-27/council/Dhruv Sundhesha.jpeg",
         rtr_id: "10701363",
         executive: true,
         district: false,
