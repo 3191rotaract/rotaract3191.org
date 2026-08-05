@@ -56,20 +56,22 @@ export default function RohSeRooBaroo() {
             <img
               src="/assets/brand-centre/2026-27/Rotaract 3191 CLA - White.png"
               alt="Rotaract District 3191"
-              className="h-8 w-auto sm:h-9"
+              className="h-11 w-auto sm:h-14"
             />
           </a>
 
           <nav aria-label="Roh Se RooBaroo navigation" className="flex flex-wrap items-center gap-2">
-            {NAV_LINKS.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="rounded-full border border-[#caa568]/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#caa568] transition hover:bg-[#caa568] hover:text-black"
-              >
-                {item.label}
-              </a>
-            ))}
+            <div className="hidden items-center gap-2 sm:flex">
+              {NAV_LINKS.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="rounded-full border border-[#caa568]/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#caa568] transition hover:bg-[#caa568] hover:text-black"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
             <Link
               to="/"
               className="inline-flex items-center gap-1.5 rounded-full border border-[#caa568]/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#caa568] transition hover:bg-[#caa568] hover:text-black"
@@ -83,8 +85,12 @@ export default function RohSeRooBaroo() {
 
       {/* PAGE BODY */}
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#caa568]/20 blur-3xl" />
-        <div className="pointer-events-none absolute top-1/2 -right-24 h-96 w-96 rounded-full bg-[#caa568]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#caa568]/25 blur-3xl" />
+        <div className="pointer-events-none absolute top-0 right-1/4 h-72 w-72 rounded-full bg-[#caa568]/15 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 -right-24 h-96 w-96 rounded-full bg-[#caa568]/15 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-1/3 left-1/4 h-80 w-80 rounded-full bg-pink-400/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-[#caa568]/20 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 right-1/3 h-72 w-72 rounded-full bg-[#caa568]/10 blur-3xl" />
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.12]"
           style={{
@@ -99,7 +105,7 @@ export default function RohSeRooBaroo() {
             <img
               src="/assets/brand-centre/2026-27/event-logos/RohSeRooBaroo.png"
               alt="Roh Se RooBaroo — DRRE Connect, a district driven by you"
-              className="w-full max-w-md object-contain"
+              className="w-full max-w-2xl object-contain"
             />
           </div>
 
