@@ -17,7 +17,7 @@ const EventDetails = lazy(() => import('./pages/EventDetails.jsx'))
 const Zones = lazy(() => import('./pages/Zones.jsx'))
 const AboutRotaract = lazy(() => import('./pages/AboutRotaract.jsx'))
 const AboutRotaract3191 = lazy(() => import('./pages/AboutRotaract3191.jsx'))
-const DrrElect = lazy(() => import('./pages/DrrElect.jsx'))
+const RohSeRooBaroo = lazy(() => import('./pages/RohSeRooBaroo.jsx'))
 const Documents = lazy(() => import('./pages/Documents.jsx'))
 const Profiles = lazy(() => import('./pages/Profiles.jsx'))
 const ProfileDetails = lazy(() => import('./pages/ProfileDetails.jsx'))
@@ -61,11 +61,15 @@ function App() {
       <div style={{ opacity: showPreloader ? 0 : 1, transition: 'opacity 0.6s ease' }}>
         <Suspense fallback={null}>
           <Routes>
+            {/* Full-bleed takeover page — deliberately outside SiteLayout so it
+                isn't padded/rounded into a card and gets its own themed nav
+                instead of the site's default Navbar/Footer. */}
+            <Route path="roh-se-roobaroo" element={<RohSeRooBaroo />} />
+
             <Route element={<SiteLayout />}>
               <Route index element={<Home />} />
               <Route path="about" element={<AboutRotaract />} />
               <Route path="about-3191" element={<AboutRotaract3191 />} />
-              <Route path="know-your-drr-elect" element={<DrrElect />} />
               <Route path="newsletters" element={<Newsletters />} />
               <Route path="resources" element={<BrandCenter />} />
               <Route path="resources/logos" element={<Logos />} />
