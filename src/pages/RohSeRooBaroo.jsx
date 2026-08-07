@@ -120,7 +120,7 @@ export default function RohSeRooBaroo() {
             <div className="relative mt-6 border-2 border-[#caa568] p-1">
               <div className="border border-[#caa568]/60 px-6 py-8 text-center sm:px-10">
                 <p
-                  className="bg-linear-to-r from-pink-300 via-pink-200 to-[#caa568] bg-clip-text text-4xl leading-tight text-transparent sm:text-5xl"
+                  className="bg-linear-to-r from-white via-white to-white bg-clip-text text-4xl leading-tight text-transparent sm:text-5xl"
                   style={{ fontFamily: "'Yellowtail', cursive" }}
                 >
                   Roh Se RooBaroo
@@ -141,10 +141,8 @@ export default function RohSeRooBaroo() {
             </div>
 
             <p className="mt-8 text-sm leading-7 text-white/80 sm:text-base">
-              Every DRRE Club Visit is an opportunity to strengthen connections and build a
-              shared vision. It fosters open conversations where leaders and members can share
-              their journeys, voice their aspirations, discuss challenges, and gain valuable
-              insights into the district's priorities for the year.
+              Every club has a story. Every member has a voice. Roh Se RooBaroo is an opportunity to bring those stories together, celebrate what makes each club unique, and build a district where every Rotaractor feels heard, valued, and inspired to make a difference. <br /><br />
+              Connect Now - Let’s begin the conversation!
             </p>
 
             <div className="mt-8 flex items-center gap-4">
