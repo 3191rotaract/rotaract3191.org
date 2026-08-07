@@ -56,20 +56,22 @@ export default function RohSeRooBaroo() {
             <img
               src="/assets/brand-centre/2026-27/Rotaract 3191 CLA - White.png"
               alt="Rotaract District 3191"
-              className="h-8 w-auto sm:h-9"
+              className="h-11 w-auto sm:h-14"
             />
           </a>
 
           <nav aria-label="Roh Se RooBaroo navigation" className="flex flex-wrap items-center gap-2">
-            {NAV_LINKS.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="rounded-full border border-[#caa568]/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#caa568] transition hover:bg-[#caa568] hover:text-black"
-              >
-                {item.label}
-              </a>
-            ))}
+            <div className="hidden items-center gap-2 sm:flex">
+              {NAV_LINKS.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="rounded-full border border-[#caa568]/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#caa568] transition hover:bg-[#caa568] hover:text-black"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
             <Link
               to="/"
               className="inline-flex items-center gap-1.5 rounded-full border border-[#caa568]/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#caa568] transition hover:bg-[#caa568] hover:text-black"
@@ -83,8 +85,12 @@ export default function RohSeRooBaroo() {
 
       {/* PAGE BODY */}
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#caa568]/20 blur-3xl" />
-        <div className="pointer-events-none absolute top-1/2 -right-24 h-96 w-96 rounded-full bg-[#caa568]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#caa568]/25 blur-3xl" />
+        <div className="pointer-events-none absolute top-0 right-1/4 h-72 w-72 rounded-full bg-[#caa568]/15 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 -right-24 h-96 w-96 rounded-full bg-[#caa568]/15 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-1/3 left-1/4 h-80 w-80 rounded-full bg-pink-400/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-[#caa568]/20 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 right-1/3 h-72 w-72 rounded-full bg-[#caa568]/10 blur-3xl" />
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.12]"
           style={{
@@ -99,7 +105,7 @@ export default function RohSeRooBaroo() {
             <img
               src="/assets/brand-centre/2026-27/event-logos/RohSeRooBaroo.png"
               alt="Roh Se RooBaroo — DRRE Connect, a district driven by you"
-              className="w-full max-w-md object-contain"
+              className="w-full max-w-2xl object-contain"
             />
           </div>
 
@@ -114,7 +120,7 @@ export default function RohSeRooBaroo() {
             <div className="relative mt-6 border-2 border-[#caa568] p-1">
               <div className="border border-[#caa568]/60 px-6 py-8 text-center sm:px-10">
                 <p
-                  className="bg-linear-to-r from-pink-300 via-pink-200 to-[#caa568] bg-clip-text text-4xl leading-tight text-transparent sm:text-5xl"
+                  className="bg-linear-to-r from-white via-white to-white bg-clip-text text-4xl leading-tight text-transparent sm:text-5xl"
                   style={{ fontFamily: "'Yellowtail', cursive" }}
                 >
                   Roh Se RooBaroo
@@ -135,10 +141,8 @@ export default function RohSeRooBaroo() {
             </div>
 
             <p className="mt-8 text-sm leading-7 text-white/80 sm:text-base">
-              Every DRRE Club Visit is an opportunity to strengthen connections and build a
-              shared vision. It fosters open conversations where leaders and members can share
-              their journeys, voice their aspirations, discuss challenges, and gain valuable
-              insights into the district's priorities for the year.
+              Every club has a story. Every member has a voice. Roh Se RooBaroo is an opportunity to bring those stories together, celebrate what makes each club unique, and build a district where every Rotaractor feels heard, valued, and inspired to make a difference. <br /><br />
+              Connect Now - Let’s begin the conversation!
             </p>
 
             <div className="mt-8 flex items-center gap-4">
