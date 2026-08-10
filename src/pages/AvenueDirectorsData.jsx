@@ -123,10 +123,18 @@ export default function AvenueDirectorsData() {
 
   if (status === 'success') {
     return (
-      <FormSuccessMessage
-        title="Details Submitted"
-        description="Thanks for sharing your details. Our team will be in touch."
-      />
+      <>
+        <FormSuccessMessage
+          title="Details Submitted"
+          description="Thanks for sharing your details. Our team will be in touch."
+        />
+        <p className="mx-auto max-w-xl px-4 pb-10 text-center text-xs text-slate-500">
+          In case of submission issues, reach out to{' '}
+          <a href="mailto:rotaract3191webtech2627@gmail.com" className="font-semibold text-[#d41367] hover:underline">
+            rotaract3191webtech2627@gmail.com
+          </a>
+        </p>
+      </>
     )
   }
 
@@ -263,6 +271,12 @@ export default function AvenueDirectorsData() {
 
             <p className="text-center text-[11px] uppercase tracking-[0.2em] text-slate-400">
               Secure Transmission · District 3191
+            </p>
+            <p className="text-center text-xs text-slate-500">
+              In case of submission issues, reach out to{' '}
+              <a href="mailto:rotaract3191webtech2627@gmail.com" className="font-semibold text-[#d41367] hover:underline">
+                rotaract3191webtech2627@gmail.com
+              </a>
             </p>
           </form>
         )}

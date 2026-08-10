@@ -49,7 +49,7 @@ const YES_NO_FIELDS = [
 ]
 
 // Flip this back to false to reopen nominations.
-const FORM_CLOSED = true
+const FORM_CLOSED = false
 
 const EMPTY_FORM = {
   name: '',
@@ -63,10 +63,10 @@ const EMPTY_FORM = {
   justification: '',
 }
 
-export default function DlaChairNominations() {
+export default function TarangChairNominations() {
   const [form, setForm] = useState(EMPTY_FORM)
   const [fieldErrors, setFieldErrors] = useState({})
-  const { status, error, submit } = useFormSubmit('submit-dla-chair-nominations')
+  const { status, error, submit } = useFormSubmit('submit-tarang-chair-nominations')
 
   function updateField(name, value) {
     setForm((prev) => ({ ...prev, [name]: value }))
@@ -137,11 +137,11 @@ export default function DlaChairNominations() {
     <div className="mx-auto max-w-3xl px-4 py-6">
       <FormPageHeader
         icon={<Award size={14} />}
-        badgeText="DLA CHAIR NOMINATIONS"
-        title="Siddhi - 4th District Learning Assembly"
-        description="Put yourself forward to chair the 4th District Learning Assembly. Fill in the details below, we'll get back to you."
-        logo="/assets/brand-centre/2026-27/event-logos/Siddhi.png"
-        logoAlt="Siddhi — 4th District Learning Assembly logo"
+        badgeText="TARANG CHAIR NOMINATIONS"
+        title="Tarang"
+        description="Put yourself forward to chair Tarang. Fill in the details below, we'll get back to you."
+        logo="/assets/brand-centre/2026-27/event-logos/Tarang.png"
+        logoAlt="Tarang logo"
       />
 
       <form
@@ -152,7 +152,7 @@ export default function DlaChairNominations() {
 
         <div className="flex items-center justify-between border-b border-slate-100 px-8 py-4">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-400">
-            Nomination Form 
+            Nomination Form
           </span>
           <span className="inline-flex items-center gap-2">
             <span className={`h-1.5 w-1.5 rounded-full ${FORM_CLOSED ? 'bg-red-500' : 'animate-pulse bg-emerald-500'}`} />
@@ -165,7 +165,7 @@ export default function DlaChairNominations() {
         {FORM_CLOSED && (
           <div className="flex items-start gap-2 border-b border-amber-100 bg-amber-50 px-8 py-3 text-sm font-semibold text-amber-800">
             <AlertCircle size={16} className="mt-0.5 shrink-0" />
-            <span>Nominations for DLA Chair are now closed. The form below is read-only.</span>
+            <span>Nominations for Tarang Chair are now closed. The form below is read-only.</span>
           </div>
         )}
 
@@ -260,7 +260,7 @@ export default function DlaChairNominations() {
             )
           })}
 
-          <FormField label="Justify why you think you will be perfect as a DLA Chairperson." error={fieldErrors.justification}>
+          <FormField label="Justify why you think you will be perfect as the Tarang Chairperson." error={fieldErrors.justification}>
             <div className="relative">
               <Trophy size={18} className="pointer-events-none absolute left-4 top-4 text-slate-400" />
               <textarea

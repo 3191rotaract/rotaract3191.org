@@ -21,7 +21,9 @@ export const navItems = [
     label: 'Forms',
     dropdown: [
       { label: 'Avenue Directors Data', path: '/avenue-directors-data' },
-      { label: 'Conference Core Team', path: '/conference-core-team' }
+      { label: 'Conference Core Team', path: '/conference-core-team' },
+      { label: 'Naada Habba Chair Nominations', path: '/Naada-Habba-Chair-Nominations' },
+      { label: 'Tarang Chair Nominations', path: '/Tarang-Chair-Nominations' }
     ]
   },
   { label: 'Brand Center', path: '/resources' },
