@@ -7,7 +7,8 @@ import { CUSTOM_LINKS } from './data/links.js'
 import './App.css'
 
 const BrandCenter = lazy(() => import('./pages/BrandCenter.jsx'))
-const Newsletters = lazy(() => import('./pages/Newsletters.jsx'))
+const Publications = lazy(() => import('./pages/Publications.jsx'))
+const PublicationViewer = lazy(() => import('./pages/PublicationViewer.jsx'))
 const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 const Team = lazy(() => import('./pages/Team.jsx'))
 const Logos = lazy(() => import('./pages/Logos.jsx'))
@@ -74,7 +75,8 @@ function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<AboutRotaract />} />
               <Route path="about-3191" element={<AboutRotaract3191 />} />
-              <Route path="newsletters" element={<Newsletters />} />
+              <Route path="publications" element={<Publications />} />
+              <Route path="publications/:groupId/:pubSlug" element={<PublicationViewer />} />
               <Route path="resources" element={<BrandCenter />} />
               <Route path="resources/logos" element={<Logos />} />
               <Route path="resources/documents" element={<Documents />} />
