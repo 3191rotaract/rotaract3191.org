@@ -3,7 +3,7 @@ import { createSheetsFormHandler } from './_lib/sheetsFormHandler.mjs'
 const YES_NO_PATTERN = /^(yes|no)$/
 
 export default createSheetsFormHandler({
-  sheetName: 'Royal Sports Meet Chair Nominations',
+  sheetName: 'Sports Meet Chair Nominations',
   fields: [
     { name: 'name', required: true, maxLength: 120 },
     { name: 'clubName', required: true, maxLength: 120 },
@@ -16,6 +16,6 @@ export default createSheetsFormHandler({
     { name: 'justification', required: true, maxLength: 2000 },
   ],
   uniqueFields: [
-    { name: 'phone', message: 'This contact number has already been used for a Royal Sports Meet Chair nomination.' },
+    { name: 'phone', message: 'This contact number has already been used for a Sports Meet Chair nomination.' },
   ],
 })

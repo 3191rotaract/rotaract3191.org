@@ -63,10 +63,10 @@ const EMPTY_FORM = {
   justification: '',
 }
 
-export default function RoyalSportsMeetChairNominations() {
+export default function SportsMeetChairNominations() {
   const [form, setForm] = useState(EMPTY_FORM)
   const [fieldErrors, setFieldErrors] = useState({})
-  const { status, error, submit } = useFormSubmit('submit-royal-sports-meet-chair-nominations')
+  const { status, error, submit } = useFormSubmit('submit-sports-meet-chair-nominations')
 
   function updateField(name, value) {
     setForm((prev) => ({ ...prev, [name]: value }))
@@ -137,9 +137,9 @@ export default function RoyalSportsMeetChairNominations() {
     <div className="mx-auto max-w-3xl px-4 py-6">
       <FormPageHeader
         icon={<Award size={14} />}
-        badgeText="ROYAL SPORTS MEET CHAIR NOMINATIONS"
-        title="Royal Sports Meet"
-        description="Put yourself forward to chair Royal Sports Meet. Fill in the details below, we'll get back to you."
+        badgeText="SPORTS MEET CHAIR NOMINATIONS"
+        title="Sports Meet"
+        description="Put yourself forward to chair Sports Meet. Fill in the details below, we'll get back to you."
       />
 
       <form
@@ -163,7 +163,7 @@ export default function RoyalSportsMeetChairNominations() {
         {FORM_CLOSED && (
           <div className="flex items-start gap-2 border-b border-amber-100 bg-amber-50 px-8 py-3 text-sm font-semibold text-amber-800">
             <AlertCircle size={16} className="mt-0.5 shrink-0" />
-            <span>Nominations for Royal Sports Meet Chair are now closed. The form below is read-only.</span>
+            <span>Nominations for Sports Meet Chair are now closed. The form below is read-only.</span>
           </div>
         )}
 
@@ -258,7 +258,7 @@ export default function RoyalSportsMeetChairNominations() {
             )
           })}
 
-          <FormField label="Justify why you think you will be perfect as the Royal Sports Meet Chairperson." error={fieldErrors.justification}>
+          <FormField label="Justify why you think you will be perfect as the Sports Meet Chairperson." error={fieldErrors.justification}>
             <div className="relative">
               <Trophy size={18} className="pointer-events-none absolute left-4 top-4 text-slate-400" />
               <textarea

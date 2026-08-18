@@ -7,7 +7,8 @@ import { CUSTOM_LINKS } from './data/links.js'
 import './App.css'
 
 const BrandCenter = lazy(() => import('./pages/BrandCenter.jsx'))
-const Newsletters = lazy(() => import('./pages/Newsletters.jsx'))
+const Publications = lazy(() => import('./pages/Publications.jsx'))
+const PublicationViewer = lazy(() => import('./pages/PublicationViewer.jsx'))
 const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 const Team = lazy(() => import('./pages/Team.jsx'))
 const Logos = lazy(() => import('./pages/Logos.jsx'))
@@ -25,7 +26,7 @@ const ResourceHub = lazy(() => import('./pages/ResourceHub.jsx'))
 const DlaChairNominations = lazy(() => import('./pages/DlaChairNominations.jsx'))
 const NaadaHabbaChairNominations = lazy(() => import('./pages/NaadaHabbaChairNominations.jsx'))
 const TarangChairNominations = lazy(() => import('./pages/TarangChairNominations.jsx'))
-const RoyalSportsMeetChairNominations = lazy(() => import('./pages/RoyalSportsMeetChairNominations.jsx'))
+const SportsMeetChairNominations = lazy(() => import('./pages/SportsMeetChairNominations.jsx'))
 const RotaCampChairNominations = lazy(() => import('./pages/RotaCampChairNominations.jsx'))
 const AvenueDirectorsData = lazy(() => import('./pages/AvenueDirectorsData.jsx'))
 const ConferenceCoreTeam = lazy(() => import('./pages/ConferenceCoreTeam.jsx'))
@@ -74,7 +75,8 @@ function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<AboutRotaract />} />
               <Route path="about-3191" element={<AboutRotaract3191 />} />
-              <Route path="newsletters" element={<Newsletters />} />
+              <Route path="publications" element={<Publications />} />
+              <Route path="publications/:groupId/:pubSlug" element={<PublicationViewer />} />
               <Route path="resources" element={<BrandCenter />} />
               <Route path="resources/logos" element={<Logos />} />
               <Route path="resources/documents" element={<Documents />} />
@@ -89,7 +91,7 @@ function App() {
               <Route path="DLA-Chair-Nominations" element={<DlaChairNominations />} />
               <Route path="Naada-Habba-Chair-Nominations" element={<NaadaHabbaChairNominations />} />
               <Route path="Tarang-Chair-Nominations" element={<TarangChairNominations />} />
-              <Route path="Royal-Sports-Meet-Chair-Nominations" element={<RoyalSportsMeetChairNominations />} />
+              <Route path="Sports-Meet-Chair-Nominations" element={<SportsMeetChairNominations />} />
               <Route path="RotaCamp-Chair-Nominations" element={<RotaCampChairNominations />} />
               <Route path="avenue-directors-data" element={<AvenueDirectorsData />} />
               <Route path="conference-core-team" element={<ConferenceCoreTeam />} />

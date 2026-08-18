@@ -71,13 +71,6 @@ function Navbar() {
                 </nav>
               </div>
 
-              <div className="hidden items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 sm:flex">
-                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                  <span className="hidden text-[10px] font-semibold uppercase tracking-[0.28em] text-[#d41367] sm:inline-block">
-                    Ready to take off
-                  </span>
-              </div>
-
               <button
                 type="button"
                 aria-label="Toggle navigation menu"
