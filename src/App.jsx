@@ -26,7 +26,7 @@ const ResourceHub = lazy(() => import('./pages/ResourceHub.jsx'))
 const DlaChairNominations = lazy(() => import('./pages/DlaChairNominations.jsx'))
 const NaadaHabbaChairNominations = lazy(() => import('./pages/NaadaHabbaChairNominations.jsx'))
 const TarangChairNominations = lazy(() => import('./pages/TarangChairNominations.jsx'))
-const RoyalSportsMeetChairNominations = lazy(() => import('./pages/RoyalSportsMeetChairNominations.jsx'))
+const SportsMeetChairNominations = lazy(() => import('./pages/SportsMeetChairNominations.jsx'))
 const RotaCampChairNominations = lazy(() => import('./pages/RotaCampChairNominations.jsx'))
 const AvenueDirectorsData = lazy(() => import('./pages/AvenueDirectorsData.jsx'))
 const ConferenceCoreTeam = lazy(() => import('./pages/ConferenceCoreTeam.jsx'))
@@ -91,7 +91,7 @@ function App() {
               <Route path="DLA-Chair-Nominations" element={<DlaChairNominations />} />
               <Route path="Naada-Habba-Chair-Nominations" element={<NaadaHabbaChairNominations />} />
               <Route path="Tarang-Chair-Nominations" element={<TarangChairNominations />} />
-              <Route path="Royal-Sports-Meet-Chair-Nominations" element={<RoyalSportsMeetChairNominations />} />
+              <Route path="Sports-Meet-Chair-Nominations" element={<SportsMeetChairNominations />} />
               <Route path="RotaCamp-Chair-Nominations" element={<RotaCampChairNominations />} />
               <Route path="avenue-directors-data" element={<AvenueDirectorsData />} />
               <Route path="conference-core-team" element={<ConferenceCoreTeam />} />

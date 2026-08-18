@@ -25,7 +25,7 @@ export const navItems = [
       { label: 'Conference Core Team', path: '/conference-core-team' },
       { label: 'Naada Habba Chair Nominations', path: '/Naada-Habba-Chair-Nominations' },
       { label: 'Tarang Chair Nominations', path: '/Tarang-Chair-Nominations' },
-      { label: 'Royal Sports Meet Chair Nominations', path: '/Royal-Sports-Meet-Chair-Nominations' },
+      { label: 'Sports Meet Chair Nominations', path: '/Sports-Meet-Chair-Nominations' },
       { label: 'RotaCamp Chair Nominations', path: '/RotaCamp-Chair-Nominations' }
     ]
   },
