@@ -19,6 +19,7 @@ import {
   ImagePlus,
   CheckCircle2,
   X,
+  Lock,
 } from 'lucide-react'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import FormField from '../components/forms/FormField.jsx'
@@ -31,6 +32,9 @@ import { fileToUploadPayload, MAX_SOURCE_BYTES } from '../lib/imageUpload.js'
 // Keep in sync with the POSITIONS list in
 // netlify/functions/submit-conference-core-team.js.
 const POSITIONS = ['Conference Co-Chair', 'Joint Secretary']
+
+// Flip this back to false to reopen applications.
+const FORM_CLOSED = true
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -155,6 +159,7 @@ export default function ConferenceCoreTeam() {
   async function handleSubmit(e) {
     e.preventDefault()
 
+    if (FORM_CLOSED) return
     if (!validate()) return
 
     setPreparingPhotos(true)
@@ -214,14 +219,21 @@ export default function ConferenceCoreTeam() {
             Application Form
           </span>
           <span className="inline-flex items-center gap-2">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-600">
-              Active
+            <span className={`h-1.5 w-1.5 rounded-full ${FORM_CLOSED ? 'bg-red-500' : 'animate-pulse bg-emerald-500'}`} />
+            <span className={`text-[11px] font-bold uppercase tracking-[0.2em] ${FORM_CLOSED ? 'text-red-600' : 'text-emerald-600'}`}>
+              {FORM_CLOSED ? 'Closed' : 'Active'}
             </span>
           </span>
         </div>
 
-        {!form.position ? (
+        {FORM_CLOSED && (
+          <div className="flex items-start gap-2 border-b border-amber-100 bg-amber-50 px-8 py-3 text-sm font-semibold text-amber-800">
+            <AlertCircle size={16} className="mt-0.5 shrink-0" />
+            <span>Applications for the Vaayu Conference Core Team are now closed. The form below is read-only.</span>
+          </div>
+        )}
+
+        {!FORM_CLOSED && !form.position ? (
           <div className="p-8">
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
               Select the position you're applying for
@@ -241,15 +253,18 @@ export default function ConferenceCoreTeam() {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6 p-8">
-            <button
-              type="button"
-              onClick={changePosition}
-              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 transition hover:text-[#d41367]"
-            >
-              <ChevronLeft size={14} />
-              {form.position} · Change
-            </button>
+          <form onSubmit={handleSubmit}>
+          <fieldset disabled={FORM_CLOSED} className="space-y-6 p-8 disabled:opacity-60">
+            {!FORM_CLOSED && (
+              <button
+                type="button"
+                onClick={changePosition}
+                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 transition hover:text-[#d41367]"
+              >
+                <ChevronLeft size={14} />
+                {form.position} · Change
+              </button>
+            )}
 
             {FIELDS.map((field) => {
               const Icon = field.icon
@@ -411,30 +426,42 @@ export default function ConferenceCoreTeam() {
               </div>
             </FormField>
 
-            {status === 'error' && (
-              <div className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
-                <AlertCircle size={18} className="mt-0.5 shrink-0" />
-                <span>{error}</span>
-              </div>
-            )}
+            {FORM_CLOSED ? (
+              <button
+                type="submit"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-300 px-6 py-3 text-sm font-bold uppercase tracking-widest text-slate-600 disabled:cursor-not-allowed"
+              >
+                <Lock size={16} />
+                Applications Closed
+              </button>
+            ) : (
+              <>
+                {status === 'error' && (
+                  <div className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+                    <AlertCircle size={18} className="mt-0.5 shrink-0" />
+                    <span>{error}</span>
+                  </div>
+                )}
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#d41367] px-6 py-3 text-sm font-bold uppercase tracking-widest text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 size={16} className="animate-spin" />
-                  {preparingPhotos ? 'Preparing Photos...' : 'Submitting...'}
-                </>
-              ) : (
-                <>
-                  <Send size={16} />
-                  Submit Application
-                </>
-              )}
-            </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#d41367] px-6 py-3 text-sm font-bold uppercase tracking-widest text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      {preparingPhotos ? 'Preparing Photos...' : 'Submitting...'}
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} />
+                      Submit Application
+                    </>
+                  )}
+                </button>
+              </>
+            )}
 
             <p className="text-center text-[11px] uppercase tracking-[0.2em] text-slate-400">
               Secure Transmission · District 3191
@@ -445,6 +472,7 @@ export default function ConferenceCoreTeam() {
                 rotaract3191webtech2627@gmail.com
               </a>
             </p>
+          </fieldset>
           </form>
         )}
       </div>
