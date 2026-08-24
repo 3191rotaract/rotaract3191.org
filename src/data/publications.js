@@ -12,9 +12,9 @@ export function slugify(value) {
 export const WINGS_LOG = {
   name: 'The Wings Log',
   frequency: 'Monthly',
-  logo: '',
+  logo: '/assets/the-wings-log/logo.png',
   editions: [
-    // { name: 'August 2026', link: '', image: '' },
+    { name: 'July 2026', link: 'https://heyzine.com/flip-book/78c2be2920.html', image: '/assets/the-wings-log/july.png' },
   ],
 }
 
