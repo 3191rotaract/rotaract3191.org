@@ -1,16 +1,33 @@
 export const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'Zones', path: '/zones' },
-  { label: 'Calendar', path: '/calendar' },
-  { 
-    label: 'About', 
+  { label: 'Publications', path: '/publications' },
+  {
+    label: 'About',
     dropdown: [
       { label: 'About Rotaract', path: '/about' },
       { label: 'About Rotaract 3191', path: '/about-3191' },
-      { label: 'Know Your DRR-Elect', path: '/know-your-drr-elect' },
+      { label: 'Roh Se RooBaroo', path: '/roh-se-roobaroo' },
       { label: 'Team', path: '/team' }
     ]
   },
-  { label: 'Brand Centre', path: '/resources' },
-  { label: 'Showcase', path: 'https://showcase.rotaract3191.org/'}
+  { label: 'Zones', path: '/zones' },
+  {
+    label: 'Events',
+    dropdown: [
+      { label: 'Wheels of Hope', path: '/wheels-of-hope' },
+      { label: 'Calendar', path: '/calendar' }
+    ]
+  },
+  {
+    label: 'Forms',
+    dropdown: [
+      { label: 'Avenue Directors Data', path: '/avenue-directors-data' },
+      { label: 'Naada Habba Chair Nominations', path: '/Naada-Habba-Chair-Nominations' },
+      { label: 'Tarang Chair Nominations', path: '/Tarang-Chair-Nominations' },
+      { label: 'Sports Meet Chair Nominations', path: '/Sports-Meet-Chair-Nominations' },
+      { label: 'RotaCamp Chair Nominations', path: '/RotaCamp-Chair-Nominations' }
+    ]
+  },
+  { label: 'Brand Center', path: '/resources' },
+  { label: 'Showcase', path: 'https://showcase.rotaract3191.org/' }
 ]

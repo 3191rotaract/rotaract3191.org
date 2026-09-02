@@ -26,6 +26,7 @@ export const ZONES = [
       { name: 'NMIT-MBA', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'NSB Bangalore', presidentPhoto: '/assets/team/2026-27/pres/Aviral.jpg', presidentName: 'Rtr. Aviral Singh', clubWebsite: '' },
       { name: 'Padmashree Institute of Management and Sciences', presidentPhoto: '', presidentName: '', clubWebsite: '' },
+      { name: 'Patel Group of Nursing', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'R. V. University', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Sacred Heart Degree College for Women', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Seshadripuram Academy of Business Studies', presidentPhoto: '', presidentName: '', clubWebsite: '' },
@@ -40,7 +41,7 @@ export const ZONES = [
     themeColor: '#ec4899', // Pink
     logo: '/assets/brand-centre/2026-27/zonal-logos/rafale.webp',
     leaders: [
-      { name: 'PP. Rtr. Hemanth', picture: '/assets/team/2026-27/council/Hemant.jpg' },
+      { name: 'PP. Rtr. Hemant', picture: '/assets/team/2026-27/council/Hemant.jpeg' },
       { name: 'IPP. Rtr. Rohith', picture: '/assets/team/2026-27/council/Rohith.jpeg' }
     ],
     clubs: [
@@ -52,12 +53,12 @@ export const ZONES = [
       { name: 'Bishop Cotton Womens Christian College', presidentPhoto: '/assets/team/2026-27/pres/Syeda.jpg', presidentName: 'Rtr. Syeda Sakina', clubWebsite: '' },
       { name: 'BMSCE', presidentPhoto: '/assets/team/2026-27/pres/Samyak.jpg', presidentName: 'Rtr. Samyak R.', clubWebsite: '' },
       { name: 'BSVP First Grade College', presidentPhoto: '', presidentName: '', clubWebsite: '' },
-      { name: 'Jain Evening College', presidentPhoto: '/assets/team/2026-27/pres/Akshidi.jpg', presidentName: 'Rtr. Akshidi J.', clubWebsite: '' },
-      { name: 'K.G.F. Coummunity', presidentPhoto: '/assets/team/2026-27/pres/Vidya.jpg', presidentName: 'Rtr. Vidya Sagar S.', clubWebsite: '' },
+      { name: 'Jain Evening College', presidentPhoto: '/assets/team/2026-27/pres/Akshidi.webp', presidentName: 'Rtr. Akshidi J.', clubWebsite: '' },
+      { name: 'K.G.F. Community', presidentPhoto: '/assets/team/2026-27/pres/Vidya.jpg', presidentName: 'Rtr. Vidya Sagar S.', clubWebsite: '' },
       { name: 'Krupanidhi Group of Institutions', presidentPhoto: '/assets/team/2026-27/pres/Raja.png', presidentName: 'Rtr. Raja Kishore S.', clubWebsite: '' },
       { name: 'Madanapalle Institute of Technology and Sciences', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Medikardia', presidentPhoto: '/assets/team/2026-27/pres/Tejaswini.jpg', presidentName: 'Rtr. Tejaswini A. P.', clubWebsite: '' },
-      { name: 'Mount Carmel College', presidentPhoto: '/assets/team/2026-27/pres/Saswata.jpg', presidentName: 'Rtr. Saswata Majumdar', clubWebsite: '' },
+      { name: 'Mount Carmel (Deemed to be University)', presidentPhoto: '/assets/team/2026-27/pres/Saswata.jpg', presidentName: 'Rtr. Saswata Majumdar', clubWebsite: '' },
       { name: 'Palmville', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'R V College of Architecture', presidentPhoto: '/assets/team/2026-27/pres/Diya.jpeg', presidentName: 'Rtr. Diya Nair', clubWebsite: '' },
       { name: 'Ramaiah College of Law', presidentPhoto: '', presidentName: '', clubWebsite: '' },
@@ -81,6 +82,7 @@ export const ZONES = [
       { name: 'Bangalore Jayanagar', presidentPhoto: '/assets/team/2026-27/pres/Manisha.jpeg', presidentName: 'Rtr. Manisha Konkala', clubWebsite: '' },
       { name: 'Bangalore Neo Minds', presidentPhoto: '', presidentName: 'Rtr. Shvetha Srinivas', clubWebsite: '' },
       { name: 'Bangalore Orchards', presidentPhoto: '/assets/team/2026-27/pres/ManojG.jpg', presidentName: 'Rtr. Manoj Gowda B. S.', clubWebsite: '' },
+      { name: 'Bengaluru Binnypet', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Dayananda Sagar College of Dental Sciences', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Ghousia College of Engineering', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Govt. First Grade College, Ramanagara', presidentPhoto: '', presidentName: '', clubWebsite: '' },
@@ -89,11 +91,12 @@ export const ZONES = [
       { name: 'Narsee Monjee Institute of Mangement Studies, Bangalore', presidentPhoto: '/assets/team/2026-27/pres/Mani.jpeg', presidentName: 'Rtr. Kummari Mani Chandana', clubWebsite: '' },
       { name: 'PES University', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'PES University Electronic City', presidentPhoto: '/assets/team/2026-27/pres/Likhita.jpg', presidentName: 'Rtr. Likhita Marella', clubWebsite: '' },
-      { name: 'Ramnagara', presidentPhoto: '/assets/team/2026-27/pres/Bharath.jpeg', presidentName: 'Rtr. Bharath M. N.', clubWebsite: '' },
+      { name: 'Ramanagara', presidentPhoto: '/assets/team/2026-27/pres/Bharath.jpeg', presidentName: 'Rtr. Bharath M. N.', clubWebsite: '' },
       { name: 'S.S.M.R.V. College', presidentPhoto: '', presidentName: 'Rtr. Mahindra R.', clubWebsite: '' },
+      { name: 'Sacred Heart College - UG', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Seshadripuram Institute of Commerce & Management', presidentPhoto: '/assets/team/2026-27/pres/Swaroopa.jpg', presidentName: 'Rtr. Swaroopa Bohara', clubWebsite: '' },
       { name: 'Shri Gnanambica Degree College Madanapalle', presidentPhoto: '', presidentName: 'Rtr. Anjaneyulu', clubWebsite: '' },
-      { name: 'Spandana', presidentPhoto: '', presidentName: '', clubWebsite: '' },
+      { name: 'Bangalore Spandana', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'St. Francis de Sales College', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'St. Joseph\'s College Of Commerce', presidentPhoto: '/assets/team/2026-27/pres/Vinod.png', presidentName: 'Rtr. Niranjan Vinod Kumar', clubWebsite: '' }
     ]
@@ -111,6 +114,7 @@ export const ZONES = [
       { name: 'A P S College of Engineering', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Bangalore High Grounds', presidentPhoto: '/assets/team/2026-27/pres/Nandan.jpg', presidentName: 'Rtr. Nandan Kumar V. S.', clubWebsite: '' },
       { name: 'Bangalore JP Nagar', presidentPhoto: '/assets/team/2026-27/pres/Anarghya.jpg', presidentName: 'Rtr. Anarghya Suvin', clubWebsite: '' },
+      { name: 'Bangalore South', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Bangalore South Parade', presidentPhoto: '/assets/team/2026-27/pres/Khakar.jpeg', presidentName: 'IPP. Rtr. Jai Jalian Khakhar', clubWebsite: '' },
       { name: 'Bengaluru Avyanna', presidentPhoto: '', presidentName: '', clubWebsite: '' },
       { name: 'Bengaluru BTM', presidentPhoto: '/assets/team/2026-27/pres/Naveen.jpg', presidentName: 'Rtr. Naveen B. M.', clubWebsite: '' },
@@ -125,7 +129,7 @@ export const ZONES = [
       { name: 'RNS Institute of Technology', presidentPhoto: '/assets/team/2026-27/pres/Keerthi.jpg', presidentName: 'Rtr. Keerthi R.', clubWebsite: '' },
       { name: 'S-Vyasa', presidentPhoto: '/assets/team/2026-27/pres/AmanLal.jpg', presidentName: 'Rtr. Aman Lal', clubWebsite: '' },
       { name: 'SEI College Tejas', presidentPhoto: '/assets/team/2026-27/pres/Soumya.jpg', presidentName: 'Rtr. Soumya M.', clubWebsite: '' },
-      { name: 'Sri Baghwan Mahaveer Jain College', presidentPhoto: '/assets/team/2026-27/pres/Harshanjan.jpg', presidentName: 'Rtr. Harshanjan Sai A.', clubWebsite: '' },
+      { name: 'Sri Bhagwan Mahaveer Jain College KGF', presidentPhoto: '/assets/team/2026-27/pres/Harshanjan.jpg', presidentName: 'Rtr. Harshanjan Sai A.', clubWebsite: '' },
       { name: 'SRNGS Boys Hostel', presidentPhoto: '/assets/team/2026-27/pres/Vikas.jpg', presidentName: 'Rtr. Vikas N.', clubWebsite: '' },
       { name: 'SVCE Tirupati', presidentPhoto: '', presidentName: '', clubWebsite: '' }
     ]

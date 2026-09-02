@@ -14,7 +14,7 @@ const core_team = [
     id: 1,
     position: "District Rotaract Representative, RI District 3191",
     name: "Rtn. Rtr. Anirudh Kulkarni",
-    photo: "/assets/team/2026-27/core-team/Anirudh.webp",
+    photo: "/assets/team/2026-27/core-team/Anirudh.jpeg",
   },
   {
     id: 2,
@@ -76,7 +76,7 @@ const zrrs = [
     position: "Zonal Rotaract Representative",
     zone: "Zone Rafale",
     name: "Rtr. Hemant Chhajer",
-    photo: "/assets/team/2026-27/council/Hemant.jpg",
+    photo: "/assets/team/2026-27/council/Hemant.jpeg",
     rtr_id: "10334499",
   },
   {
@@ -168,9 +168,9 @@ const council = [
     members: [
       {
         id: 1,
-        name: "Rtr. Dhruv Sundhesha",
+        name: "Rtn. Rtr. Dhruv Sundhesha",
         position: "District Treasurer",
-        photo: "/assets/team/2026-27/council/Dhruv.jpg",
+        photo: "/assets/team/2026-27/council/Dhruv Sundhesha.jpeg",
         rtr_id: "10701363",
         executive: true,
         district: false,

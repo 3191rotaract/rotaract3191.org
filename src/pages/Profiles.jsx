@@ -1,108 +1,48 @@
-import { Search, Radar, Users } from "lucide-react";
-import { Download, FileText, Image as ImageIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Radar, Users, ArrowRight } from "lucide-react";
+import { PROFILES } from "../data/profiles.js";
 
-const profiles = [
-    {
-        id: 1,
-        name: "Rtn. Anil Gupta",
-        position: "District Governor",
-        photo: "/assets/team/2026-27/DG.jpeg",
-        pdf: "/assets/profiles/DG-Sridhar-BR.pdf",
-        designation: "DG",
-    },
-    {
-        id: 2,
-        name: "PDRR Rtn. Umesh P.",
-        position: "District Rotaract Committee Chair",
-        photo: "/assets/team/2026-27/DRC.jpeg",
-        pdf: "/assets/profiles/DRCC-Arun-Teja.pdf",
-        designation: "DRCC",
-    },
-    {
-        id: 3,
-        name: "Rtn. Rtr. Anirudh G Kulkarni",
-        position: "District Rotaract Representative",
-        photo: "/assets/team/2026-27/core-team/Anirudh.webp",
-        pdf: "/assets/profiles/DRR-Anirudh-Kulkarni.pdf",
-        designation: "DRR",
-    },
-    {
-        id: 4,
-        name: "PDRR Rtn. Karthik Kittu",
-        position: "District Youth Service Director",
-        photo: "/assets/team/2026-27/DYSD.jpeg",
-        pdf: "/assets/profiles/DYSD-Karthik-Kittu.pdf",
-        designation: "DYSD",
-    },
-    {
-        id: 5,
-        name: "Rtn. Rtr. Rohan A",
-        position: "District Rotaract Representative Elect",
-        photo: "/assets/team/2026-27/core-team/Rohan A.jpg",
-        pdf: "/assets/profiles/DRRE-Rohan-A.pdf",
-        designation: "DRRE",
-    },
-];
+function handlePhotoError(e) {
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = '/assets/images/placeholder.png';
+}
 
 function ProfileCard({ profile }) {
     return (
-        <div
-            className="group overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367] hover:shadow-xl"
+        <Link
+            to={`/resources/profiles/${profile.slug}`}
+            className="group block overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367] hover:shadow-xl"
         >
-            <div className="relative aspect-square overflow-hidden">
+            <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
                 <img
-                    src={profile.photo}
-                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/assets/images/placeholder.png' }}
+                    src={profile.primaryPhoto}
+                    onError={handlePhotoError}
                     alt={profile.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
             </div>
 
-            <div className="p-5">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">
-                    PERSONNEL FILE
+            <div className="p-3">
+                <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#d41367]">
+                    {profile.designation}
                 </p>
 
-                <h3 className="mt-2 text-xl font-black text-slate-900">
+                <h3 className="mt-1 text-sm font-black leading-tight text-slate-900">
                     {profile.name}
                 </h3>
 
-                <p className="mt-2 text-sm text-slate-600">
-                    {profile.position}
+                <p className="mt-1 text-xs leading-snug text-slate-600">
+                    {profile.designationFull}
                 </p>
 
-                <div className="mt-5 grid grid-cols-2 gap-2">
-                    <a
-                        href={profile.photo}
-                        download
-                        className="
-              flex items-center justify-center gap-2
-              rounded-xl border border-slate-200
-              bg-slate-50 px-4 py-3
-              text-sm font-semibold
-              hover:border-[#d41367]
-            "
-                    >
-                        <ImageIcon size={16} />
-                        Photo
-                    </a>
-
-                    <a
-                        href={profile.pdf}
-                        className="
-              flex items-center justify-center gap-2
-              rounded-xl bg-[#d41367]
-              px-4 py-3
-              text-sm font-semibold text-white
-              hover:opacity-90
-            "
-                    >
-                        <FileText size={16} />
-                        PDF
-                    </a>
+                <div className="mt-3 flex justify-center">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#d41367]/30 bg-[#d41367]/5 px-3 py-1.5 text-xs font-semibold text-[#d41367] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#d41367] group-hover:bg-[#d41367] group-hover:text-white group-hover:shadow-[0_10px_24px_rgba(212,19,103,0.35)]">
+                        View Profile
+                        <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 
@@ -124,15 +64,15 @@ export default function Profiles() {
                                 </span>
                             </div>
 
-                            <h1 className="mt-5 text-5xl font-black tracking-tight text-slate-900">
+                            <h1 className="mt-5 text-4xl md:text-5xl font-black tracking-tight text-slate-900">
                                 District Profiles
                             </h1>
                         </div>
                     </div>
-                    <div className="w-1/4 animate-pulse">
+                    <div className="w-1/4 animate-pulse hidden md:block">
                         <p className="text-slate-800 border font-semibold border-slate-400 text-base rounded-lg p-4">
-                            Access official profile photographs and profile PDFs
-                            for district leadership and Rotary leadership.
+                            Access official profile photographs and write-ups
+                            for district leadership.
                         </p>
                     </div>
                 </div>
@@ -140,11 +80,11 @@ export default function Profiles() {
 
             {/* GRID */}
 
-            <div className="grid gap-6 my-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4 my-6 sm:grid-cols-3 lg:grid-cols-5">
 
-                {profiles.map((profile) => (
+                {PROFILES.map((profile) => (
                     <ProfileCard
-                        key={profile.id}
+                        key={profile.slug}
                         profile={profile}
                     />
                 ))}

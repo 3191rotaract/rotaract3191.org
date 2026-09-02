@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { HeartHandshake, ExternalLink, FileText } from 'lucide-react'
+import { PROFILES } from '../data/profiles.js'
 
 /* ─────────────────────────────────────────────────────────────
    INJECTED CSS — keyframes only; UI classes replaced by Tailwind
@@ -37,62 +39,13 @@ const HOME_CSS = `
 /* ─────────────────────────────────────────────────────────────
    FIGHTER JET SVG (top-down, nose pointing UP)
 ───────────────────────────────────────────────────────────── */
-function Jet({ id, flipped = false }) {
-  const gId = `jg-${id}`
-  const cId = `jc-${id}`
-  const fId = `jf-${id}`
-  const bId = `jb-${id}`
-  return (
-    <svg viewBox="0 0 100 240" fill="none" xmlns="http://www.w3.org/2000/svg"
-      style={{ width: '100%', height: '100%', transform: flipped ? 'scaleX(-1)' : 'none', filter: 'drop-shadow(0 0 6px rgba(255,107,26,.5))' }}>
-      <defs>
-        <radialGradient id={gId} cx="50%" cy="0%" r="100%">
-          <stop offset="0%" stopColor="#fff" stopOpacity="1" />
-          <stop offset="22%" stopColor="#ffcc44" stopOpacity=".95" />
-          <stop offset="55%" stopColor="#ff4400" stopOpacity=".5" />
-          <stop offset="100%" stopColor="#ff2200" stopOpacity="0" />
-        </radialGradient>
-        <linearGradient id={fId} x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#3a5060" />
-          <stop offset="48%" stopColor="#9fb8cc" />
-          <stop offset="100%" stopColor="#3a5060" />
-        </linearGradient>
-        <radialGradient id={cId} cx="50%" cy="30%" r="70%">
-          <stop offset="0%" stopColor="#c0f8ff" stopOpacity=".95" />
-          <stop offset="100%" stopColor="#00c8ff" stopOpacity=".5" />
-        </radialGradient>
-        <filter id={bId}><feGaussianBlur stdDeviation="4" /></filter>
-      </defs>
-      <ellipse cx="50" cy="204" rx="16" ry="38" fill={`url(#${gId})`} filter={`url(#${bId})`} opacity=".7" />
-      <path d="M50 7 C53 24 55 55 54 116 L50 198 L46 116 C45 55 47 24 50 7Z" fill={`url(#${fId})`} />
-      <path d="M46 68 L3 150 L9 158 L44 122 Z" fill="#7a9aaa" opacity=".88" />
-      <path d="M54 68 L97 150 L91 158 L56 122 Z" fill="#7a9aaa" opacity=".88" />
-      <path d="M47 43 L22 67 L24 73 L46 57 Z" fill="#7a9aaa" opacity=".92" />
-      <path d="M53 43 L78 67 L76 73 L54 57 Z" fill="#7a9aaa" opacity=".92" />
-      <path d="M47 154 L36 187 L41 185 L48 162 Z" fill="#7a9aaa" opacity=".9" />
-      <path d="M53 154 L64 187 L59 185 L52 162 Z" fill="#7a9aaa" opacity=".9" />
-      <ellipse cx="50" cy="27" rx="4.5" ry="10" fill={`url(#${cId})`} />
-      <ellipse cx="50" cy="25" rx="2" ry="5" fill="#d8f8ff" opacity=".65" />
-      <line x1="12" y1="128" x2="36" y2="118" stroke="#FF9933" strokeWidth="2" opacity=".7" />
-      <line x1="10" y1="135" x2="34" y2="125" stroke="#ffffff" strokeWidth="1" opacity=".5" />
-      <rect x="6" y="132" width="6" height="22" rx="3" fill="#ff6b1a" opacity=".9" />
-      <rect x="88" y="132" width="6" height="22" rx="3" fill="#ff6b1a" opacity=".9" />
-      <polygon points="9,132 6,122 12,122" fill="#ffcc44" opacity=".85" />
-      <polygon points="91,132 88,122 94,122" fill="#ffcc44" opacity=".85" />
-      <ellipse cx="50" cy="200" rx="10" ry="28" fill={`url(#${gId})`} />
-      <ellipse cx="50" cy="197" rx="5" ry="13" fill="#fffde8" opacity=".8" />
-      <ellipse cx="50" cy="195" rx="2" ry="6" fill="#fff" opacity=".95" />
-    </svg>
-  )
-}
-
 /* ─────────────────────────────────────────────────────────────
-   SIDE JETS (fixed, both edges of viewport)
+   SIDE ZONAL LOGOS (fixed, both edges of viewport)
 ───────────────────────────────────────────────────────────── */
 function SideJets() {
   const Trail = ({ w = 3, h = 55, delay = 0 }) => (
     <div className="ab" style={{
-      position: 'absolute', bottom: -h * .6, left: '50%', transform: 'translateX(-50%)',
+      position: 'absolute', bottom: -h * .65, left: '50%', transform: 'translateX(-50%)',
       width: w, height: h,
       background: `linear-gradient(to bottom,#fff 0%,#ffcc44 18%,#ff6b1a 45%,#ff2200 75%,transparent 100%)`,
       borderRadius: w / 2, filter: `blur(${w * .9}px)`,
@@ -102,20 +55,47 @@ function SideJets() {
 
   return (
     <div>
-      <div style={{ position: 'fixed', left: 6, top: 0, bottom: 0, width: 52, zIndex: 5, pointerEvents: 'none', overflow: 'hidden' }}>
-        <div className="sj-a" style={{ position: 'absolute', bottom: 0, left: 0, width: 48, height: 118 }}>
-          <Jet id="la" /><Trail w={4} h={62} delay={0} />
+      {/* Left side: Mirage and Sukhoi */}
+      <div style={{ position: 'fixed', left: 6, top: 0, bottom: 0, width: 80, zIndex: 5, pointerEvents: 'none', overflow: 'hidden' }}>
+        {/* Zone Mirage */}
+        <div className="sj-a" style={{ position: 'absolute', bottom: 0, left: 8, width: 64, height: 64 }}>
+          <img
+            src="/assets/brand-centre/2026-27/zonal-logos/mirage.webp"
+            alt="Zone Mirage Logo"
+            className="w-full h-full object-contain"
+          />
+          <Trail w={5} h={75} delay={0} />
         </div>
-        <div className="sj-b" style={{ position: 'absolute', bottom: 0, left: 6, width: 34, height: 84 }}>
-          <Jet id="lb" /><Trail w={2.5} h={44} delay={.06} />
+        {/* Zone Sukhoi */}
+        <div className="sj-c" style={{ position: 'absolute', bottom: 0, right: 8, width: 64, height: 64 }}>
+          <img
+            src="/assets/brand-centre/2026-27/zonal-logos/sukhoi.webp"
+            alt="Zone Sukhoi Logo"
+            className="w-full h-full object-contain"
+          />
+          <Trail w={5} h={75} delay={0} />
         </div>
       </div>
-      <div style={{ position: 'fixed', right: 6, top: 0, bottom: 0, width: 52, zIndex: 5, pointerEvents: 'none', overflow: 'hidden' }}>
-        <div className="sj-c" style={{ position: 'absolute', bottom: 0, right: 0, width: 48, height: 118 }}>
-          <Jet id="rc" flipped /><Trail w={4} h={62} delay={0} />
+
+      {/* Right side: Rafale and Tejas */}
+      <div style={{ position: 'fixed', right: 6, top: 0, bottom: 0, width: 80, zIndex: 5, pointerEvents: 'none', overflow: 'hidden' }}>
+        {/* Zone Rafale */}
+        <div className="sj-b" style={{ position: 'absolute', bottom: 0, left: 14, width: 52, height: 52 }}>
+          <img
+            src="/assets/brand-centre/2026-27/zonal-logos/rafale.webp"
+            alt="Zone Rafale Logo"
+            className="w-full h-full object-contain"
+          />
+          <Trail w={3.5} h={55} delay={.06} />
         </div>
-        <div className="sj-d" style={{ position: 'absolute', bottom: 0, right: 6, width: 34, height: 84 }}>
-          <Jet id="rd" flipped /><Trail w={2.5} h={44} delay={.06} />
+        {/* Zone Tejas */}
+        <div className="sj-d" style={{ position: 'absolute', bottom: 0, right: 14, width: 52, height: 52 }}>
+          <img
+            src="/assets/brand-centre/2026-27/zonal-logos/tejas.webp"
+            alt="Zone Tejas Logo"
+            className="w-full h-full object-contain"
+          />
+          <Trail w={3.5} h={55} delay={.06} />
         </div>
       </div>
     </div>
@@ -170,15 +150,15 @@ function HUDReticle({ size = 210 }) {
    DATA
 ───────────────────────────────────────────────────────────── */
 const SLIDES = [
-  { tag: 'ROTARACT DISTRICT 3191 · 2026–27', title: 'SOAR ABOVE.', titleAccent: 'SERVE BEYOND.', sub: 'Empowering communities through innovative service projects and dynamic youth engagement.' },
-  { tag: 'LEADERSHIP · SERVICE · FELLOWSHIP', title: 'LEAD WITH', titleAccent: 'PURPOSE.', sub: 'Join 80+ clubs and 1900+ Rotaractors on a mission that creates lasting impact.' },
-  { tag: 'DISTRICT EVENTS · 2026–27', title: 'FLY HIGH.', titleAccent: 'GIVE BACK.', sub: 'From the District Learning Assembly to Vaayu — our flagship events bring the district together.' },
+  { tag: 'ROTARACT DISTRICT 3191 · 2026–27', title: 'SOAR ABOVE.', titleAccent: 'SERVE BEYOND.', sub: 'Empowering communities through innovative service projects and dynamic youth engagement.', image: '/assets/hero-bg.webp' },
+  { tag: 'LEADERSHIP · SERVICE · FELLOWSHIP', title: 'LEAD WITH', titleAccent: 'PURPOSE.', sub: 'Join 80+ clubs and 1900+ Rotaractors on a mission that creates lasting impact.', image: '/assets/hero-bg-2.webp' },
+  { tag: 'DISTRICT EVENTS · 2026–27', title: 'FLY HIGH.', titleAccent: 'GIVE BACK.', sub: 'From the District Learning Assembly to Vaayu — our flagship events bring the district together.', image: '/assets/hero-bg-3.webp' },
 ]
 
 const QUICK_LINKS = [
   { icon: '', title: '3191 Showcase', href: 'https://showcase.rotaract3191.org/', desc: 'Your go-to platform for reporting and displaying your club’s projects. Highlight initiatives, share impact and connect.', tag: '', internal: false },
-  { icon: '', title: 'Forms & Links', href: '/resource-hub', desc: 'Access essential forms and links for seamless club operations — RIDE applications, event registrations, all in one place.', tag: '', internal: true },
-  { icon: '', title: 'Resources', href: '/resources', desc: 'Resources and guidelines to maintain consistent branding across all platforms for a unified and professional image.', tag: '', internal: true },
+  { icon: '', title: 'Resource Hub', href: '/resource-hub', desc: 'Access essential forms and links for seamless club operations — RIDE applications, event registrations, all in one place.', tag: '', internal: true },
+  { icon: '', title: 'Brand Centre and Documents', href: '/resources', desc: 'Resources and guidelines to maintain consistent branding across all platforms for a unified and professional image.', tag: '', internal: true },
 ]
 
 const EVENTS = [
@@ -188,7 +168,7 @@ const EVENTS = [
 ]
 
 const TEAM = [
-  { name: 'Rtn. Rtr. Anirudh Kulkarni', role: 'District Rotaract Representative', photo: '/assets/team/2026-27/core-team/Anirudh.webp' },
+  { name: 'Rtn. Rtr. Anirudh Kulkarni', role: 'District Rotaract Representative', photo: '/assets/team/2026-27/core-team/Anirudh.jpeg' },
   { name: 'Rtn. Rtr. Karthik Chikmath', role: 'Immediate Past DRR', photo: '/assets/team/2026-27/core-team/Karthik U Chikmath.jpeg' },
   { name: 'Rtn. Rtr. Rohan A', role: 'District Rotaract Representative Elect', photo: '/assets/team/2026-27/core-team/Rohan A.jpg' },
   { name: 'PP. Rtr. Girish AR', role: 'General Secretary', photo: '/assets/team/2026-27/core-team/Girish A R.jpeg' },
@@ -197,8 +177,13 @@ const TEAM = [
   { name: 'PP. Rtr. Ram M Narayanan', role: 'District Rotaract Secretary - Initiatives', photo: '/assets/team/2026-27/core-team/Ram M Narayanan.jpeg' },
 ]
 
+const LEADERSHIP = ['dg', 'drr', 'dir']
+  .map((slug) => PROFILES.find((p) => p.slug === slug))
+  .filter(Boolean)
+
 const PARTNERS = [
   { name: 'Tixora', role: 'Tech Partners', logo: '/assets/partners/tixora.svg' },
+  { name: 'NKR Media Co', role: 'Creatives Partner', logo: '/assets/partners/NKR Media Co.png' },
 ]
 
 /* ─────────────────────────────────────────────────────────────
@@ -218,11 +203,14 @@ function HeroSlider() {
     <div className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
       <div className="h-1 bg-linear-to-r from-[#d41367] via-pink-300 to-slate-900" />
 
-      <section style={{ position: 'relative', minHeight: 'clamp(300px,65vh,550px)', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+      <section
+        className="aspect-[3/2] sm:aspect-auto sm:min-h-[clamp(300px,65vh,550px)]"
+        style={{ position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}
+      >
         {/* Photo background */}
         <div key={current} style={{
           position: 'absolute', inset: 0, zIndex: 0,
-          backgroundImage: 'url(/assets/hero-bg.webp)',
+          backgroundImage: `url(${SLIDES[current].image})`,
           backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
           animation: 'sliderFadeIn .9s ease forwards',
         }} />
@@ -379,6 +367,108 @@ export default function Home() {
             >
               KNOW MORE →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ §3.4 DISTRICT LEADERSHIP ══ */}
+      <section id="leadership" className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
+        <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">DISTRICT LEADERSHIP</p>
+            <h2 className="font-black text-slate-900">Our Leaders</h2>
+          </div>
+        </div>
+
+        <div className="p-5 grid gap-5 sm:grid-cols-3">
+          {LEADERSHIP.map((p) => (
+            <Link
+              to={`/resources/profiles/${p.slug}`}
+              key={p.slug}
+              id={`leader-${p.slug}`}
+              className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d41367] hover:shadow-[0_18px_48px_rgba(15,23,42,0.08)]"
+              style={{ textDecoration: 'none' }}
+            >
+              <div className="aspect-[4/5] overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f7_100%)]">
+                <img
+                  src={p.primaryPhoto}
+                  alt={p.name}
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  onError={e => { e.target.style.display = 'none' }}
+                />
+              </div>
+              <div className="p-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#d41367]">{p.designation}</p>
+                <h4 className="mt-1 text-base font-black text-slate-900 leading-tight">{p.name}</h4>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ══ §3.5 THE ROTARY FOUNDATION ══ */}
+      <section
+        id="rotary-foundation"
+        className="relative overflow-hidden rounded-4xl border border-[#0a2f6b] shadow-[0_24px_80px_rgba(10,47,107,0.35)]"
+        style={{ background: 'linear-gradient(135deg, #0a2f6b 0%, #123a7d 55%, #0a2f6b 100%)' }}
+      >
+        <div className="h-1 bg-linear-to-r from-[#F7A81B] via-[#ffd166] to-[#0a2f6b]" />
+
+        <div className="relative flex flex-col gap-6 p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#F7A81B]/40 bg-[#F7A81B]/10 px-4 py-2">
+              <HeartHandshake size={14} className="text-[#F7A81B]" />
+              <span className="text-xs font-bold tracking-[0.25em] text-[#F7A81B]">
+                The Rotary Foundation
+              </span>
+            </div>
+
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-4xl">
+              Fund the Work That Outlives Us
+            </h2>
+
+            <p className="mt-2 text-sm md:text-base leading-8 text-blue-100/85">
+              You can easily contribute to The Rotary Foundation by making a secure online donation through the Rotary International Donation Portal.
+            </p>
+            <p className="mt-3 text-sm md:text-base leading-8 text-blue-100/85">
+              Whether you're looking to support global health, education, or disaster relief, your contribution directly funds sustainable service projects — with several ways to manage your giving.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2 items-center justify-center">
+              <a
+                href="https://my.rotary.org/en/donate"
+                target="_blank"
+                rel="noreferrer"
+                id="trf-donate-cta"
+                className="inline-flex items-center gap-2 rounded-full bg-[#F7A81B] px-6 py-3 text-sm font-bold uppercase tracking-[0.15em] text-[#0a2f6b] shadow-[0_10px_24px_rgba(247,168,27,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffbe3d] hover:shadow-[0_0_25px_rgba(247,168,27,0.5)]"
+                style={{ textDecoration: 'none' }}
+              >
+                DONATE TO TRF
+                <ExternalLink size={14} />
+              </a>
+
+              <a
+                href="/assets/159-rotary-foundation-facts-en.pdf"
+                target="_blank"
+                rel="noreferrer"
+                id="trf-facts-cta"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-6 py-3 text-sm font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F7A81B] hover:bg-white/10"
+                style={{ textDecoration: 'none' }}
+              >
+                <FileText size={14} />
+                See TRF Impact
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-shrink-0 justify-center lg:justify-end">
+            <div className="rounded-3xl bg-white p-5 shadow-[0_10px_24px_rgba(0,0,0,0.2)] sm:p-6">
+              <img
+                src="/assets/brand-centre/2026-27/TRF-Simple_RGB.png"
+                alt="The Rotary Foundation"
+                className="h-16 w-auto object-contain sm:h-20"
+              />
+            </div>
           </div>
         </div>
       </section>
