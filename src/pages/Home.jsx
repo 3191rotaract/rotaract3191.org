@@ -184,6 +184,7 @@ const LEADERSHIP = ['dg', 'drr', 'dir']
 const PARTNERS = [
   { name: 'Tixora', role: 'Tech Partners', logo: '/assets/partners/tixora.svg' },
   { name: 'NKR Media Co', role: 'Creatives Partner', logo: '/assets/partners/NKR Media Co.png' },
+  { name: 'Custom Create', role: 'Merchandise Partner', logo: '/assets/partners/Custom Create.png' },
 ]
 
 /* ─────────────────────────────────────────────────────────────
