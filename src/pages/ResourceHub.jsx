@@ -11,7 +11,7 @@ const links = [
   { id: 9, title: "Guest Profile & Photos", type: "link", href: '/resources/profiles' },
   { id: 10, title: "Annual District Club Dues", type: "pdf", href: '/assets/docs/Club Dues 2026-27.pdf' },
   { id: 11, title: "Q1 - Top Gun Recognition Guidelines", type: "pdf", href: '/assets/docs/Top Gun Recognition Guidelines, Quarter 1.pdf' },
-  { id: 12, title: "Q2 - Top Gun Recognition Guidelines", type: "pdf", href: '/Top Gun Recognition Guidelines, Quarter 2.pdf' },
+  { id: 12, title: "Q2 - Top Gun Recognition Guidelines", type: "pdf", href: '/Q2Recognitions.pdf' },
   // { id: 2, title: "Brand Guidelines", type: "pdf", href: null },
 ];
 
