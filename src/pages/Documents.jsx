@@ -77,7 +77,7 @@ const documentSections = [
       },
       {
         title: "Q2 - Top Gun Recognition Guidelines",
-        file: "/Top Gun Recognition Guidelines, Quarter 2.pdf",
+        file: "/Q2Recognitions.pdf",
       },
     ],
   },
