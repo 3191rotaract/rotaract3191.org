@@ -75,6 +75,10 @@ const documentSections = [
         title: "Q1 - Top Gun Recognition Guidelines",
         file: "/assets/docs/Top Gun Recognition Guidelines, Quarter 1.pdf",
       },
+      {
+        title: "Q2 - Top Gun Recognition Guidelines",
+        file: "/Top Gun Recognition Guidelines, Quarter 2.pdf",
+      },
     ],
   },
   {
