@@ -154,3 +154,29 @@ Service, Professional Development, Public Image, SAA, Next Gen, Social
 Media, Web & Tech, Club Learning Facilitator, Club Foundation Chairman) are
 created lazily as each one receives its first submission — you don't need
 to pre-create any of them.
+
+## Separate sheet: Top Gun Rotaractors Recognition
+
+The Top Gun Rotaractors Recognition form uses a separate spreadsheet so its
+Quarter 1 nominations stay isolated from the other forms.
+
+1. Create a new blank spreadsheet (for example, **"Rotaract 3191 — Top Gun
+  Recognition Q1"**).
+2. Open **Extensions → Apps Script**, delete the placeholder function, and
+  paste the contents of [`google-apps-script/Code.gs`](./google-apps-script/Code.gs).
+  This backend supports the form's casual-photo upload to Google Drive.
+3. Deploy it as a Web App with **Execute as: Me** and **Who has access: Anyone**.
+  Authorize the requested Sheets and Drive permissions.
+4. Copy the deployed URL ending in `/exec`.
+5. In `netlify/functions/_lib/sheetsConfig.mjs`, replace
+  `PASTE_YOUR_TOP_GUN_APPS_SCRIPT_WEB_APP_URL_HERE` in
+  `TOP_GUN_RECOGNITION_SCRIPT_URL` with that URL.
+6. Deploy the website. The form is available at
+  `/top-gun-rotaractors-recognition`.
+
+The first submission automatically creates a
+**Top Gun Rotaractors Recognition - Q1** tab with columns for the timestamp,
+five answers, and the Drive link to the casual photo. The photo is stored in
+**Drive → Rotaract 3191 Form Uploads → Top Gun Rotaractors Recognition - Q1**.
+If you edit `Code.gs` later, create a new deployment version under
+**Deploy → Manage deployments**; the `/exec` URL remains unchanged.

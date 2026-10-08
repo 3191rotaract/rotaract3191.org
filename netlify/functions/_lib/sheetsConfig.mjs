@@ -9,3 +9,7 @@ export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxM6yy
 // Separate Apps Script Web App deployment, bound to its own spreadsheet, used
 // only by the Avenue Directors Data form. See GOOGLE_SHEETS_SETUP.md.
 export const AVENUE_DIRECTORS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz3FInGNmsV5ai9t22G1sMg8pSulwKsi10D-lMoABF2DDACFGE9r-s0pf3QQjFv4WQ/exec'
+
+// Separate Apps Script Web App deployment for the Top Gun Rotaractors
+// Recognition form, bound to its own spreadsheet.
+export const TOP_GUN_RECOGNITION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkfI58Nb0gpHvbv9Qxb7YdeISFRNFlLRLr0gXsjef7KTFz90gyg6jRnYfxA5_gQAd2YQ/exec'

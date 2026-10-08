@@ -27,6 +27,11 @@ export function validateFields(fields, body) {
       continue
     }
 
+    if (field.maxWords && value.split(/\s+/).filter(Boolean).length > field.maxWords) {
+      errors.push(`${field.name} must be ${field.maxWords} words or fewer`)
+      continue
+    }
+
     if (field.oneOf && value.length > 0 && !field.oneOf.includes(value)) {
       errors.push(`${field.name} is not a valid option`)
       continue
