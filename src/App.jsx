@@ -31,6 +31,7 @@ const RotaCampChairNominations = lazy(() => import('./pages/RotaCampChairNominat
 const AvenueDirectorsData = lazy(() => import('./pages/AvenueDirectorsData.jsx'))
 const ConferenceCoreTeam = lazy(() => import('./pages/ConferenceCoreTeam.jsx'))
 const WheelsOfHope = lazy(() => import('./pages/WheelsOfHope.jsx'))
+const TopGunRecognition = lazy(() => import('./pages/TopGunRecognition.jsx'))
 
 function App() {
   const [isHomeLanding] = useState(() => window.location.pathname === '/')
@@ -96,6 +97,7 @@ function App() {
               <Route path="avenue-directors-data" element={<AvenueDirectorsData />} />
               <Route path="conference-core-team" element={<ConferenceCoreTeam />} />
               <Route path="wheels-of-hope" element={<WheelsOfHope />} />
+              <Route path="top-gun-rotaractors-recognition" element={<TopGunRecognition />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
