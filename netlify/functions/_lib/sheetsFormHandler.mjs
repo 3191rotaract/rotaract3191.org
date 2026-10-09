@@ -76,7 +76,12 @@ export function createSheetsFormHandler({ sheetName, fields, files, uniqueFields
 
       if (!scriptRes.ok) {
         console.error('Apps Script request failed:', scriptRes.status, data)
-        return jsonResponse(502, { error: 'Something went wrong. Please try again later.' })
+        if (scriptRes.status === 401 || scriptRes.status === 403) {
+          return jsonResponse(502, {
+            error: 'The form backend rejected the request. Please verify the Apps Script Web App is deployed with "Who has access: Anyone".',
+          })
+        }
+        return jsonResponse(502, { error: `The form backend returned an error (${scriptRes.status}). Please try again later.` })
       }
 
       // data.ok === false here means Apps Script deliberately rejected the
