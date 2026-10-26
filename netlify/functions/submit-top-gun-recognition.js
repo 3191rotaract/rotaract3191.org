@@ -4,6 +4,7 @@ import { TOP_GUN_RECOGNITION_SCRIPT_URL } from './_lib/sheetsConfig.mjs'
 const IMAGE_PATTERN = /^image\/(jpeg|jpg|png|webp)$/
 
 export default createSheetsFormHandler({
+  closed: true,
   scriptUrl: TOP_GUN_RECOGNITION_SCRIPT_URL,
   sheetName: 'Top Gun Rotaractors Recognition - Q1',
   fields: [

@@ -30,12 +30,16 @@ function jsonResponse(status, data) {
  * to CORS at all, so we get Apps Script's real JSON response back and can
  * surface a genuine success/error state to the user.
  */
-export function createSheetsFormHandler({ sheetName, fields, files, uniqueFields, scriptUrl }) {
+export function createSheetsFormHandler({ sheetName, fields, files, uniqueFields, scriptUrl, closed = false }) {
   const url = scriptUrl ?? GOOGLE_SCRIPT_URL
 
   return async (req) => {
     if (req.method !== 'POST') {
       return jsonResponse(405, { error: 'Method not allowed' })
+    }
+
+    if (closed) {
+      return jsonResponse(410, { error: 'This form is closed and no longer accepting submissions.' })
     }
 
     if (url.includes('PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE')) {
