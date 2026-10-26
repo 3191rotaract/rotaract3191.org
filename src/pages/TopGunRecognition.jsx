@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Award, Building2, Briefcase, CheckCircle2, IdCard, ImagePlus, Loader2, Send, User, X } from 'lucide-react'
+import { AlertCircle, Award, Building2, Briefcase, CheckCircle2, IdCard, ImagePlus, Loader2, Lock, Send, User, X } from 'lucide-react'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import FormField from '../components/forms/FormField.jsx'
 import FormPageHeader from '../components/forms/FormPageHeader.jsx'
@@ -10,6 +10,7 @@ import { fileToUploadPayload, MAX_SOURCE_BYTES } from '../lib/imageUpload.js'
 
 const EMPTY_FORM = { name: '', clubName: '', riId: '', clubRole: '', reason: '' }
 const EMPTY_PHOTO = null
+const FORM_CLOSED = true
 
 export default function TopGunRecognition() {
   const [form, setForm] = useState(EMPTY_FORM)
@@ -58,6 +59,7 @@ export default function TopGunRecognition() {
 
   async function handleSubmit(event) {
     event.preventDefault()
+    if (FORM_CLOSED) return
     if (!validate()) return
     setPreparingPhoto(true)
     let payload
@@ -96,7 +98,27 @@ export default function TopGunRecognition() {
 
       <div className="mt-8 overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
         <div className="h-1 bg-linear-to-r from-[#d41367] via-pink-300 to-slate-900" />
+        <div className="flex items-center justify-between border-b border-slate-100 px-8 py-4">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-400">
+            Recognition Form
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className={`h-1.5 w-1.5 rounded-full ${FORM_CLOSED ? 'bg-red-500' : 'animate-pulse bg-emerald-500'}`} />
+            <span className={`text-[11px] font-bold uppercase tracking-[0.2em] ${FORM_CLOSED ? 'text-red-600' : 'text-emerald-600'}`}>
+              {FORM_CLOSED ? 'Closed' : 'Active'}
+            </span>
+          </span>
+        </div>
+
+        {FORM_CLOSED && (
+          <div className="flex items-start gap-2 border-b border-amber-100 bg-amber-50 px-8 py-3 text-sm font-semibold text-amber-800">
+            <AlertCircle size={16} className="mt-0.5 shrink-0" />
+            <span>Top Gun Rotaractors recognition nominations for Quarter 1 are now closed. The form below is read-only.</span>
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-6 p-8">
+          <fieldset disabled={FORM_CLOSED} className="space-y-6 disabled:opacity-60">
           <FormField label="Name of the Rotaractor" error={fieldErrors.name}>
             <div className="relative">
               <User size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -156,10 +178,19 @@ export default function TopGunRecognition() {
             </label>
           </FormField>
 
-          {error && <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{error}</div>}
-          <button type="submit" disabled={isSubmitting} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#d41367] px-5 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-[#b81058] disabled:cursor-not-allowed disabled:opacity-60">
-            {isSubmitting ? <><Loader2 size={17} className="animate-spin" /> Submitting...</> : <><Send size={17} /> Submit Nomination</>}
-          </button>
+          {FORM_CLOSED ? (
+            <button type="submit" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-300 px-5 py-3.5 text-sm font-bold uppercase tracking-widest text-slate-600 disabled:cursor-not-allowed">
+              <Lock size={17} /> Nominations Closed
+            </button>
+          ) : (
+            <>
+              {error && <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{error}</div>}
+              <button type="submit" disabled={isSubmitting} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#d41367] px-5 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-[#b81058] disabled:cursor-not-allowed disabled:opacity-60">
+                {isSubmitting ? <><Loader2 size={17} className="animate-spin" /> Submitting...</> : <><Send size={17} /> Submit Nomination</>}
+              </button>
+            </>
+          )}
+          </fieldset>
         </form>
       </div>
     </div>

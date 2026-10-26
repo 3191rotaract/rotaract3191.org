@@ -49,7 +49,7 @@ const YES_NO_FIELDS = [
 ]
 
 // Flip this back to false to reopen nominations.
-const FORM_CLOSED = false
+const FORM_CLOSED = true
 
 const EMPTY_FORM = {
   name: '',

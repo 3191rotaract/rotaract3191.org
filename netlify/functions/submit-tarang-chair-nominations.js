@@ -3,6 +3,7 @@ import { createSheetsFormHandler } from './_lib/sheetsFormHandler.mjs'
 const YES_NO_PATTERN = /^(yes|no)$/
 
 export default createSheetsFormHandler({
+  closed: true,
   sheetName: 'Tarang Chair Nominations',
   fields: [
     { name: 'name', required: true, maxLength: 120 },
