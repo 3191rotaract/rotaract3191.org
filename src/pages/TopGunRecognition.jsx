@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AlertCircle, Award, Building2, Briefcase, CheckCircle2, IdCard, ImagePlus, Loader2, Lock, Send, User, X } from 'lucide-react'
+import { AlertCircle, Award, Building2, Briefcase, CheckCircle2, IdCard, ImagePlus, Loader2, Send, User, X } from 'lucide-react'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import FormField from '../components/forms/FormField.jsx'
 import FormPageHeader from '../components/forms/FormPageHeader.jsx'
@@ -10,7 +10,7 @@ import { fileToUploadPayload, MAX_SOURCE_BYTES } from '../lib/imageUpload.js'
 
 const EMPTY_FORM = { name: '', clubName: '', riId: '', clubRole: '', reason: '' }
 const EMPTY_PHOTO = null
-const FORM_CLOSED = true
+const FORM_CLOSED = false
 
 export default function TopGunRecognition() {
   const [form, setForm] = useState(EMPTY_FORM)
