@@ -72,9 +72,16 @@ export default function TarangCommitteeSignup() {
       ...prev,
       committees: prev.committees.includes(committee)
         ? prev.committees.filter((item) => item !== committee)
+        : prev.committees.length >= 2
+          ? prev.committees
         : [...prev.committees, committee],
     }))
-    setFieldErrors((prev) => ({ ...prev, committees: undefined }))
+    setFieldErrors((prev) => ({
+      ...prev,
+      committees: form.committees.length >= 2 && !form.committees.includes(committee)
+        ? 'You can select a maximum of 2 committees'
+        : undefined,
+    }))
   }
 
   function validate() {
@@ -86,6 +93,7 @@ export default function TarangCommitteeSignup() {
       errors.email = 'Please enter a valid email address'
     }
     if (form.committees.length === 0) errors.committees = 'Select at least one committee'
+    if (form.committees.length > 2) errors.committees = 'You can select a maximum of 2 committees'
     setFieldErrors(errors)
     return Object.keys(errors).length === 0
   }
@@ -166,7 +174,7 @@ export default function TarangCommitteeSignup() {
           </div>
 
           <FormField label="Interested Committee(s)" error={fieldErrors.committees}>
-            <p className="mb-3 text-sm text-slate-500">Select all committees you would like to work with.</p>
+            <p className="mb-3 text-sm text-slate-500">Select up to 2 committees you would like to work with.</p>
             <div className="grid gap-2 sm:grid-cols-2">
               {COMMITTEES.map((committee) => {
                 const checked = form.committees.includes(committee)
