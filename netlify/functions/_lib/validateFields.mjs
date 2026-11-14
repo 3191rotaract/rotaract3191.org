@@ -32,6 +32,11 @@ export function validateFields(fields, body) {
       continue
     }
 
+    if (field.maxItems && value.split(',').map((item) => item.trim()).filter(Boolean).length > field.maxItems) {
+      errors.push(`${field.name} must contain ${field.maxItems} items or fewer`)
+      continue
+    }
+
     if (field.oneOf && value.length > 0 && !field.oneOf.includes(value)) {
       errors.push(`${field.name} is not a valid option`)
       continue

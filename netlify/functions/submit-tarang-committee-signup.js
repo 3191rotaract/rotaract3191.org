@@ -13,7 +13,7 @@ export default createSheetsFormHandler({
     { name: 'zoneName', required: true, maxLength: 80 },
     { name: 'clubName', required: true, maxLength: 160 },
     { name: 'designation', required: true, maxLength: 100 },
-    { name: 'interestedCommittee', required: true, maxLength: 1000 },
+    { name: 'interestedCommittee', required: true, maxLength: 1000, maxItems: 2 },
     { name: 'motivation', required: true, maxLength: 2000 },
   ],
   uniqueFields: [
