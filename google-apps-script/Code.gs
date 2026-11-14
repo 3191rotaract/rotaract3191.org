@@ -4,8 +4,8 @@
  * One deployment serves every form on the site. Each Netlify Function posts
  * { sheetName, fields, files, uniqueFields } — this script writes each
  * form's rows to its own tab (creating the tab and header row the first
- * time it sees a new sheetName), so adding a brand-new form later needs
- * zero changes here: just point a new Netlify Function at a new sheetName.
+ * time it sees a new sheetName). The script is copied into the spreadsheet
+ * that should receive the form's submissions.
  *
  * `files` (optional) is a map of fieldName -> { name, mimeType, data }
  * (data is base64). Each is uploaded to a Drive folder scoped to the form

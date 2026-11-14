@@ -13,3 +13,7 @@ export const AVENUE_DIRECTORS_SCRIPT_URL = 'https://script.google.com/macros/s/A
 // Separate Apps Script Web App deployment for the Top Gun Rotaractors
 // Recognition form, bound to its own spreadsheet.
 export const TOP_GUN_RECOGNITION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkfI58Nb0gpHvbv9Qxb7YdeISFRNFlLRLr0gXsjef7KTFz90gyg6jRnYfxA5_gQAd2YQ/exec'
+
+// Separate Apps Script Web App deployment for Tarang Committee Signup.
+// Paste the /exec URL deployed from the new Tarang spreadsheet here.
+export const TARANG_COMMITTEE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNw0WkFUIrz-Vt5mIFH_kp2apLRlcNkFf5dB5NKkeZ1vf81M-4yoYAwyEhwgBx3NWl/exec'
