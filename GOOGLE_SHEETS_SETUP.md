@@ -1,8 +1,8 @@
 # Google Sheets form backend — setup
 
-One Google Sheet + one Apps Script Web App deployment serves every form on
-the site. Each form's Netlify Function sends its data to its own tab in the
-same spreadsheet.
+One Apps Script Web App deployment serves the site's Google Sheets forms.
+Most forms send data to tabs in the main spreadsheet. Tarang Committee Signup
+is routed to its own spreadsheet file so its volunteer data stays separate.
 
 ## 1. Create the spreadsheet
 
@@ -126,8 +126,28 @@ setup needed, the folder is created automatically on first submission.
 
 ## Viewing responses
 
-Just open the spreadsheet — each form's submissions land in their own tab,
-newest at the bottom, with a Timestamp column first.
+Just open the relevant spreadsheet — each form's submissions land in their own
+tab, newest at the bottom, with a Timestamp column first. The
+**Tarang Committee Signup** uses its own spreadsheet and Apps Script
+deployment.
+
+### Separate sheet: Tarang Committee Signup
+
+The Tarang Committee Signup form uses a separate spreadsheet named
+**Tarang Committee Signup**:
+
+1. Create a new blank Google Spreadsheet named **Tarang Committee Signup**.
+2. Open **Extensions → Apps Script** in that spreadsheet.
+3. Paste in the contents of [`google-apps-script/Code.gs`](./google-apps-script/Code.gs).
+4. Deploy it as a Web App with **Execute as: Me** and **Who has access: Anyone**.
+5. Copy the new `/exec` URL.
+6. Put that URL in `TARANG_COMMITTEE_SCRIPT_URL` in
+   `netlify/functions/_lib/sheetsConfig.mjs`.
+7. Deploy the website.
+
+The first submission automatically creates the
+**Tarang Committee Signup** tab in this spreadsheet. Existing forms continue
+using the main Apps Script URL.
 
 ## Second sheet: Avenue Directors Data
 

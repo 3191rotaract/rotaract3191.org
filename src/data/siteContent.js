@@ -24,6 +24,7 @@ export const navItems = [
       { label: 'Avenue Directors Data', path: '/avenue-directors-data' },
       { label: 'Naada Habba Chair Nominations', path: '/Naada-Habba-Chair-Nominations' },
       { label: 'Tarang Chair Nominations', path: '/Tarang-Chair-Nominations' },
+      { label: 'Tarang Committee Signup', path: '/Tarang-Committee-Signup' },
       { label: 'Sports Meet Chair Nominations', path: '/Sports-Meet-Chair-Nominations' },
       { label: 'RotaCamp Chair Nominations', path: '/RotaCamp-Chair-Nominations' }
     ]
