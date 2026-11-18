@@ -149,6 +149,10 @@ The first submission automatically creates the
 **Tarang Committee Signup** tab in this spreadsheet. Existing forms continue
 using the main Apps Script URL.
 
+The **Tarang Event SignUp Form** also uses this Tarang spreadsheet. Its first
+submission automatically creates a separate **Tarang Event SignUp** tab in the
+same spreadsheet.
+
 ## Second sheet: Avenue Directors Data
 
 The Avenue Directors Data form (`/avenue-directors-data`) is deliberately
