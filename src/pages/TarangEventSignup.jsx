@@ -207,10 +207,10 @@ export default function TarangEventSignup() {
           </FormField>
 
           <div className="grid gap-6 sm:grid-cols-2">
-            <FormField label="Event POC Name (if any)" error={fieldErrors.eventPocName}>
+            <FormField label="Event POC Name" optional error={fieldErrors.eventPocName}>
               <div className="relative"><Contact size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" /><input value={form.eventPocName} maxLength={120} placeholder="Point of contact name" onChange={(e) => updateField('eventPocName', e.target.value)} className={inputClasses} /></div>
             </FormField>
-            <FormField label="Event POC Contact Details (if any)" error={fieldErrors.eventPocContact}>
+            <FormField label="Event POC Contact Details" optional error={fieldErrors.eventPocContact}>
               <div className="relative"><Phone size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" /><input type="tel" value={form.eventPocContact} maxLength={20} placeholder="98765 43210" onChange={(e) => updateField('eventPocContact', e.target.value)} className={inputClasses} /></div>
             </FormField>
           </div>
