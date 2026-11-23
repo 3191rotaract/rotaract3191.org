@@ -133,7 +133,7 @@ export default function TarangCommitteeSignup() {
         icon={<Sparkles size={14} />}
         badgeText="TARANG 2026"
         title="Tarang Committee Signup"
-        description="Join the team behind TARANG - Empowering Dreams, One Wave at a Time! Help us create an unforgettable celebration of talent, creativity and opportunities for children from NGOs and orphanages."
+        description="Join the team behind TARANG - Empowering Dreams, One Wave at a Time! Help us create an unforgettable celebration of talent, creativity and opportunities for children from NGOs and children's home."
         logo="/assets/brand-centre/2026-27/event-logos/Tarang.png"
         logoAlt="Tarang logo"
       />
